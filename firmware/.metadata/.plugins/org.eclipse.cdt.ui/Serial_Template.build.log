@@ -1,0 +1,11 @@
+14:24:13 **** Incremental Build of configuration Debug for project Serial_Template ****
+make all 
+Invoking: Cross ARM GNU Print Size
+arm-none-eabi-size --format=berkeley "Serial_Template.elf"
+   text	   data	    bss	    dec	    hex	filename
+   5197	    208	   2992	   8397	   20cd	Serial_Template.elf
+Finished building: Serial_Template.siz
+ 
+
+14:24:14 Build Finished (took 269ms)
+
