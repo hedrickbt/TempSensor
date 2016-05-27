@@ -1,0 +1,22 @@
+STM32F030 Temp sensor
+=============================================================
+ADC_IN16		Pin/ADC where we can get the value
+TS_CAL1 		register with the cal offset
+
+ADCAL=1			calibrate
+ADEN=1			enable
+ADRDY			set when ADC is ready
+ADDIS=1			disable
+ADC_IER , ADRDYIE bit	interrupt
+ADSTART=1		conversion
+EOSMP			end of sample phase
+
+
+Using the ADC : 
+	Nucleo_reference_manual_DM00091010.pdf
+	12 Analog-to-digital converter (ADC)
+
+1. Calibrate
+2. Turn on 
+3. Conversion
+4. Turn off
