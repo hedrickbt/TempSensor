@@ -9,7 +9,7 @@
 
 #ifndef __SERIAL_INTERFACE_STRUCTURE_H__
 #define __SERIAL_INTERFACE_STRUCTURE_H__
-    #include "../common.h"
+    #include "common.h"
 
     ///////////////////////////////////////////////////////////////////////////////
     /// \brief define the standard serial interface
