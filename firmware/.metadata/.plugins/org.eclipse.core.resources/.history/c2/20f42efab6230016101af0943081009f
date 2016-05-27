@@ -1,0 +1,29 @@
+/*
+ * tempsense.c
+ *
+ *  Created on: May 27, 2016
+ *      Author: vagrant
+ */
+#include <stdint.h>
+
+/*
+ * \brief Initialize the internal temperature sensor ADC
+ */
+void TEMPSENSE_Enable(void) {
+
+}
+
+/**
+ * \brief This will return a decree C value for the internal temperature sensor.
+ * 			You can make multiple calls for a reading without having to re-initialize the sensor.
+ */
+int16_t TEMPSENSE_GetReading() {
+	return (int16_t)0.0;
+}
+
+/*
+ * \brief Disable the internal temperature sensor ADC
+ */
+void TEMPSENSE_Disable(void) {
+
+}
