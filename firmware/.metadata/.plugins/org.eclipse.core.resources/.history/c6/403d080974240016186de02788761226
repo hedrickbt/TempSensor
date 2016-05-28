@@ -43,8 +43,6 @@ uint_fast8_t ADC_Read(uint_fast32_t channel, uint_fast16_t *destination) {
 
 	while (!ADC1->ISR & ADC_ISR_EOC); //wait until ADC is done with conversion
 
-	*destination = (uint32_t)(0x0000FFFF & ADC1->DR); // only want to keep the 1/2 of the bits
-
 
 	return FALSE;
 }

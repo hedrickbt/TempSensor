@@ -33,18 +33,9 @@ uint_fast8_t ADC_Read(uint_fast32_t channel, uint_fast16_t *destination) {
 		return FALSE; // adc is not turned on, bad channel, or null destination
 	}
 
-	if (ADC1->CR & ADC_CR_ADSTART) {
-		return FALSE;  // a conversion has already been started
-	}
-
-	ADC1->CHSELR = ((uint32_t)(1 << channel)); // select the channel
-
-	ADC1->CR |= ADC_CR_ADSTART; // start the conversion
-
-	while (!ADC1->ISR & ADC_ISR_EOC); //wait until ADC is done with conversion
-
-	*destination = (uint32_t)(0x0000FFFF & ADC1->DR); // only want to keep the 1/2 of the bits
-
+	ADC1->CHSELR = ((uint32_t)(1 << channel));
+	while (!ADC1->ISR & ADC_ISR_EOC); //waint until ADC is done with conversion
+brooke here
 
 	return FALSE;
 }
