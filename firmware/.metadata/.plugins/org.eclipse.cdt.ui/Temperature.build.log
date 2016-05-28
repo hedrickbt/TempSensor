@@ -1,31 +1,24 @@
-21:47:24 **** Incremental Build of configuration Debug for project Temperature ****
+22:32:11 **** Incremental Build of configuration Debug for project Temperature ****
 make all 
-Building file: ../src/MCU/usart2.c
+Building file: ../src/ADC.c
 Invoking: Cross ARM C Compiler
-arm-none-eabi-gcc -mcpu=cortex-m0 -mthumb -Og -fmessage-length=0 -fsigned-char -ffunction-sections -fdata-sections -ffreestanding -fno-move-loop-invariants -Wall -Wextra  -g3 -DDEBUG -DUSE_FULL_ASSERT -DTRACE -DOS_USE_TRACE_SEMIHOSTING_DEBUG -DSTM32F030 -DUSE_STDPERIPH_DRIVER -DHSE_VALUE=8000000 -I"../include" -I"../system/include" -I"../system/include/cmsis" -I"../system/include/stm32f0-stdperiph" -std=gnu11 -MMD -MP -MF"src/MCU/usart2.d" -MT"src/MCU/usart2.o" -c -o "src/MCU/usart2.o" "../src/MCU/usart2.c"
-Finished building: ../src/MCU/usart2.c
- 
-Building file: ../src/Terminal.c
-Invoking: Cross ARM C Compiler
-arm-none-eabi-gcc -mcpu=cortex-m0 -mthumb -Og -fmessage-length=0 -fsigned-char -ffunction-sections -fdata-sections -ffreestanding -fno-move-loop-invariants -Wall -Wextra  -g3 -DDEBUG -DUSE_FULL_ASSERT -DTRACE -DOS_USE_TRACE_SEMIHOSTING_DEBUG -DSTM32F030 -DUSE_STDPERIPH_DRIVER -DHSE_VALUE=8000000 -I"../include" -I"../system/include" -I"../system/include/cmsis" -I"../system/include/stm32f0-stdperiph" -std=gnu11 -MMD -MP -MF"src/Terminal.d" -MT"src/Terminal.o" -c -o "src/Terminal.o" "../src/Terminal.c"
-../src/Terminal.c: In function 'DisplaySystemInformation':
-../src/Terminal.c:84:25: warning: pointer targets in passing argument 1 of 'SerialPort2.SendString' differ in signedness [-Wpointer-sign]
-  SerialPort2.SendString("\n> ");
-                         ^
-../src/Terminal.c:84:25: note: expected 'const unsigned char *' but argument is of type 'char *'
-../src/Terminal.c: In function 'ProcessData':
-../src/Terminal.c:168:18: warning: comparison of constant '115' with boolean expression is always false [-Wbool-compare]
-  } else if ( 's' == !destination->List[0].Type && 'S' == !destination->List[0].Type)
-                  ^
-../src/Terminal.c:168:55: warning: comparison of constant '83' with boolean expression is always false [-Wbool-compare]
-  } else if ( 's' == !destination->List[0].Type && 'S' == !destination->List[0].Type)
-                                                       ^
-../src/Terminal.c: In function 'Terminal_Process':
-../src/Terminal.c:289:26: warning: pointer targets in passing argument 1 of 'SerialPort2.SendString' differ in signedness [-Wpointer-sign]
-   SerialPort2.SendString("\n> ");
-                          ^
-../src/Terminal.c:289:26: note: expected 'const unsigned char *' but argument is of type 'char *'
-Finished building: ../src/Terminal.c
+arm-none-eabi-gcc -mcpu=cortex-m0 -mthumb -Og -fmessage-length=0 -fsigned-char -ffunction-sections -fdata-sections -ffreestanding -fno-move-loop-invariants -Wall -Wextra  -g3 -DDEBUG -DUSE_FULL_ASSERT -DTRACE -DOS_USE_TRACE_SEMIHOSTING_DEBUG -DSTM32F030 -DUSE_STDPERIPH_DRIVER -DHSE_VALUE=8000000 -I"../include" -I"../system/include" -I"../system/include/cmsis" -I"../system/include/stm32f0-stdperiph" -std=gnu11 -MMD -MP -MF"src/ADC.d" -MT"src/ADC.o" -c -o "src/ADC.o" "../src/ADC.c"
+../src/ADC.c: In function 'ADC_ReadNorm':
+../src/ADC.c:51:41: warning: unused parameter 'channel' [-Wunused-parameter]
+ uint_fast8_t ADC_ReadNorm(uint_fast32_t channel, float *destination) {
+                                         ^
+../src/ADC.c:51:57: warning: unused parameter 'destination' [-Wunused-parameter]
+ uint_fast8_t ADC_ReadNorm(uint_fast32_t channel, float *destination) {
+                                                         ^
+../src/ADC.c: In function 'ADC_Off':
+../src/ADC.c:61:10: warning: suggest parentheses around operand of '!' or change '&' to '&&' or '!' to '~' [-Wparentheses]
+  while ( !ADC1->CR & ADC_CR_ADDIS );  // wait until the ADC is shut down
+          ^
+../src/ADC.c: In function 'ADC_CalibratedTemperature':
+../src/ADC.c:73:47: warning: unused parameter 'rawData' [-Wunused-parameter]
+ float ADC_CalibratedTemperature(uint_fast16_t rawData) {
+                                               ^
+Finished building: ../src/ADC.c
  
 Building target: Temperature.elf
 Invoking: Cross ARM C++ Linker
@@ -43,9 +36,9 @@ Finished building: Temperature.hex
 Invoking: Cross ARM GNU Print Size
 arm-none-eabi-size --format=berkeley "Temperature.elf"
    text	   data	    bss	    dec	    hex	filename
-  22200	    268	   3272	  25740	   648c	Temperature.elf
+  22208	    268	   3272	  25748	   6494	Temperature.elf
 Finished building: Temperature.siz
  
 
-21:47:25 Build Finished (took 990ms)
+22:32:12 Build Finished (took 639ms)
 

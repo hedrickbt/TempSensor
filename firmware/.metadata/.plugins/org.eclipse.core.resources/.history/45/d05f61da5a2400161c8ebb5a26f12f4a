@@ -30,12 +30,10 @@ void ADC_On(void) {
 ///////////////////////////////////////////////////////////////////////////////
 uint_fast8_t ADC_Read(uint_fast32_t channel, uint_fast16_t *destination) {
 	if (!ADC1->CR & ADC_CR_ADEN || channel > 17 || !destination) {
-		return FALSE; // adc is not turned on, bad channel, or null destination
+		return FALSE; // adc is not turned on
 	}
 
 	ADC1->CHSELR = ((uint32_t)(1 << channel));
-	while (!ADC1->ISR & ADC_ISR_EOC); //waint until ADC is done with conversion
-brooke here
 
 	return FALSE;
 }

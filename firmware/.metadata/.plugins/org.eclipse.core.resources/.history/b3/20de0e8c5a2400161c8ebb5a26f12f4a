@@ -23,20 +23,15 @@ void ADC_On(void) {
 ///////////////////////////////////////////////////////////////////////////////
 /// \brief Read a value from the ADC for the internal temperature sensor
 ///
-/// \param ADC channel 0-17
+/// \param ADC channel
 /// \param destination pointer to return the value read
 ///
 /// \return True on success else adc is not open
 ///////////////////////////////////////////////////////////////////////////////
 uint_fast8_t ADC_Read(uint_fast32_t channel, uint_fast16_t *destination) {
-	if (!ADC1->CR & ADC_CR_ADEN || channel > 17 || !destination) {
-		return FALSE; // adc is not turned on, bad channel, or null destination
+	if (!ADC1->CR & ADC_CR_ADEN) {
+		return FALSE; // adc is not turned on
 	}
-
-	ADC1->CHSELR = ((uint32_t)(1 << channel));
-	while (!ADC1->ISR & ADC_ISR_EOC); //waint until ADC is done with conversion
-brooke here
-
 	return FALSE;
 }
 

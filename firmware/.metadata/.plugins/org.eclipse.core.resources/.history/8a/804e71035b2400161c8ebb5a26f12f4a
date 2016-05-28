@@ -34,8 +34,8 @@ uint_fast8_t ADC_Read(uint_fast32_t channel, uint_fast16_t *destination) {
 	}
 
 	ADC1->CHSELR = ((uint32_t)(1 << channel));
-	while (!ADC1->ISR & ADC_ISR_EOC); //waint until ADC is done with conversion
-brooke here
+
+
 
 	return FALSE;
 }
