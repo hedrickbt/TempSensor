@@ -120,10 +120,10 @@ static uint_fast8_t Open(const uint32_t baudrate)
 		// reset the FIFO
 	    FIFO_Initialiser();
 
-	    // This line caused bad things to happen.  The terminal program no longer worked.
-	    //RCC->APB1RSTR |= RCC_APB1RSTR_USART2RST; // reset the USART2 config to defaults
+	    RCC->APB1RSTR |= RCC_APB1RSTR_USART2RST; // put the USART2 into reset mode
+	    RCC->APB1RSTR &= ~RCC_APB1RSTR_USART2RST; // take USART2 back out of reset mode
 
-		RCC->APB1ENR |= RCC_APB1ENR_USART2EN; // en USART clock
+	    RCC->APB1ENR |= RCC_APB1ENR_USART2EN; // en USART clock
 
 		USART2->CR1 = 0; // reset the usart CR1 register
 

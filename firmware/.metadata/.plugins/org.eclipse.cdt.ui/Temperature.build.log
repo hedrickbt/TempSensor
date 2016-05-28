@@ -1,11 +1,11 @@
-15:22:14 **** Incremental Build of configuration Debug for project Temperature ****
+20:34:01 **** Incremental Build of configuration Debug for project Temperature ****
 make all 
 Invoking: Cross ARM GNU Print Size
 arm-none-eabi-size --format=berkeley "Temperature.elf"
    text	   data	    bss	    dec	    hex	filename
-  22544	    268	   3272	  26084	   65e4	Temperature.elf
+  22880	    268	   3272	  26420	   6734	Temperature.elf
 Finished building: Temperature.siz
  
 
-15:22:14 Build Finished (took 148ms)
+20:34:01 Build Finished (took 160ms)
 

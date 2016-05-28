@@ -234,6 +234,9 @@ static int_fast8_t ProcessData(uint8_t *source, uint32_t length, ListOfParameter
 static int_fast8_t RunCommand(ListOfParameterStructureType *source)
 {
 	uint_fast16_t adcReading = 0;
+	int32_t adcTempCelsius = 0;
+
+	uint8_t message[25];
 
 	enum {
 		Command_LedControl = 1,
@@ -263,7 +266,18 @@ static int_fast8_t RunCommand(ListOfParameterStructureType *source)
 			break;
 		case Command_AdcSample: // Take a sample from the ADC
 			if ( source->NumberOfParameter > 1 && source->List[1].Type == 'u') {
-				ADC_Read(source->List[1].Value.i32_t[0], &adcReading );
+				if (ADC_Read(source->List[1].Value.i32_t[0], &adcReading )) {
+					snprintf(&message[0], 25, "%d", adcReading);
+					SerialPort2.SendString(&message[0]);
+					SerialPort2.SendString((uint8_t*)"\r\n");
+
+					adcTempCelsius = ADC_CalibratedTemperature(adcReading);
+					snprintf(&message[0], 25, "%d", adcTempCelsius);
+					SerialPort2.SendString(&message[0]);
+					SerialPort2.SendString((uint8_t*)"C\r\n");
+				} else {
+					SerialPort2.SendString((uint8_t*)"Error reading ADC\r\n");
+				}
 			}
 			break;
 		default:

@@ -15,7 +15,7 @@ uint_fast8_t ADC_Read(uint_fast32_t channel, uint_fast16_t *destination);
 uint_fast8_t ADC_ReadNorm(uint_fast32_t channel, float *destination);
 void ADC_Off(void);
 
-float ADC_CalibratedTemperature(uint_fast16_t rawData);
+int32_t ADC_CalibratedTemperature(uint_fast16_t rawData);
 
 
 

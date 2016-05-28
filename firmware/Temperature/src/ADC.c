@@ -12,6 +12,10 @@
 ///////////////////////////////////////////////////////////////////////////////
 void ADC_On(void) {
 	//RCC->APB2RSTR |= RCC_APB2RSTR_ADCRST; // reset the ADC
+
+	RCC->APB2RSTR |= RCC_APB2RSTR_ADCRST; // reset the ADC
+	RCC->APB2RSTR &= ~RCC_APB2RSTR_ADCRST; // take the ADC out of reset mode
+
 	RCC->APB2ENR |= RCC_APB2ENR_ADCEN; // enable the ADC clock
 
 	ADC->CCR |= ADC_CCR_TSEN; // enable the temperature sensor
@@ -46,8 +50,7 @@ uint_fast8_t ADC_Read(uint_fast32_t channel, uint_fast16_t *destination) {
 
 	*destination = (uint32_t)(0x0000FFFF & ADC1->DR); // only want to keep the 1/2 of the bits
 
-
-	return FALSE;
+	return TRUE;
 }
 
 ///////////////////////////////////////////////////////////////////////////////
@@ -80,8 +83,18 @@ void ADC_Off(void) {
 /// \return Calibrated reading value
 /// \sa ADC_Read()
 ///////////////////////////////////////////////////////////////////////////////
-float ADC_CalibratedTemperature(uint_fast16_t rawData) {
-	float result = 0.0;
+int32_t ADC_CalibratedTemperature(uint_fast16_t rawData) {
+	/* Temperature sensor calibration value address */
+	#define TEMP110_CAL_ADDR ((uint16_t*) ((uint32_t) 0x1FFFF7C2))
+	#define TEMP30_CAL_ADDR ((uint16_t*) ((uint32_t) 0x1FFFF7B8))
+	#define VDD_CALIB ((uint16_t) (330))
+	#define VDD_APPLI ((uint16_t) (300))
+	int32_t temperature; /* will contain the temperature in degree Celsius */
+	temperature = (((int32_t) rawData * VDD_APPLI / VDD_CALIB) - (int32_t) *TEMP30_CAL_ADDR );
+	temperature = temperature * (int32_t)(110 - 30);
+	temperature = temperature / (int32_t)(*TEMP110_CAL_ADDR - *TEMP30_CAL_ADDR);
+	temperature = temperature + 30;
 
-	return result;
+
+	return temperature;
 }
