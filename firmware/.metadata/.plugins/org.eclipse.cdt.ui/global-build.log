@@ -425,3 +425,48 @@ arm-none-eabi-size --format=berkeley "Temperature.elf"
   22208	    268	   3272	  25748	   6494	Temperature.elf
 Finished building: Temperature.siz
  
+01:41:34 **** Incremental Build of configuration Debug for project Temperature ****
+make all 
+Building file: ../src/ADC.c
+Invoking: Cross ARM C Compiler
+arm-none-eabi-gcc -mcpu=cortex-m0 -mthumb -Og -fmessage-length=0 -fsigned-char -ffunction-sections -fdata-sections -ffreestanding -fno-move-loop-invariants -Wall -Wextra  -g3 -DDEBUG -DUSE_FULL_ASSERT -DTRACE -DOS_USE_TRACE_SEMIHOSTING_DEBUG -DSTM32F030 -DUSE_STDPERIPH_DRIVER -DHSE_VALUE=8000000 -I"../include" -I"../system/include" -I"../system/include/cmsis" -I"../system/include/stm32f0-stdperiph" -std=gnu11 -MMD -MP -MF"src/ADC.d" -MT"src/ADC.o" -c -o "src/ADC.o" "../src/ADC.c"
+../src/ADC.c: In function 'ADC_Read':
+../src/ADC.c:44:9: warning: suggest parentheses around operand of '!' or change '&' to '&&' or '!' to '~' [-Wparentheses]
+  while (!ADC1->ISR & ADC_ISR_EOC); //wait until ADC is done with conversion
+         ^
+../src/ADC.c: In function 'ADC_ReadNorm':
+../src/ADC.c:60:41: warning: unused parameter 'channel' [-Wunused-parameter]
+ uint_fast8_t ADC_ReadNorm(uint_fast32_t channel, float *destination) {
+                                         ^
+../src/ADC.c:60:57: warning: unused parameter 'destination' [-Wunused-parameter]
+ uint_fast8_t ADC_ReadNorm(uint_fast32_t channel, float *destination) {
+                                                         ^
+../src/ADC.c: In function 'ADC_Off':
+../src/ADC.c:70:10: warning: suggest parentheses around operand of '!' or change '&' to '&&' or '!' to '~' [-Wparentheses]
+  while ( !ADC1->CR & ADC_CR_ADDIS );  // wait until the ADC is shut down
+          ^
+../src/ADC.c: In function 'ADC_CalibratedTemperature':
+../src/ADC.c:82:47: warning: unused parameter 'rawData' [-Wunused-parameter]
+ float ADC_CalibratedTemperature(uint_fast16_t rawData) {
+                                               ^
+Finished building: ../src/ADC.c
+ 
+Building target: Temperature.elf
+Invoking: Cross ARM C++ Linker
+arm-none-eabi-g++ -mcpu=cortex-m0 -mthumb -Og -fmessage-length=0 -fsigned-char -ffunction-sections -fdata-sections -ffreestanding -fno-move-loop-invariants -Wall -Wextra  -g3 -T mem.ld -T libs.ld -T sections.ld -nostartfiles -Xlinker --gc-sections -L"../ldscripts" -Wl,-Map,"Temperature.map" --specs=nano.specs -o "Temperature.elf"  ./system/src/stm32f0-stdperiph/stm32f0xx_adc.o ./system/src/stm32f0-stdperiph/stm32f0xx_can.o ./system/src/stm32f0-stdperiph/stm32f0xx_cec.o ./system/src/stm32f0-stdperiph/stm32f0xx_comp.o ./system/src/stm32f0-stdperiph/stm32f0xx_crc.o ./system/src/stm32f0-stdperiph/stm32f0xx_crs.o ./system/src/stm32f0-stdperiph/stm32f0xx_dac.o ./system/src/stm32f0-stdperiph/stm32f0xx_dbgmcu.o ./system/src/stm32f0-stdperiph/stm32f0xx_dma.o ./system/src/stm32f0-stdperiph/stm32f0xx_exti.o ./system/src/stm32f0-stdperiph/stm32f0xx_flash.o ./system/src/stm32f0-stdperiph/stm32f0xx_gpio.o ./system/src/stm32f0-stdperiph/stm32f0xx_i2c.o ./system/src/stm32f0-stdperiph/stm32f0xx_iwdg.o ./system/src/stm32f0-stdperiph/stm32f0xx_misc.o ./system/src/stm32f0-stdperiph/stm32f0xx_pwr.o ./system/src/stm32f0-stdperiph/stm32f0xx_rcc.o ./system/src/stm32f0-stdperiph/stm32f0xx_rtc.o ./system/src/stm32f0-stdperiph/stm32f0xx_spi.o ./system/src/stm32f0-stdperiph/stm32f0xx_syscfg.o ./system/src/stm32f0-stdperiph/stm32f0xx_tim.o ./system/src/stm32f0-stdperiph/stm32f0xx_usart.o ./system/src/stm32f0-stdperiph/stm32f0xx_wwdg.o  ./system/src/newlib/_cxx.o ./system/src/newlib/_exit.o ./system/src/newlib/_sbrk.o ./system/src/newlib/_startup.o ./system/src/newlib/_syscalls.o ./system/src/newlib/assert.o  ./system/src/diag/Trace.o ./system/src/diag/trace_impl.o  ./system/src/cortexm/_initialize_hardware.o ./system/src/cortexm/_reset_hardware.o ./system/src/cortexm/exception_handlers.o  ./system/src/cmsis/system_stm32f0xx.o ./system/src/cmsis/vectors_stm32f0xx.o  ./src/MCU/led.o ./src/MCU/tick.o ./src/MCU/usart2.o  ./src/ADC.o ./src/FIFO.o ./src/Terminal.o ./src/main.o   
+Finished building target: Temperature.elf
+ 
+make --no-print-directory post-build
+Binary
+arm-none-eabi-objcopy -S  -O binary  "Temperature.elf" "Temperature.bin"
+ 
+Invoking: Cross ARM GNU Create Flash Image
+arm-none-eabi-objcopy -O ihex "Temperature.elf"  "Temperature.hex"
+Finished building: Temperature.hex
+ 
+Invoking: Cross ARM GNU Print Size
+arm-none-eabi-size --format=berkeley "Temperature.elf"
+   text	   data	    bss	    dec	    hex	filename
+  22208	    268	   3272	  25748	   6494	Temperature.elf
+Finished building: Temperature.siz
+ 

@@ -1,4 +1,4 @@
-01:32:28 **** Incremental Build of configuration Debug for project Temperature ****
+01:41:34 **** Incremental Build of configuration Debug for project Temperature ****
 make all 
 Building file: ../src/ADC.c
 Invoking: Cross ARM C Compiler
@@ -44,5 +44,5 @@ arm-none-eabi-size --format=berkeley "Temperature.elf"
 Finished building: Temperature.siz
  
 
-01:32:29 Build Finished (took 831ms)
+01:41:35 Build Finished (took 1s.19ms)
 
