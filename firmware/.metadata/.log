@@ -424,3 +424,113 @@ Command-line arguments:  -os linux -ws gtk -arch x86_64 -product org.eclipse.epp
 
 !ENTRY ilg.gnuarmeclipse.packs.data 4 1 2016-05-27 21:35:43.085
 !MESSAGE File .repos.xml does not exist, using defaults.
+!SESSION 2016-05-28 12:46:26.951 -----------------------------------------------
+eclipse.buildId=4.5.2.M20160212-1500
+java.version=1.7.0_101
+java.vendor=Oracle Corporation
+BootLoader constants: OS=linux, ARCH=x86_64, WS=gtk, NL=en_US
+Framework arguments:  -product org.eclipse.epp.package.cpp.product
+Command-line arguments:  -os linux -ws gtk -arch x86_64 -product org.eclipse.epp.package.cpp.product
+
+!ENTRY org.eclipse.cdt.codan.core.cxx 4 1 2016-05-28 12:55:30.505
+!MESSAGE Unsupported statement type: CASTDefaultStatement.
+
+!ENTRY ilg.gnuarmeclipse.debug.gdbjtag 4 0 2016-05-28 13:45:00.956
+!MESSAGE Debug session 'Temperature Debug' already started. Terminate the first one before restarting.
+
+!ENTRY ilg.gnuarmeclipse.debug.gdbjtag.openocd 4 5012 2016-05-28 13:48:25.548
+!MESSAGE Error in final launch sequence
+!STACK 1
+org.eclipse.core.runtime.CoreException: Failed to execute MI command:
+load /home/vagrant/repos/TempSensor/firmware/Temperature/Debug/Temperature.elf
+Error message from debugger back end:
+Error erasing flash with vFlashErase packet
+	at org.eclipse.cdt.dsf.concurrent.Query.get(Query.java:111)
+	at ilg.gnuarmeclipse.debug.gdbjtag.openocd.dsf.LaunchConfigurationDelegate.launchDebugSession(LaunchConfigurationDelegate.java:462)
+	at ilg.gnuarmeclipse.debug.gdbjtag.openocd.dsf.LaunchConfigurationDelegate.launchDebugger(LaunchConfigurationDelegate.java:181)
+	at ilg.gnuarmeclipse.debug.gdbjtag.openocd.dsf.LaunchConfigurationDelegate.launch(LaunchConfigurationDelegate.java:155)
+	at org.eclipse.debug.internal.core.LaunchConfiguration.launch(LaunchConfiguration.java:885)
+	at org.eclipse.debug.internal.core.LaunchConfiguration.launch(LaunchConfiguration.java:739)
+	at org.eclipse.debug.internal.ui.DebugUIPlugin.buildAndLaunch(DebugUIPlugin.java:1039)
+	at org.eclipse.debug.internal.ui.DebugUIPlugin$8.run(DebugUIPlugin.java:1256)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:55)
+Contains: Failed to execute MI command:
+load /home/vagrant/repos/TempSensor/firmware/Temperature/Debug/Temperature.elf
+Error message from debugger back end:
+Error erasing flash with vFlashErase packet
+java.lang.Exception: Error erasing flash with vFlashErase packet
+	at org.eclipse.cdt.dsf.mi.service.command.AbstractMIControl$RxThread.processMIOutput(AbstractMIControl.java:927)
+	at org.eclipse.cdt.dsf.mi.service.command.AbstractMIControl$RxThread.run(AbstractMIControl.java:756)
+!SUBENTRY 1 org.eclipse.cdt.dsf 4 10004 2016-05-28 13:48:25.552
+!MESSAGE Failed to execute MI command:
+load /home/vagrant/repos/TempSensor/firmware/Temperature/Debug/Temperature.elf
+Error message from debugger back end:
+Error erasing flash with vFlashErase packet
+!SUBENTRY 2 org.eclipse.cdt.dsf.gdb 4 10004 2016-05-28 13:48:25.552
+!MESSAGE Failed to execute MI command:
+load /home/vagrant/repos/TempSensor/firmware/Temperature/Debug/Temperature.elf
+Error message from debugger back end:
+Error erasing flash with vFlashErase packet
+!STACK 0
+java.lang.Exception: Error erasing flash with vFlashErase packet
+	at org.eclipse.cdt.dsf.mi.service.command.AbstractMIControl$RxThread.processMIOutput(AbstractMIControl.java:927)
+	at org.eclipse.cdt.dsf.mi.service.command.AbstractMIControl$RxThread.run(AbstractMIControl.java:756)
+
+!ENTRY ilg.gnuarmeclipse.debug.gdbjtag.openocd 4 5012 2016-05-28 13:50:04.306
+!MESSAGE Error in final launch sequence
+!STACK 1
+org.eclipse.core.runtime.CoreException: Failed to execute MI command:
+-target-select remote localhost:3333
+Error message from debugger back end:
+localhost:3333: Connection timed out.
+	at org.eclipse.cdt.dsf.concurrent.Query.get(Query.java:111)
+	at ilg.gnuarmeclipse.debug.gdbjtag.openocd.dsf.LaunchConfigurationDelegate.launchDebugSession(LaunchConfigurationDelegate.java:462)
+	at ilg.gnuarmeclipse.debug.gdbjtag.openocd.dsf.LaunchConfigurationDelegate.launchDebugger(LaunchConfigurationDelegate.java:181)
+	at ilg.gnuarmeclipse.debug.gdbjtag.openocd.dsf.LaunchConfigurationDelegate.launch(LaunchConfigurationDelegate.java:155)
+	at org.eclipse.debug.internal.core.LaunchConfiguration.launch(LaunchConfiguration.java:885)
+	at org.eclipse.debug.internal.core.LaunchConfiguration.launch(LaunchConfiguration.java:739)
+	at org.eclipse.debug.internal.ui.DebugUIPlugin.buildAndLaunch(DebugUIPlugin.java:1039)
+	at org.eclipse.debug.internal.ui.DebugUIPlugin$8.run(DebugUIPlugin.java:1256)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:55)
+Contains: Failed to execute MI command:
+-target-select remote localhost:3333
+Error message from debugger back end:
+localhost:3333: Connection timed out.
+java.lang.Exception: localhost:3333: Connection timed out.
+	at org.eclipse.cdt.dsf.mi.service.command.AbstractMIControl$RxThread.processMIOutput(AbstractMIControl.java:927)
+	at org.eclipse.cdt.dsf.mi.service.command.AbstractMIControl$RxThread.run(AbstractMIControl.java:756)
+!SUBENTRY 1 org.eclipse.cdt.dsf 4 10004 2016-05-28 13:50:04.307
+!MESSAGE Failed to execute MI command:
+-target-select remote localhost:3333
+Error message from debugger back end:
+localhost:3333: Connection timed out.
+!SUBENTRY 2 org.eclipse.cdt.dsf.gdb 4 10004 2016-05-28 13:50:04.307
+!MESSAGE Failed to execute MI command:
+-target-select remote localhost:3333
+Error message from debugger back end:
+localhost:3333: Connection timed out.
+!STACK 0
+java.lang.Exception: localhost:3333: Connection timed out.
+	at org.eclipse.cdt.dsf.mi.service.command.AbstractMIControl$RxThread.processMIOutput(AbstractMIControl.java:927)
+	at org.eclipse.cdt.dsf.mi.service.command.AbstractMIControl$RxThread.run(AbstractMIControl.java:756)
+
+!ENTRY ilg.gnuarmeclipse.debug.gdbjtag 4 0 2016-05-28 13:50:17.447
+!MESSAGE OpenOCD failed with code (1).
+
+For more details, see the openocd console.
+
+!ENTRY org.eclipse.cdt.codan.core.cxx 4 1 2016-05-28 13:52:47.519
+!MESSAGE Unsupported statement type: CASTCaseStatement.
+
+!ENTRY org.eclipse.cdt.codan.core.cxx 4 1 2016-05-28 13:52:51.583
+!MESSAGE Unsupported statement type: CASTCaseStatement.
+!SESSION 2016-05-28 15:04:59.079 -----------------------------------------------
+eclipse.buildId=4.5.2.M20160212-1500
+java.version=1.7.0_101
+java.vendor=Oracle Corporation
+BootLoader constants: OS=linux, ARCH=x86_64, WS=gtk, NL=en_US
+Framework arguments:  -product org.eclipse.epp.package.cpp.product
+Command-line arguments:  -os linux -ws gtk -arch x86_64 -product org.eclipse.epp.package.cpp.product
+
+!ENTRY ilg.gnuarmeclipse.debug.gdbjtag 4 0 2016-05-28 15:34:36.745
+!MESSAGE Debug session 'Temperature Debug' already started. Terminate the first one before restarting.
