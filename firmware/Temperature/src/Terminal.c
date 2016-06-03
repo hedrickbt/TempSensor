@@ -235,6 +235,7 @@ static int_fast8_t RunCommand(ListOfParameterStructureType *source)
 {
 	uint_fast16_t adcReading = 0;
 	int32_t adcTempCelsius = 0;
+	float adcNorm = 0.0;
 
 	uint8_t message[25];
 
@@ -277,6 +278,18 @@ static int_fast8_t RunCommand(ListOfParameterStructureType *source)
 					SerialPort2.SendString((uint8_t*)"C\r\n");
 				} else {
 					SerialPort2.SendString((uint8_t*)"Error reading ADC\r\n");
+				}
+
+				if (ADC_ReadNorm(source->List[1].Value.i32_t[0], &adcNorm )) {
+					// Split the decimal into the whole number and fraction since %f doesn't work with snprintf
+					uint16_t intpart = (int)adcNorm;
+					uint16_t fracpart = (int)((adcNorm - intpart) * 100000);
+
+					snprintf(&message[0], 25, "%d.%05d", intpart, fracpart);
+					SerialPort2.SendString(&message[0]);
+					SerialPort2.SendString((uint8_t*)"\r\n");
+				} else {
+					SerialPort2.SendString((uint8_t*)"Error reading ADC Norm\r\n");
 				}
 			}
 			break;

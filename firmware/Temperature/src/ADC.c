@@ -62,8 +62,14 @@ uint_fast8_t ADC_Read(uint_fast32_t channel, uint_fast16_t *destination) {
 /// \return True on success else adc is not open
 ///////////////////////////////////////////////////////////////////////////////
 uint_fast8_t ADC_ReadNorm(uint_fast32_t channel, float *destination) {
-
-	return FALSE;
+	uint_fast16_t adcReading = 0;
+	if (ADC_Read(channel, &adcReading )) {
+		float temp = (float)adcReading / (float)UINT16_MAX;
+		*destination = temp;
+		return TRUE;
+	} else {
+		return FALSE;
+	}
 }
 
 ///////////////////////////////////////////////////////////////////////////////

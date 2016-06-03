@@ -1,4 +1,4 @@
-17:39:13 **** Build of configuration Debug for project Temperature ****
+02:35:43 **** Build of configuration Debug for project Temperature ****
 make all 
 Building file: ../system/src/stm32f0-stdperiph/stm32f0xx_adc.c
 Invoking: Cross ARM C Compiler
@@ -198,17 +198,6 @@ Finished building: ../src/MCU/usart2.c
 Building file: ../src/ADC.c
 Invoking: Cross ARM C Compiler
 arm-none-eabi-gcc -mcpu=cortex-m0 -mthumb -Og -fmessage-length=0 -fsigned-char -ffunction-sections -fdata-sections -ffreestanding -fno-move-loop-invariants -Wall -Wextra  -g3 -DDEBUG -DUSE_FULL_ASSERT -DTRACE -DOS_USE_TRACE_SEMIHOSTING_DEBUG -DSTM32F030 -DUSE_STDPERIPH_DRIVER -DHSE_VALUE=8000000 -I"../include" -I"../system/include" -I"../system/include/cmsis" -I"../system/include/stm32f0-stdperiph" -std=gnu11 -MMD -MP -MF"src/ADC.d" -MT"src/ADC.o" -c -o "src/ADC.o" "../src/ADC.c"
-../src/ADC.c: In function 'ADC_ReadNorm':
-../src/ADC.c:78:41: warning: unused parameter 'channel' [-Wunused-parameter]
- uint_fast8_t ADC_ReadNorm(uint_fast32_t channel, float *destination) {
-                                         ^
-../src/ADC.c:78:57: warning: unused parameter 'destination' [-Wunused-parameter]
- uint_fast8_t ADC_ReadNorm(uint_fast32_t channel, float *destination) {
-                                                         ^
-../src/ADC.c: In function 'ADC_CalibratedTemperature':
-../src/ADC.c:100:47: warning: unused parameter 'rawData' [-Wunused-parameter]
- float ADC_CalibratedTemperature(uint_fast16_t rawData) {
-                                               ^
 Finished building: ../src/ADC.c
  
 Building file: ../src/FIFO.c
@@ -226,6 +215,28 @@ arm-none-eabi-gcc -mcpu=cortex-m0 -mthumb -Og -fmessage-length=0 -fsigned-char -
 ../src/Terminal.c:173:55: warning: comparison of constant '83' with boolean expression is always false [-Wbool-compare]
   } else if ( 's' == !destination->List[0].Type && 'S' == !destination->List[0].Type)
                                                        ^
+../src/Terminal.c: In function 'RunCommand':
+../src/Terminal.c:270:15: warning: pointer targets in passing argument 1 of 'snprintf' differ in signedness [-Wpointer-sign]
+      snprintf(&message[0], 25, "%d", adcReading);
+               ^
+In file included from /usr/local/gcc-arm-none-eabi-5_3-2016q1/arm-none-eabi/include/stdio.h:29:0,
+                 from ../include/common.h:9,
+                 from ../src/Terminal.c:6:
+/usr/local/gcc-arm-none-eabi-5_3-2016q1/arm-none-eabi/include/stdio.h:247:5: note: expected 'char * restrict' but argument is of type 'unsigned char *'
+ int _EXFUN(snprintf, (char *__restrict, size_t, const char *__restrict, ...)
+     ^
+../src/Terminal.c:275:15: warning: pointer targets in passing argument 1 of 'snprintf' differ in signedness [-Wpointer-sign]
+      snprintf(&message[0], 25, "%d", adcTempCelsius);
+               ^
+In file included from /usr/local/gcc-arm-none-eabi-5_3-2016q1/arm-none-eabi/include/stdio.h:29:0,
+                 from ../include/common.h:9,
+                 from ../src/Terminal.c:6:
+/usr/local/gcc-arm-none-eabi-5_3-2016q1/arm-none-eabi/include/stdio.h:247:5: note: expected 'char * restrict' but argument is of type 'unsigned char *'
+ int _EXFUN(snprintf, (char *__restrict, size_t, const char *__restrict, ...)
+     ^
+../src/Terminal.c:275:32: warning: format '%d' expects argument of type 'int', but argument 4 has type 'long int' [-Wformat=]
+      snprintf(&message[0], 25, "%d", adcTempCelsius);
+                                ^
 Finished building: ../src/Terminal.c
  
 Building file: ../src/main.c
@@ -249,132 +260,42 @@ Finished building: Temperature.hex
 Invoking: Cross ARM GNU Print Size
 arm-none-eabi-size --format=berkeley "Temperature.elf"
    text	   data	    bss	    dec	    hex	filename
-  22584	    268	   3272	  26124	   660c	Temperature.elf
+  22880	    268	   3272	  26420	   6734	Temperature.elf
 Finished building: Temperature.siz
  
-17:39:28 **** Incremental Build of configuration Debug for project Temperature ****
+02:36:05 **** Incremental Build of configuration Debug for project Temperature ****
 make all 
 Invoking: Cross ARM GNU Print Size
 arm-none-eabi-size --format=berkeley "Temperature.elf"
    text	   data	    bss	    dec	    hex	filename
-  22584	    268	   3272	  26124	   660c	Temperature.elf
+  22880	    268	   3272	  26420	   6734	Temperature.elf
 Finished building: Temperature.siz
  
-17:42:02 **** Incremental Build of configuration Debug for project Temperature ****
-make all 
-Building file: ../src/ADC.c
-Invoking: Cross ARM C Compiler
-arm-none-eabi-gcc -mcpu=cortex-m0 -mthumb -Og -fmessage-length=0 -fsigned-char -ffunction-sections -fdata-sections -ffreestanding -fno-move-loop-invariants -Wall -Wextra  -g3 -DDEBUG -DUSE_FULL_ASSERT -DTRACE -DOS_USE_TRACE_SEMIHOSTING_DEBUG -DSTM32F030 -DUSE_STDPERIPH_DRIVER -DHSE_VALUE=8000000 -I"../include" -I"../system/include" -I"../system/include/cmsis" -I"../system/include/stm32f0-stdperiph" -std=gnu11 -MMD -MP -MF"src/ADC.d" -MT"src/ADC.o" -c -o "src/ADC.o" "../src/ADC.c"
-../src/ADC.c: In function 'ADC_ReadNorm':
-../src/ADC.c:82:41: warning: unused parameter 'channel' [-Wunused-parameter]
- uint_fast8_t ADC_ReadNorm(uint_fast32_t channel, float *destination) {
-                                         ^
-../src/ADC.c:82:57: warning: unused parameter 'destination' [-Wunused-parameter]
- uint_fast8_t ADC_ReadNorm(uint_fast32_t channel, float *destination) {
-                                                         ^
-../src/ADC.c: In function 'ADC_CalibratedTemperature':
-../src/ADC.c:104:47: warning: unused parameter 'rawData' [-Wunused-parameter]
- float ADC_CalibratedTemperature(uint_fast16_t rawData) {
-                                               ^
-Finished building: ../src/ADC.c
- 
-Building target: Temperature.elf
-Invoking: Cross ARM C++ Linker
-arm-none-eabi-g++ -mcpu=cortex-m0 -mthumb -Og -fmessage-length=0 -fsigned-char -ffunction-sections -fdata-sections -ffreestanding -fno-move-loop-invariants -Wall -Wextra  -g3 -T mem.ld -T libs.ld -T sections.ld -nostartfiles -Xlinker --gc-sections -L"../ldscripts" -Wl,-Map,"Temperature.map" --specs=nano.specs -o "Temperature.elf"  ./system/src/stm32f0-stdperiph/stm32f0xx_adc.o ./system/src/stm32f0-stdperiph/stm32f0xx_can.o ./system/src/stm32f0-stdperiph/stm32f0xx_cec.o ./system/src/stm32f0-stdperiph/stm32f0xx_comp.o ./system/src/stm32f0-stdperiph/stm32f0xx_crc.o ./system/src/stm32f0-stdperiph/stm32f0xx_crs.o ./system/src/stm32f0-stdperiph/stm32f0xx_dac.o ./system/src/stm32f0-stdperiph/stm32f0xx_dbgmcu.o ./system/src/stm32f0-stdperiph/stm32f0xx_dma.o ./system/src/stm32f0-stdperiph/stm32f0xx_exti.o ./system/src/stm32f0-stdperiph/stm32f0xx_flash.o ./system/src/stm32f0-stdperiph/stm32f0xx_gpio.o ./system/src/stm32f0-stdperiph/stm32f0xx_i2c.o ./system/src/stm32f0-stdperiph/stm32f0xx_iwdg.o ./system/src/stm32f0-stdperiph/stm32f0xx_misc.o ./system/src/stm32f0-stdperiph/stm32f0xx_pwr.o ./system/src/stm32f0-stdperiph/stm32f0xx_rcc.o ./system/src/stm32f0-stdperiph/stm32f0xx_rtc.o ./system/src/stm32f0-stdperiph/stm32f0xx_spi.o ./system/src/stm32f0-stdperiph/stm32f0xx_syscfg.o ./system/src/stm32f0-stdperiph/stm32f0xx_tim.o ./system/src/stm32f0-stdperiph/stm32f0xx_usart.o ./system/src/stm32f0-stdperiph/stm32f0xx_wwdg.o  ./system/src/newlib/_cxx.o ./system/src/newlib/_exit.o ./system/src/newlib/_sbrk.o ./system/src/newlib/_startup.o ./system/src/newlib/_syscalls.o ./system/src/newlib/assert.o  ./system/src/diag/Trace.o ./system/src/diag/trace_impl.o  ./system/src/cortexm/_initialize_hardware.o ./system/src/cortexm/_reset_hardware.o ./system/src/cortexm/exception_handlers.o  ./system/src/cmsis/system_stm32f0xx.o ./system/src/cmsis/vectors_stm32f0xx.o  ./src/MCU/led.o ./src/MCU/tick.o ./src/MCU/usart2.o  ./src/ADC.o ./src/FIFO.o ./src/Terminal.o ./src/main.o   
-Finished building target: Temperature.elf
- 
-make --no-print-directory post-build
-Binary
-arm-none-eabi-objcopy -S  -O binary  "Temperature.elf" "Temperature.bin"
- 
-Invoking: Cross ARM GNU Create Flash Image
-arm-none-eabi-objcopy -O ihex "Temperature.elf"  "Temperature.hex"
-Finished building: Temperature.hex
- 
-Invoking: Cross ARM GNU Print Size
-arm-none-eabi-size --format=berkeley "Temperature.elf"
-   text	   data	    bss	    dec	    hex	filename
-  22656	    268	   3272	  26196	   6654	Temperature.elf
-Finished building: Temperature.siz
- 
-17:42:07 **** Incremental Build of configuration Debug for project Temperature ****
+02:37:41 **** Incremental Build of configuration Debug for project Temperature ****
 make all 
 Invoking: Cross ARM GNU Print Size
 arm-none-eabi-size --format=berkeley "Temperature.elf"
    text	   data	    bss	    dec	    hex	filename
-  22656	    268	   3272	  26196	   6654	Temperature.elf
+  22880	    268	   3272	  26420	   6734	Temperature.elf
 Finished building: Temperature.siz
  
-17:46:11 **** Incremental Build of configuration Debug for project Temperature ****
-make all 
-Building file: ../src/ADC.c
-Invoking: Cross ARM C Compiler
-arm-none-eabi-gcc -mcpu=cortex-m0 -mthumb -Og -fmessage-length=0 -fsigned-char -ffunction-sections -fdata-sections -ffreestanding -fno-move-loop-invariants -Wall -Wextra  -g3 -DDEBUG -DUSE_FULL_ASSERT -DTRACE -DOS_USE_TRACE_SEMIHOSTING_DEBUG -DSTM32F030 -DUSE_STDPERIPH_DRIVER -DHSE_VALUE=8000000 -I"../include" -I"../system/include" -I"../system/include/cmsis" -I"../system/include/stm32f0-stdperiph" -std=gnu11 -MMD -MP -MF"src/ADC.d" -MT"src/ADC.o" -c -o "src/ADC.o" "../src/ADC.c"
-../src/ADC.c: In function 'ADC_ReadNorm':
-../src/ADC.c:80:41: warning: unused parameter 'channel' [-Wunused-parameter]
- uint_fast8_t ADC_ReadNorm(uint_fast32_t channel, float *destination) {
-                                         ^
-../src/ADC.c:80:57: warning: unused parameter 'destination' [-Wunused-parameter]
- uint_fast8_t ADC_ReadNorm(uint_fast32_t channel, float *destination) {
-                                                         ^
-../src/ADC.c: In function 'ADC_CalibratedTemperature':
-../src/ADC.c:102:47: warning: unused parameter 'rawData' [-Wunused-parameter]
- float ADC_CalibratedTemperature(uint_fast16_t rawData) {
-                                               ^
-Finished building: ../src/ADC.c
- 
-Building target: Temperature.elf
-Invoking: Cross ARM C++ Linker
-arm-none-eabi-g++ -mcpu=cortex-m0 -mthumb -Og -fmessage-length=0 -fsigned-char -ffunction-sections -fdata-sections -ffreestanding -fno-move-loop-invariants -Wall -Wextra  -g3 -T mem.ld -T libs.ld -T sections.ld -nostartfiles -Xlinker --gc-sections -L"../ldscripts" -Wl,-Map,"Temperature.map" --specs=nano.specs -o "Temperature.elf"  ./system/src/stm32f0-stdperiph/stm32f0xx_adc.o ./system/src/stm32f0-stdperiph/stm32f0xx_can.o ./system/src/stm32f0-stdperiph/stm32f0xx_cec.o ./system/src/stm32f0-stdperiph/stm32f0xx_comp.o ./system/src/stm32f0-stdperiph/stm32f0xx_crc.o ./system/src/stm32f0-stdperiph/stm32f0xx_crs.o ./system/src/stm32f0-stdperiph/stm32f0xx_dac.o ./system/src/stm32f0-stdperiph/stm32f0xx_dbgmcu.o ./system/src/stm32f0-stdperiph/stm32f0xx_dma.o ./system/src/stm32f0-stdperiph/stm32f0xx_exti.o ./system/src/stm32f0-stdperiph/stm32f0xx_flash.o ./system/src/stm32f0-stdperiph/stm32f0xx_gpio.o ./system/src/stm32f0-stdperiph/stm32f0xx_i2c.o ./system/src/stm32f0-stdperiph/stm32f0xx_iwdg.o ./system/src/stm32f0-stdperiph/stm32f0xx_misc.o ./system/src/stm32f0-stdperiph/stm32f0xx_pwr.o ./system/src/stm32f0-stdperiph/stm32f0xx_rcc.o ./system/src/stm32f0-stdperiph/stm32f0xx_rtc.o ./system/src/stm32f0-stdperiph/stm32f0xx_spi.o ./system/src/stm32f0-stdperiph/stm32f0xx_syscfg.o ./system/src/stm32f0-stdperiph/stm32f0xx_tim.o ./system/src/stm32f0-stdperiph/stm32f0xx_usart.o ./system/src/stm32f0-stdperiph/stm32f0xx_wwdg.o  ./system/src/newlib/_cxx.o ./system/src/newlib/_exit.o ./system/src/newlib/_sbrk.o ./system/src/newlib/_startup.o ./system/src/newlib/_syscalls.o ./system/src/newlib/assert.o  ./system/src/diag/Trace.o ./system/src/diag/trace_impl.o  ./system/src/cortexm/_initialize_hardware.o ./system/src/cortexm/_reset_hardware.o ./system/src/cortexm/exception_handlers.o  ./system/src/cmsis/system_stm32f0xx.o ./system/src/cmsis/vectors_stm32f0xx.o  ./src/MCU/led.o ./src/MCU/tick.o ./src/MCU/usart2.o  ./src/ADC.o ./src/FIFO.o ./src/Terminal.o ./src/main.o   
-Finished building target: Temperature.elf
- 
-make --no-print-directory post-build
-Binary
-arm-none-eabi-objcopy -S  -O binary  "Temperature.elf" "Temperature.bin"
- 
-Invoking: Cross ARM GNU Create Flash Image
-arm-none-eabi-objcopy -O ihex "Temperature.elf"  "Temperature.hex"
-Finished building: Temperature.hex
- 
-Invoking: Cross ARM GNU Print Size
-arm-none-eabi-size --format=berkeley "Temperature.elf"
-   text	   data	    bss	    dec	    hex	filename
-  22656	    268	   3272	  26196	   6654	Temperature.elf
-Finished building: Temperature.siz
- 
-17:46:18 **** Incremental Build of configuration Debug for project Temperature ****
+02:44:32 **** Incremental Build of configuration Debug for project Temperature ****
 make all 
 Invoking: Cross ARM GNU Print Size
 arm-none-eabi-size --format=berkeley "Temperature.elf"
    text	   data	    bss	    dec	    hex	filename
-  22656	    268	   3272	  26196	   6654	Temperature.elf
+  22880	    268	   3272	  26420	   6734	Temperature.elf
 Finished building: Temperature.siz
  
-18:24:48 **** Incremental Build of configuration Debug for project Temperature ****
+02:46:47 **** Incremental Build of configuration Debug for project Temperature ****
 make all 
 Invoking: Cross ARM GNU Print Size
 arm-none-eabi-size --format=berkeley "Temperature.elf"
    text	   data	    bss	    dec	    hex	filename
-  22656	    268	   3272	  26196	   6654	Temperature.elf
+  22880	    268	   3272	  26420	   6734	Temperature.elf
 Finished building: Temperature.siz
  
-18:41:24 **** Incremental Build of configuration Debug for project Temperature ****
-make all 
-Invoking: Cross ARM GNU Print Size
-arm-none-eabi-size --format=berkeley "Temperature.elf"
-   text	   data	    bss	    dec	    hex	filename
-  22656	    268	   3272	  26196	   6654	Temperature.elf
-Finished building: Temperature.siz
- 
-18:41:29 **** Incremental Build of configuration Debug for project Temperature ****
-make all 
-Invoking: Cross ARM GNU Print Size
-arm-none-eabi-size --format=berkeley "Temperature.elf"
-   text	   data	    bss	    dec	    hex	filename
-  22656	    268	   3272	  26196	   6654	Temperature.elf
-Finished building: Temperature.siz
- 
-19:13:55 **** Incremental Build of configuration Debug for project Temperature ****
+02:54:47 **** Incremental Build of configuration Debug for project Temperature ****
 make all 
 Building file: ../src/Terminal.c
 Invoking: Cross ARM C Compiler
@@ -387,99 +308,7 @@ arm-none-eabi-gcc -mcpu=cortex-m0 -mthumb -Og -fmessage-length=0 -fsigned-char -
   } else if ( 's' == !destination->List[0].Type && 'S' == !destination->List[0].Type)
                                                        ^
 ../src/Terminal.c: In function 'RunCommand':
-../src/Terminal.c:268:23: error: expected expression before ']' token
-     snprintf(&message[], 25, "%d", adcReading);
-                       ^
-../src/Terminal.c:269:5: error: too few arguments to function 'SerialPort2.SendString'
-     SerialPort2.SendString();
-     ^
-../src/Terminal.c:237:10: warning: variable 'message' set but not used [-Wunused-but-set-variable]
-  uint8_t message[25];
-          ^
-make: *** [src/Terminal.o] Error 1
-19:14:20 **** Incremental Build of configuration Debug for project Temperature ****
-make all 
-Building file: ../src/Terminal.c
-Invoking: Cross ARM C Compiler
-arm-none-eabi-gcc -mcpu=cortex-m0 -mthumb -Og -fmessage-length=0 -fsigned-char -ffunction-sections -fdata-sections -ffreestanding -fno-move-loop-invariants -Wall -Wextra  -g3 -DDEBUG -DUSE_FULL_ASSERT -DTRACE -DOS_USE_TRACE_SEMIHOSTING_DEBUG -DSTM32F030 -DUSE_STDPERIPH_DRIVER -DHSE_VALUE=8000000 -I"../include" -I"../system/include" -I"../system/include/cmsis" -I"../system/include/stm32f0-stdperiph" -std=gnu11 -MMD -MP -MF"src/Terminal.d" -MT"src/Terminal.o" -c -o "src/Terminal.o" "../src/Terminal.c"
-../src/Terminal.c: In function 'ProcessData':
-../src/Terminal.c:173:18: warning: comparison of constant '115' with boolean expression is always false [-Wbool-compare]
-  } else if ( 's' == !destination->List[0].Type && 'S' == !destination->List[0].Type)
-                  ^
-../src/Terminal.c:173:55: warning: comparison of constant '83' with boolean expression is always false [-Wbool-compare]
-  } else if ( 's' == !destination->List[0].Type && 'S' == !destination->List[0].Type)
-                                                       ^
-../src/Terminal.c: In function 'RunCommand':
-../src/Terminal.c:268:14: warning: pointer targets in passing argument 1 of 'snprintf' differ in signedness [-Wpointer-sign]
-     snprintf(&message[0], 25, "%d", adcReading);
-              ^
-In file included from /usr/local/gcc-arm-none-eabi-5_3-2016q1/arm-none-eabi/include/stdio.h:29:0,
-                 from ../include/common.h:9,
-                 from ../src/Terminal.c:6:
-/usr/local/gcc-arm-none-eabi-5_3-2016q1/arm-none-eabi/include/stdio.h:247:5: note: expected 'char * restrict' but argument is of type 'unsigned char *'
- int _EXFUN(snprintf, (char *__restrict, size_t, const char *__restrict, ...)
-     ^
-../src/Terminal.c:269:5: error: too few arguments to function 'SerialPort2.SendString'
-     SerialPort2.SendString();
-     ^
-make: *** [src/Terminal.o] Error 1
-19:14:43 **** Incremental Build of configuration Debug for project Temperature ****
-make all 
-Building file: ../src/Terminal.c
-Invoking: Cross ARM C Compiler
-arm-none-eabi-gcc -mcpu=cortex-m0 -mthumb -Og -fmessage-length=0 -fsigned-char -ffunction-sections -fdata-sections -ffreestanding -fno-move-loop-invariants -Wall -Wextra  -g3 -DDEBUG -DUSE_FULL_ASSERT -DTRACE -DOS_USE_TRACE_SEMIHOSTING_DEBUG -DSTM32F030 -DUSE_STDPERIPH_DRIVER -DHSE_VALUE=8000000 -I"../include" -I"../system/include" -I"../system/include/cmsis" -I"../system/include/stm32f0-stdperiph" -std=gnu11 -MMD -MP -MF"src/Terminal.d" -MT"src/Terminal.o" -c -o "src/Terminal.o" "../src/Terminal.c"
-../src/Terminal.c: In function 'ProcessData':
-../src/Terminal.c:173:18: warning: comparison of constant '115' with boolean expression is always false [-Wbool-compare]
-  } else if ( 's' == !destination->List[0].Type && 'S' == !destination->List[0].Type)
-                  ^
-../src/Terminal.c:173:55: warning: comparison of constant '83' with boolean expression is always false [-Wbool-compare]
-  } else if ( 's' == !destination->List[0].Type && 'S' == !destination->List[0].Type)
-                                                       ^
-../src/Terminal.c: In function 'RunCommand':
-../src/Terminal.c:268:14: warning: pointer targets in passing argument 1 of 'snprintf' differ in signedness [-Wpointer-sign]
-     snprintf(&message[0], 25, "%d", adcReading);
-              ^
-In file included from /usr/local/gcc-arm-none-eabi-5_3-2016q1/arm-none-eabi/include/stdio.h:29:0,
-                 from ../include/common.h:9,
-                 from ../src/Terminal.c:6:
-/usr/local/gcc-arm-none-eabi-5_3-2016q1/arm-none-eabi/include/stdio.h:247:5: note: expected 'char * restrict' but argument is of type 'unsigned char *'
- int _EXFUN(snprintf, (char *__restrict, size_t, const char *__restrict, ...)
-     ^
-Finished building: ../src/Terminal.c
- 
-Building target: Temperature.elf
-Invoking: Cross ARM C++ Linker
-arm-none-eabi-g++ -mcpu=cortex-m0 -mthumb -Og -fmessage-length=0 -fsigned-char -ffunction-sections -fdata-sections -ffreestanding -fno-move-loop-invariants -Wall -Wextra  -g3 -T mem.ld -T libs.ld -T sections.ld -nostartfiles -Xlinker --gc-sections -L"../ldscripts" -Wl,-Map,"Temperature.map" --specs=nano.specs -o "Temperature.elf"  ./system/src/stm32f0-stdperiph/stm32f0xx_adc.o ./system/src/stm32f0-stdperiph/stm32f0xx_can.o ./system/src/stm32f0-stdperiph/stm32f0xx_cec.o ./system/src/stm32f0-stdperiph/stm32f0xx_comp.o ./system/src/stm32f0-stdperiph/stm32f0xx_crc.o ./system/src/stm32f0-stdperiph/stm32f0xx_crs.o ./system/src/stm32f0-stdperiph/stm32f0xx_dac.o ./system/src/stm32f0-stdperiph/stm32f0xx_dbgmcu.o ./system/src/stm32f0-stdperiph/stm32f0xx_dma.o ./system/src/stm32f0-stdperiph/stm32f0xx_exti.o ./system/src/stm32f0-stdperiph/stm32f0xx_flash.o ./system/src/stm32f0-stdperiph/stm32f0xx_gpio.o ./system/src/stm32f0-stdperiph/stm32f0xx_i2c.o ./system/src/stm32f0-stdperiph/stm32f0xx_iwdg.o ./system/src/stm32f0-stdperiph/stm32f0xx_misc.o ./system/src/stm32f0-stdperiph/stm32f0xx_pwr.o ./system/src/stm32f0-stdperiph/stm32f0xx_rcc.o ./system/src/stm32f0-stdperiph/stm32f0xx_rtc.o ./system/src/stm32f0-stdperiph/stm32f0xx_spi.o ./system/src/stm32f0-stdperiph/stm32f0xx_syscfg.o ./system/src/stm32f0-stdperiph/stm32f0xx_tim.o ./system/src/stm32f0-stdperiph/stm32f0xx_usart.o ./system/src/stm32f0-stdperiph/stm32f0xx_wwdg.o  ./system/src/newlib/_cxx.o ./system/src/newlib/_exit.o ./system/src/newlib/_sbrk.o ./system/src/newlib/_startup.o ./system/src/newlib/_syscalls.o ./system/src/newlib/assert.o  ./system/src/diag/Trace.o ./system/src/diag/trace_impl.o  ./system/src/cortexm/_initialize_hardware.o ./system/src/cortexm/_reset_hardware.o ./system/src/cortexm/exception_handlers.o  ./system/src/cmsis/system_stm32f0xx.o ./system/src/cmsis/vectors_stm32f0xx.o  ./src/MCU/led.o ./src/MCU/tick.o ./src/MCU/usart2.o  ./src/ADC.o ./src/FIFO.o ./src/Terminal.o ./src/main.o   
-Finished building target: Temperature.elf
- 
-make --no-print-directory post-build
-Binary
-arm-none-eabi-objcopy -S  -O binary  "Temperature.elf" "Temperature.bin"
- 
-Invoking: Cross ARM GNU Create Flash Image
-arm-none-eabi-objcopy -O ihex "Temperature.elf"  "Temperature.hex"
-Finished building: Temperature.hex
- 
-Invoking: Cross ARM GNU Print Size
-arm-none-eabi-size --format=berkeley "Temperature.elf"
-   text	   data	    bss	    dec	    hex	filename
-  22784	    268	   3272	  26324	   66d4	Temperature.elf
-Finished building: Temperature.siz
- 
-19:16:51 **** Incremental Build of configuration Debug for project Temperature ****
-make all 
-Building file: ../src/Terminal.c
-Invoking: Cross ARM C Compiler
-arm-none-eabi-gcc -mcpu=cortex-m0 -mthumb -Og -fmessage-length=0 -fsigned-char -ffunction-sections -fdata-sections -ffreestanding -fno-move-loop-invariants -Wall -Wextra  -g3 -DDEBUG -DUSE_FULL_ASSERT -DTRACE -DOS_USE_TRACE_SEMIHOSTING_DEBUG -DSTM32F030 -DUSE_STDPERIPH_DRIVER -DHSE_VALUE=8000000 -I"../include" -I"../system/include" -I"../system/include/cmsis" -I"../system/include/stm32f0-stdperiph" -std=gnu11 -MMD -MP -MF"src/Terminal.d" -MT"src/Terminal.o" -c -o "src/Terminal.o" "../src/Terminal.c"
-../src/Terminal.c: In function 'ProcessData':
-../src/Terminal.c:173:18: warning: comparison of constant '115' with boolean expression is always false [-Wbool-compare]
-  } else if ( 's' == !destination->List[0].Type && 'S' == !destination->List[0].Type)
-                  ^
-../src/Terminal.c:173:55: warning: comparison of constant '83' with boolean expression is always false [-Wbool-compare]
-  } else if ( 's' == !destination->List[0].Type && 'S' == !destination->List[0].Type)
-                                                       ^
-../src/Terminal.c: In function 'RunCommand':
-../src/Terminal.c:268:15: warning: pointer targets in passing argument 1 of 'snprintf' differ in signedness [-Wpointer-sign]
+../src/Terminal.c:271:15: warning: pointer targets in passing argument 1 of 'snprintf' differ in signedness [-Wpointer-sign]
       snprintf(&message[0], 25, "%d", adcReading);
                ^
 In file included from /usr/local/gcc-arm-none-eabi-5_3-2016q1/arm-none-eabi/include/stdio.h:29:0,
@@ -488,250 +317,7 @@ In file included from /usr/local/gcc-arm-none-eabi-5_3-2016q1/arm-none-eabi/incl
 /usr/local/gcc-arm-none-eabi-5_3-2016q1/arm-none-eabi/include/stdio.h:247:5: note: expected 'char * restrict' but argument is of type 'unsigned char *'
  int _EXFUN(snprintf, (char *__restrict, size_t, const char *__restrict, ...)
      ^
-Finished building: ../src/Terminal.c
- 
-Building target: Temperature.elf
-Invoking: Cross ARM C++ Linker
-arm-none-eabi-g++ -mcpu=cortex-m0 -mthumb -Og -fmessage-length=0 -fsigned-char -ffunction-sections -fdata-sections -ffreestanding -fno-move-loop-invariants -Wall -Wextra  -g3 -T mem.ld -T libs.ld -T sections.ld -nostartfiles -Xlinker --gc-sections -L"../ldscripts" -Wl,-Map,"Temperature.map" --specs=nano.specs -o "Temperature.elf"  ./system/src/stm32f0-stdperiph/stm32f0xx_adc.o ./system/src/stm32f0-stdperiph/stm32f0xx_can.o ./system/src/stm32f0-stdperiph/stm32f0xx_cec.o ./system/src/stm32f0-stdperiph/stm32f0xx_comp.o ./system/src/stm32f0-stdperiph/stm32f0xx_crc.o ./system/src/stm32f0-stdperiph/stm32f0xx_crs.o ./system/src/stm32f0-stdperiph/stm32f0xx_dac.o ./system/src/stm32f0-stdperiph/stm32f0xx_dbgmcu.o ./system/src/stm32f0-stdperiph/stm32f0xx_dma.o ./system/src/stm32f0-stdperiph/stm32f0xx_exti.o ./system/src/stm32f0-stdperiph/stm32f0xx_flash.o ./system/src/stm32f0-stdperiph/stm32f0xx_gpio.o ./system/src/stm32f0-stdperiph/stm32f0xx_i2c.o ./system/src/stm32f0-stdperiph/stm32f0xx_iwdg.o ./system/src/stm32f0-stdperiph/stm32f0xx_misc.o ./system/src/stm32f0-stdperiph/stm32f0xx_pwr.o ./system/src/stm32f0-stdperiph/stm32f0xx_rcc.o ./system/src/stm32f0-stdperiph/stm32f0xx_rtc.o ./system/src/stm32f0-stdperiph/stm32f0xx_spi.o ./system/src/stm32f0-stdperiph/stm32f0xx_syscfg.o ./system/src/stm32f0-stdperiph/stm32f0xx_tim.o ./system/src/stm32f0-stdperiph/stm32f0xx_usart.o ./system/src/stm32f0-stdperiph/stm32f0xx_wwdg.o  ./system/src/newlib/_cxx.o ./system/src/newlib/_exit.o ./system/src/newlib/_sbrk.o ./system/src/newlib/_startup.o ./system/src/newlib/_syscalls.o ./system/src/newlib/assert.o  ./system/src/diag/Trace.o ./system/src/diag/trace_impl.o  ./system/src/cortexm/_initialize_hardware.o ./system/src/cortexm/_reset_hardware.o ./system/src/cortexm/exception_handlers.o  ./system/src/cmsis/system_stm32f0xx.o ./system/src/cmsis/vectors_stm32f0xx.o  ./src/MCU/led.o ./src/MCU/tick.o ./src/MCU/usart2.o  ./src/ADC.o ./src/FIFO.o ./src/Terminal.o ./src/main.o   
-Finished building target: Temperature.elf
- 
-make --no-print-directory post-build
-Binary
-arm-none-eabi-objcopy -S  -O binary  "Temperature.elf" "Temperature.bin"
- 
-Invoking: Cross ARM GNU Create Flash Image
-arm-none-eabi-objcopy -O ihex "Temperature.elf"  "Temperature.hex"
-Finished building: Temperature.hex
- 
-Invoking: Cross ARM GNU Print Size
-arm-none-eabi-size --format=berkeley "Temperature.elf"
-   text	   data	    bss	    dec	    hex	filename
-  22840	    268	   3272	  26380	   670c	Temperature.elf
-Finished building: Temperature.siz
- 
-19:17:38 **** Incremental Build of configuration Debug for project Temperature ****
-make all 
-Invoking: Cross ARM GNU Print Size
-arm-none-eabi-size --format=berkeley "Temperature.elf"
-   text	   data	    bss	    dec	    hex	filename
-  22840	    268	   3272	  26380	   670c	Temperature.elf
-Finished building: Temperature.siz
- 
-19:17:53 **** Incremental Build of configuration Debug for project Temperature ****
-make all 
-Invoking: Cross ARM GNU Print Size
-arm-none-eabi-size --format=berkeley "Temperature.elf"
-   text	   data	    bss	    dec	    hex	filename
-  22840	    268	   3272	  26380	   670c	Temperature.elf
-Finished building: Temperature.siz
- 
-19:23:51 **** Incremental Build of configuration Debug for project Temperature ****
-make all 
-Building file: ../src/Terminal.c
-Invoking: Cross ARM C Compiler
-arm-none-eabi-gcc -mcpu=cortex-m0 -mthumb -Og -fmessage-length=0 -fsigned-char -ffunction-sections -fdata-sections -ffreestanding -fno-move-loop-invariants -Wall -Wextra  -g3 -DDEBUG -DUSE_FULL_ASSERT -DTRACE -DOS_USE_TRACE_SEMIHOSTING_DEBUG -DSTM32F030 -DUSE_STDPERIPH_DRIVER -DHSE_VALUE=8000000 -I"../include" -I"../system/include" -I"../system/include/cmsis" -I"../system/include/stm32f0-stdperiph" -std=gnu11 -MMD -MP -MF"src/Terminal.d" -MT"src/Terminal.o" -c -o "src/Terminal.o" "../src/Terminal.c"
-../src/Terminal.c: In function 'ProcessData':
-../src/Terminal.c:173:18: warning: comparison of constant '115' with boolean expression is always false [-Wbool-compare]
-  } else if ( 's' == !destination->List[0].Type && 'S' == !destination->List[0].Type)
-                  ^
-../src/Terminal.c:173:55: warning: comparison of constant '83' with boolean expression is always false [-Wbool-compare]
-  } else if ( 's' == !destination->List[0].Type && 'S' == !destination->List[0].Type)
-                                                       ^
-../src/Terminal.c: In function 'RunCommand':
-../src/Terminal.c:268:15: warning: pointer targets in passing argument 1 of 'snprintf' differ in signedness [-Wpointer-sign]
-      snprintf(&message[0], 25, "%d", adcReading);
-               ^
-In file included from /usr/local/gcc-arm-none-eabi-5_3-2016q1/arm-none-eabi/include/stdio.h:29:0,
-                 from ../include/common.h:9,
-                 from ../src/Terminal.c:6:
-/usr/local/gcc-arm-none-eabi-5_3-2016q1/arm-none-eabi/include/stdio.h:247:5: note: expected 'char * restrict' but argument is of type 'unsigned char *'
- int _EXFUN(snprintf, (char *__restrict, size_t, const char *__restrict, ...)
-     ^
-Finished building: ../src/Terminal.c
- 
-Building target: Temperature.elf
-Invoking: Cross ARM C++ Linker
-arm-none-eabi-g++ -mcpu=cortex-m0 -mthumb -Og -fmessage-length=0 -fsigned-char -ffunction-sections -fdata-sections -ffreestanding -fno-move-loop-invariants -Wall -Wextra  -g3 -T mem.ld -T libs.ld -T sections.ld -nostartfiles -Xlinker --gc-sections -L"../ldscripts" -Wl,-Map,"Temperature.map" --specs=nano.specs -o "Temperature.elf"  ./system/src/stm32f0-stdperiph/stm32f0xx_adc.o ./system/src/stm32f0-stdperiph/stm32f0xx_can.o ./system/src/stm32f0-stdperiph/stm32f0xx_cec.o ./system/src/stm32f0-stdperiph/stm32f0xx_comp.o ./system/src/stm32f0-stdperiph/stm32f0xx_crc.o ./system/src/stm32f0-stdperiph/stm32f0xx_crs.o ./system/src/stm32f0-stdperiph/stm32f0xx_dac.o ./system/src/stm32f0-stdperiph/stm32f0xx_dbgmcu.o ./system/src/stm32f0-stdperiph/stm32f0xx_dma.o ./system/src/stm32f0-stdperiph/stm32f0xx_exti.o ./system/src/stm32f0-stdperiph/stm32f0xx_flash.o ./system/src/stm32f0-stdperiph/stm32f0xx_gpio.o ./system/src/stm32f0-stdperiph/stm32f0xx_i2c.o ./system/src/stm32f0-stdperiph/stm32f0xx_iwdg.o ./system/src/stm32f0-stdperiph/stm32f0xx_misc.o ./system/src/stm32f0-stdperiph/stm32f0xx_pwr.o ./system/src/stm32f0-stdperiph/stm32f0xx_rcc.o ./system/src/stm32f0-stdperiph/stm32f0xx_rtc.o ./system/src/stm32f0-stdperiph/stm32f0xx_spi.o ./system/src/stm32f0-stdperiph/stm32f0xx_syscfg.o ./system/src/stm32f0-stdperiph/stm32f0xx_tim.o ./system/src/stm32f0-stdperiph/stm32f0xx_usart.o ./system/src/stm32f0-stdperiph/stm32f0xx_wwdg.o  ./system/src/newlib/_cxx.o ./system/src/newlib/_exit.o ./system/src/newlib/_sbrk.o ./system/src/newlib/_startup.o ./system/src/newlib/_syscalls.o ./system/src/newlib/assert.o  ./system/src/diag/Trace.o ./system/src/diag/trace_impl.o  ./system/src/cortexm/_initialize_hardware.o ./system/src/cortexm/_reset_hardware.o ./system/src/cortexm/exception_handlers.o  ./system/src/cmsis/system_stm32f0xx.o ./system/src/cmsis/vectors_stm32f0xx.o  ./src/MCU/led.o ./src/MCU/tick.o ./src/MCU/usart2.o  ./src/ADC.o ./src/FIFO.o ./src/Terminal.o ./src/main.o   
-Finished building target: Temperature.elf
- 
-make --no-print-directory post-build
-Binary
-arm-none-eabi-objcopy -S  -O binary  "Temperature.elf" "Temperature.bin"
- 
-Invoking: Cross ARM GNU Create Flash Image
-arm-none-eabi-objcopy -O ihex "Temperature.elf"  "Temperature.hex"
-Finished building: Temperature.hex
- 
-Invoking: Cross ARM GNU Print Size
-arm-none-eabi-size --format=berkeley "Temperature.elf"
-   text	   data	    bss	    dec	    hex	filename
-  22840	    268	   3272	  26380	   670c	Temperature.elf
-Finished building: Temperature.siz
- 
-19:24:08 **** Incremental Build of configuration Debug for project Temperature ****
-make all 
-Invoking: Cross ARM GNU Print Size
-arm-none-eabi-size --format=berkeley "Temperature.elf"
-   text	   data	    bss	    dec	    hex	filename
-  22840	    268	   3272	  26380	   670c	Temperature.elf
-Finished building: Temperature.siz
- 
-19:26:13 **** Incremental Build of configuration Debug for project Temperature ****
-make all 
-Building file: ../src/ADC.c
-Invoking: Cross ARM C Compiler
-arm-none-eabi-gcc -mcpu=cortex-m0 -mthumb -Og -fmessage-length=0 -fsigned-char -ffunction-sections -fdata-sections -ffreestanding -fno-move-loop-invariants -Wall -Wextra  -g3 -DDEBUG -DUSE_FULL_ASSERT -DTRACE -DOS_USE_TRACE_SEMIHOSTING_DEBUG -DSTM32F030 -DUSE_STDPERIPH_DRIVER -DHSE_VALUE=8000000 -I"../include" -I"../system/include" -I"../system/include/cmsis" -I"../system/include/stm32f0-stdperiph" -std=gnu11 -MMD -MP -MF"src/ADC.d" -MT"src/ADC.o" -c -o "src/ADC.o" "../src/ADC.c"
-../src/ADC.c: In function 'ADC_ReadNorm':
-../src/ADC.c:64:41: warning: unused parameter 'channel' [-Wunused-parameter]
- uint_fast8_t ADC_ReadNorm(uint_fast32_t channel, float *destination) {
-                                         ^
-../src/ADC.c:64:57: warning: unused parameter 'destination' [-Wunused-parameter]
- uint_fast8_t ADC_ReadNorm(uint_fast32_t channel, float *destination) {
-                                                         ^
-Finished building: ../src/ADC.c
- 
-Building target: Temperature.elf
-Invoking: Cross ARM C++ Linker
-arm-none-eabi-g++ -mcpu=cortex-m0 -mthumb -Og -fmessage-length=0 -fsigned-char -ffunction-sections -fdata-sections -ffreestanding -fno-move-loop-invariants -Wall -Wextra  -g3 -T mem.ld -T libs.ld -T sections.ld -nostartfiles -Xlinker --gc-sections -L"../ldscripts" -Wl,-Map,"Temperature.map" --specs=nano.specs -o "Temperature.elf"  ./system/src/stm32f0-stdperiph/stm32f0xx_adc.o ./system/src/stm32f0-stdperiph/stm32f0xx_can.o ./system/src/stm32f0-stdperiph/stm32f0xx_cec.o ./system/src/stm32f0-stdperiph/stm32f0xx_comp.o ./system/src/stm32f0-stdperiph/stm32f0xx_crc.o ./system/src/stm32f0-stdperiph/stm32f0xx_crs.o ./system/src/stm32f0-stdperiph/stm32f0xx_dac.o ./system/src/stm32f0-stdperiph/stm32f0xx_dbgmcu.o ./system/src/stm32f0-stdperiph/stm32f0xx_dma.o ./system/src/stm32f0-stdperiph/stm32f0xx_exti.o ./system/src/stm32f0-stdperiph/stm32f0xx_flash.o ./system/src/stm32f0-stdperiph/stm32f0xx_gpio.o ./system/src/stm32f0-stdperiph/stm32f0xx_i2c.o ./system/src/stm32f0-stdperiph/stm32f0xx_iwdg.o ./system/src/stm32f0-stdperiph/stm32f0xx_misc.o ./system/src/stm32f0-stdperiph/stm32f0xx_pwr.o ./system/src/stm32f0-stdperiph/stm32f0xx_rcc.o ./system/src/stm32f0-stdperiph/stm32f0xx_rtc.o ./system/src/stm32f0-stdperiph/stm32f0xx_spi.o ./system/src/stm32f0-stdperiph/stm32f0xx_syscfg.o ./system/src/stm32f0-stdperiph/stm32f0xx_tim.o ./system/src/stm32f0-stdperiph/stm32f0xx_usart.o ./system/src/stm32f0-stdperiph/stm32f0xx_wwdg.o  ./system/src/newlib/_cxx.o ./system/src/newlib/_exit.o ./system/src/newlib/_sbrk.o ./system/src/newlib/_startup.o ./system/src/newlib/_syscalls.o ./system/src/newlib/assert.o  ./system/src/diag/Trace.o ./system/src/diag/trace_impl.o  ./system/src/cortexm/_initialize_hardware.o ./system/src/cortexm/_reset_hardware.o ./system/src/cortexm/exception_handlers.o  ./system/src/cmsis/system_stm32f0xx.o ./system/src/cmsis/vectors_stm32f0xx.o  ./src/MCU/led.o ./src/MCU/tick.o ./src/MCU/usart2.o  ./src/ADC.o ./src/FIFO.o ./src/Terminal.o ./src/main.o   
-Finished building target: Temperature.elf
- 
-make --no-print-directory post-build
-Binary
-arm-none-eabi-objcopy -S  -O binary  "Temperature.elf" "Temperature.bin"
- 
-Invoking: Cross ARM GNU Create Flash Image
-arm-none-eabi-objcopy -O ihex "Temperature.elf"  "Temperature.hex"
-Finished building: Temperature.hex
- 
-Invoking: Cross ARM GNU Print Size
-arm-none-eabi-size --format=berkeley "Temperature.elf"
-   text	   data	    bss	    dec	    hex	filename
-  22792	    268	   3272	  26332	   66dc	Temperature.elf
-Finished building: Temperature.siz
- 
-19:26:27 **** Incremental Build of configuration Debug for project Temperature ****
-make all 
-Invoking: Cross ARM GNU Print Size
-arm-none-eabi-size --format=berkeley "Temperature.elf"
-   text	   data	    bss	    dec	    hex	filename
-  22792	    268	   3272	  26332	   66dc	Temperature.elf
-Finished building: Temperature.siz
- 
-19:29:52 **** Incremental Build of configuration Debug for project Temperature ****
-make all 
-Building file: ../src/Terminal.c
-Invoking: Cross ARM C Compiler
-arm-none-eabi-gcc -mcpu=cortex-m0 -mthumb -Og -fmessage-length=0 -fsigned-char -ffunction-sections -fdata-sections -ffreestanding -fno-move-loop-invariants -Wall -Wextra  -g3 -DDEBUG -DUSE_FULL_ASSERT -DTRACE -DOS_USE_TRACE_SEMIHOSTING_DEBUG -DSTM32F030 -DUSE_STDPERIPH_DRIVER -DHSE_VALUE=8000000 -I"../include" -I"../system/include" -I"../system/include/cmsis" -I"../system/include/stm32f0-stdperiph" -std=gnu11 -MMD -MP -MF"src/Terminal.d" -MT"src/Terminal.o" -c -o "src/Terminal.o" "../src/Terminal.c"
-../src/Terminal.c: In function 'ProcessData':
-../src/Terminal.c:173:18: warning: comparison of constant '115' with boolean expression is always false [-Wbool-compare]
-  } else if ( 's' == !destination->List[0].Type && 'S' == !destination->List[0].Type)
-                  ^
-../src/Terminal.c:173:55: warning: comparison of constant '83' with boolean expression is always false [-Wbool-compare]
-  } else if ( 's' == !destination->List[0].Type && 'S' == !destination->List[0].Type)
-                                                       ^
-../src/Terminal.c: In function 'RunCommand':
-../src/Terminal.c:270:15: warning: pointer targets in passing argument 1 of 'snprintf' differ in signedness [-Wpointer-sign]
-      snprintf(&message[0], 25, "%d", adcReading);
-               ^
-In file included from /usr/local/gcc-arm-none-eabi-5_3-2016q1/arm-none-eabi/include/stdio.h:29:0,
-                 from ../include/common.h:9,
-                 from ../src/Terminal.c:6:
-/usr/local/gcc-arm-none-eabi-5_3-2016q1/arm-none-eabi/include/stdio.h:247:5: note: expected 'char * restrict' but argument is of type 'unsigned char *'
- int _EXFUN(snprintf, (char *__restrict, size_t, const char *__restrict, ...)
-     ^
-../src/Terminal.c:275:15: warning: pointer targets in passing argument 1 of 'snprintf' differ in signedness [-Wpointer-sign]
-      snprintf(&message[0], 25, "%f", adcTempCelsius);
-               ^
-In file included from /usr/local/gcc-arm-none-eabi-5_3-2016q1/arm-none-eabi/include/stdio.h:29:0,
-                 from ../include/common.h:9,
-                 from ../src/Terminal.c:6:
-/usr/local/gcc-arm-none-eabi-5_3-2016q1/arm-none-eabi/include/stdio.h:247:5: note: expected 'char * restrict' but argument is of type 'unsigned char *'
- int _EXFUN(snprintf, (char *__restrict, size_t, const char *__restrict, ...)
-     ^
-Finished building: ../src/Terminal.c
- 
-Building target: Temperature.elf
-Invoking: Cross ARM C++ Linker
-arm-none-eabi-g++ -mcpu=cortex-m0 -mthumb -Og -fmessage-length=0 -fsigned-char -ffunction-sections -fdata-sections -ffreestanding -fno-move-loop-invariants -Wall -Wextra  -g3 -T mem.ld -T libs.ld -T sections.ld -nostartfiles -Xlinker --gc-sections -L"../ldscripts" -Wl,-Map,"Temperature.map" --specs=nano.specs -o "Temperature.elf"  ./system/src/stm32f0-stdperiph/stm32f0xx_adc.o ./system/src/stm32f0-stdperiph/stm32f0xx_can.o ./system/src/stm32f0-stdperiph/stm32f0xx_cec.o ./system/src/stm32f0-stdperiph/stm32f0xx_comp.o ./system/src/stm32f0-stdperiph/stm32f0xx_crc.o ./system/src/stm32f0-stdperiph/stm32f0xx_crs.o ./system/src/stm32f0-stdperiph/stm32f0xx_dac.o ./system/src/stm32f0-stdperiph/stm32f0xx_dbgmcu.o ./system/src/stm32f0-stdperiph/stm32f0xx_dma.o ./system/src/stm32f0-stdperiph/stm32f0xx_exti.o ./system/src/stm32f0-stdperiph/stm32f0xx_flash.o ./system/src/stm32f0-stdperiph/stm32f0xx_gpio.o ./system/src/stm32f0-stdperiph/stm32f0xx_i2c.o ./system/src/stm32f0-stdperiph/stm32f0xx_iwdg.o ./system/src/stm32f0-stdperiph/stm32f0xx_misc.o ./system/src/stm32f0-stdperiph/stm32f0xx_pwr.o ./system/src/stm32f0-stdperiph/stm32f0xx_rcc.o ./system/src/stm32f0-stdperiph/stm32f0xx_rtc.o ./system/src/stm32f0-stdperiph/stm32f0xx_spi.o ./system/src/stm32f0-stdperiph/stm32f0xx_syscfg.o ./system/src/stm32f0-stdperiph/stm32f0xx_tim.o ./system/src/stm32f0-stdperiph/stm32f0xx_usart.o ./system/src/stm32f0-stdperiph/stm32f0xx_wwdg.o  ./system/src/newlib/_cxx.o ./system/src/newlib/_exit.o ./system/src/newlib/_sbrk.o ./system/src/newlib/_startup.o ./system/src/newlib/_syscalls.o ./system/src/newlib/assert.o  ./system/src/diag/Trace.o ./system/src/diag/trace_impl.o  ./system/src/cortexm/_initialize_hardware.o ./system/src/cortexm/_reset_hardware.o ./system/src/cortexm/exception_handlers.o  ./system/src/cmsis/system_stm32f0xx.o ./system/src/cmsis/vectors_stm32f0xx.o  ./src/MCU/led.o ./src/MCU/tick.o ./src/MCU/usart2.o  ./src/ADC.o ./src/FIFO.o ./src/Terminal.o ./src/main.o   
-Finished building target: Temperature.elf
- 
-make --no-print-directory post-build
-Binary
-arm-none-eabi-objcopy -S  -O binary  "Temperature.elf" "Temperature.bin"
- 
-Invoking: Cross ARM GNU Create Flash Image
-arm-none-eabi-objcopy -O ihex "Temperature.elf"  "Temperature.hex"
-Finished building: Temperature.hex
- 
-Invoking: Cross ARM GNU Print Size
-arm-none-eabi-size --format=berkeley "Temperature.elf"
-   text	   data	    bss	    dec	    hex	filename
-  23208	    268	   3272	  26748	   687c	Temperature.elf
-Finished building: Temperature.siz
- 
-19:30:31 **** Incremental Build of configuration Debug for project Temperature ****
-make all 
-Invoking: Cross ARM GNU Print Size
-arm-none-eabi-size --format=berkeley "Temperature.elf"
-   text	   data	    bss	    dec	    hex	filename
-  23208	    268	   3272	  26748	   687c	Temperature.elf
-Finished building: Temperature.siz
- 
-20:27:55 **** Incremental Build of configuration Debug for project Temperature ****
-make all 
-Invoking: Cross ARM GNU Print Size
-arm-none-eabi-size --format=berkeley "Temperature.elf"
-   text	   data	    bss	    dec	    hex	filename
-  23208	    268	   3272	  26748	   687c	Temperature.elf
-Finished building: Temperature.siz
- 
-20:31:51 **** Incremental Build of configuration Debug for project Temperature ****
-make all 
-Invoking: Cross ARM GNU Print Size
-arm-none-eabi-size --format=berkeley "Temperature.elf"
-   text	   data	    bss	    dec	    hex	filename
-  23208	    268	   3272	  26748	   687c	Temperature.elf
-Finished building: Temperature.siz
- 
-20:31:55 **** Incremental Build of configuration Debug for project Temperature ****
-make all 
-Invoking: Cross ARM GNU Print Size
-arm-none-eabi-size --format=berkeley "Temperature.elf"
-   text	   data	    bss	    dec	    hex	filename
-  23208	    268	   3272	  26748	   687c	Temperature.elf
-Finished building: Temperature.siz
- 
-20:31:59 **** Incremental Build of configuration Debug for project Temperature ****
-make all 
-Invoking: Cross ARM GNU Print Size
-arm-none-eabi-size --format=berkeley "Temperature.elf"
-   text	   data	    bss	    dec	    hex	filename
-  23208	    268	   3272	  26748	   687c	Temperature.elf
-Finished building: Temperature.siz
- 
-20:32:08 **** Incremental Build of configuration Debug for project Temperature ****
-make all 
-Building file: ../src/Terminal.c
-Invoking: Cross ARM C Compiler
-arm-none-eabi-gcc -mcpu=cortex-m0 -mthumb -Og -fmessage-length=0 -fsigned-char -ffunction-sections -fdata-sections -ffreestanding -fno-move-loop-invariants -Wall -Wextra  -g3 -DDEBUG -DUSE_FULL_ASSERT -DTRACE -DOS_USE_TRACE_SEMIHOSTING_DEBUG -DSTM32F030 -DUSE_STDPERIPH_DRIVER -DHSE_VALUE=8000000 -I"../include" -I"../system/include" -I"../system/include/cmsis" -I"../system/include/stm32f0-stdperiph" -std=gnu11 -MMD -MP -MF"src/Terminal.d" -MT"src/Terminal.o" -c -o "src/Terminal.o" "../src/Terminal.c"
-../src/Terminal.c: In function 'ProcessData':
-../src/Terminal.c:173:18: warning: comparison of constant '115' with boolean expression is always false [-Wbool-compare]
-  } else if ( 's' == !destination->List[0].Type && 'S' == !destination->List[0].Type)
-                  ^
-../src/Terminal.c:173:55: warning: comparison of constant '83' with boolean expression is always false [-Wbool-compare]
-  } else if ( 's' == !destination->List[0].Type && 'S' == !destination->List[0].Type)
-                                                       ^
-../src/Terminal.c: In function 'RunCommand':
-../src/Terminal.c:270:15: warning: pointer targets in passing argument 1 of 'snprintf' differ in signedness [-Wpointer-sign]
-      snprintf(&message[0], 25, "%d", adcReading);
-               ^
-In file included from /usr/local/gcc-arm-none-eabi-5_3-2016q1/arm-none-eabi/include/stdio.h:29:0,
-                 from ../include/common.h:9,
-                 from ../src/Terminal.c:6:
-/usr/local/gcc-arm-none-eabi-5_3-2016q1/arm-none-eabi/include/stdio.h:247:5: note: expected 'char * restrict' but argument is of type 'unsigned char *'
- int _EXFUN(snprintf, (char *__restrict, size_t, const char *__restrict, ...)
-     ^
-../src/Terminal.c:275:15: warning: pointer targets in passing argument 1 of 'snprintf' differ in signedness [-Wpointer-sign]
+../src/Terminal.c:276:15: warning: pointer targets in passing argument 1 of 'snprintf' differ in signedness [-Wpointer-sign]
       snprintf(&message[0], 25, "%d", adcTempCelsius);
                ^
 In file included from /usr/local/gcc-arm-none-eabi-5_3-2016q1/arm-none-eabi/include/stdio.h:29:0,
@@ -740,65 +326,142 @@ In file included from /usr/local/gcc-arm-none-eabi-5_3-2016q1/arm-none-eabi/incl
 /usr/local/gcc-arm-none-eabi-5_3-2016q1/arm-none-eabi/include/stdio.h:247:5: note: expected 'char * restrict' but argument is of type 'unsigned char *'
  int _EXFUN(snprintf, (char *__restrict, size_t, const char *__restrict, ...)
      ^
-../src/Terminal.c:275:32: warning: format '%d' expects argument of type 'int', but argument 4 has type 'double' [-Wformat=]
+../src/Terminal.c:276:32: warning: format '%d' expects argument of type 'int', but argument 4 has type 'long int' [-Wformat=]
       snprintf(&message[0], 25, "%d", adcTempCelsius);
                                 ^
-Finished building: ../src/Terminal.c
- 
-Building target: Temperature.elf
-Invoking: Cross ARM C++ Linker
-arm-none-eabi-g++ -mcpu=cortex-m0 -mthumb -Og -fmessage-length=0 -fsigned-char -ffunction-sections -fdata-sections -ffreestanding -fno-move-loop-invariants -Wall -Wextra  -g3 -T mem.ld -T libs.ld -T sections.ld -nostartfiles -Xlinker --gc-sections -L"../ldscripts" -Wl,-Map,"Temperature.map" --specs=nano.specs -o "Temperature.elf"  ./system/src/stm32f0-stdperiph/stm32f0xx_adc.o ./system/src/stm32f0-stdperiph/stm32f0xx_can.o ./system/src/stm32f0-stdperiph/stm32f0xx_cec.o ./system/src/stm32f0-stdperiph/stm32f0xx_comp.o ./system/src/stm32f0-stdperiph/stm32f0xx_crc.o ./system/src/stm32f0-stdperiph/stm32f0xx_crs.o ./system/src/stm32f0-stdperiph/stm32f0xx_dac.o ./system/src/stm32f0-stdperiph/stm32f0xx_dbgmcu.o ./system/src/stm32f0-stdperiph/stm32f0xx_dma.o ./system/src/stm32f0-stdperiph/stm32f0xx_exti.o ./system/src/stm32f0-stdperiph/stm32f0xx_flash.o ./system/src/stm32f0-stdperiph/stm32f0xx_gpio.o ./system/src/stm32f0-stdperiph/stm32f0xx_i2c.o ./system/src/stm32f0-stdperiph/stm32f0xx_iwdg.o ./system/src/stm32f0-stdperiph/stm32f0xx_misc.o ./system/src/stm32f0-stdperiph/stm32f0xx_pwr.o ./system/src/stm32f0-stdperiph/stm32f0xx_rcc.o ./system/src/stm32f0-stdperiph/stm32f0xx_rtc.o ./system/src/stm32f0-stdperiph/stm32f0xx_spi.o ./system/src/stm32f0-stdperiph/stm32f0xx_syscfg.o ./system/src/stm32f0-stdperiph/stm32f0xx_tim.o ./system/src/stm32f0-stdperiph/stm32f0xx_usart.o ./system/src/stm32f0-stdperiph/stm32f0xx_wwdg.o  ./system/src/newlib/_cxx.o ./system/src/newlib/_exit.o ./system/src/newlib/_sbrk.o ./system/src/newlib/_startup.o ./system/src/newlib/_syscalls.o ./system/src/newlib/assert.o  ./system/src/diag/Trace.o ./system/src/diag/trace_impl.o  ./system/src/cortexm/_initialize_hardware.o ./system/src/cortexm/_reset_hardware.o ./system/src/cortexm/exception_handlers.o  ./system/src/cmsis/system_stm32f0xx.o ./system/src/cmsis/vectors_stm32f0xx.o  ./src/MCU/led.o ./src/MCU/tick.o ./src/MCU/usart2.o  ./src/ADC.o ./src/FIFO.o ./src/Terminal.o ./src/main.o   
-Finished building target: Temperature.elf
- 
-make --no-print-directory post-build
-Binary
-arm-none-eabi-objcopy -S  -O binary  "Temperature.elf" "Temperature.bin"
- 
-Invoking: Cross ARM GNU Create Flash Image
-arm-none-eabi-objcopy -O ihex "Temperature.elf"  "Temperature.hex"
-Finished building: Temperature.hex
- 
-Invoking: Cross ARM GNU Print Size
-arm-none-eabi-size --format=berkeley "Temperature.elf"
-   text	   data	    bss	    dec	    hex	filename
-  23200	    268	   3272	  26740	   6874	Temperature.elf
-Finished building: Temperature.siz
- 
-20:32:48 **** Incremental Build of configuration Debug for project Temperature ****
-make all 
-Building file: ../src/ADC.c
-Invoking: Cross ARM C Compiler
-arm-none-eabi-gcc -mcpu=cortex-m0 -mthumb -Og -fmessage-length=0 -fsigned-char -ffunction-sections -fdata-sections -ffreestanding -fno-move-loop-invariants -Wall -Wextra  -g3 -DDEBUG -DUSE_FULL_ASSERT -DTRACE -DOS_USE_TRACE_SEMIHOSTING_DEBUG -DSTM32F030 -DUSE_STDPERIPH_DRIVER -DHSE_VALUE=8000000 -I"../include" -I"../system/include" -I"../system/include/cmsis" -I"../system/include/stm32f0-stdperiph" -std=gnu11 -MMD -MP -MF"src/ADC.d" -MT"src/ADC.o" -c -o "src/ADC.o" "../src/ADC.c"
-../src/ADC.c: In function 'ADC_ReadNorm':
-../src/ADC.c:64:41: warning: unused parameter 'channel' [-Wunused-parameter]
- uint_fast8_t ADC_ReadNorm(uint_fast32_t channel, float *destination) {
-                                         ^
-../src/ADC.c:64:57: warning: unused parameter 'destination' [-Wunused-parameter]
- uint_fast8_t ADC_ReadNorm(uint_fast32_t channel, float *destination) {
-                                                         ^
-../src/ADC.c: At top level:
-../src/ADC.c:86:9: error: conflicting types for 'ADC_CalibratedTemperature'
- int32_t ADC_CalibratedTemperature(uint_fast16_t rawData) {
+../src/Terminal.c:283:9: error: too few arguments to function 'ADC_ReadNorm'
+     if (ADC_ReadNorm()(source->List[1].Value.i32_t[0], &adcNorm )) {
          ^
-In file included from ../src/ADC.c:8:0:
-../include/MCU/ADC.h:18:7: note: previous declaration of 'ADC_CalibratedTemperature' was here
- float ADC_CalibratedTemperature(uint_fast16_t rawData);
-       ^
-make: *** [src/ADC.o] Error 1
-20:33:07 **** Incremental Build of configuration Debug for project Temperature ****
+In file included from ../src/Terminal.c:10:0:
+../include/MCU/ADC.h:15:14: note: declared here
+ uint_fast8_t ADC_ReadNorm(uint_fast32_t channel, float *destination);
+              ^
+../src/Terminal.c:284:15: warning: pointer targets in passing argument 1 of 'snprintf' differ in signedness [-Wpointer-sign]
+      snprintf(&message[0], 25, "%f", adcNorm);
+               ^
+In file included from /usr/local/gcc-arm-none-eabi-5_3-2016q1/arm-none-eabi/include/stdio.h:29:0,
+                 from ../include/common.h:9,
+                 from ../src/Terminal.c:6:
+/usr/local/gcc-arm-none-eabi-5_3-2016q1/arm-none-eabi/include/stdio.h:247:5: note: expected 'char * restrict' but argument is of type 'unsigned char *'
+ int _EXFUN(snprintf, (char *__restrict, size_t, const char *__restrict, ...)
+     ^
+make: *** [src/Terminal.o] Error 1
+02:55:18 **** Incremental Build of configuration Debug for project Temperature ****
+make all 
+Building file: ../src/Terminal.c
+Invoking: Cross ARM C Compiler
+arm-none-eabi-gcc -mcpu=cortex-m0 -mthumb -Og -fmessage-length=0 -fsigned-char -ffunction-sections -fdata-sections -ffreestanding -fno-move-loop-invariants -Wall -Wextra  -g3 -DDEBUG -DUSE_FULL_ASSERT -DTRACE -DOS_USE_TRACE_SEMIHOSTING_DEBUG -DSTM32F030 -DUSE_STDPERIPH_DRIVER -DHSE_VALUE=8000000 -I"../include" -I"../system/include" -I"../system/include/cmsis" -I"../system/include/stm32f0-stdperiph" -std=gnu11 -MMD -MP -MF"src/Terminal.d" -MT"src/Terminal.o" -c -o "src/Terminal.o" "../src/Terminal.c"
+../src/Terminal.c: In function 'ProcessData':
+../src/Terminal.c:173:18: warning: comparison of constant '115' with boolean expression is always false [-Wbool-compare]
+  } else if ( 's' == !destination->List[0].Type && 'S' == !destination->List[0].Type)
+                  ^
+../src/Terminal.c:173:55: warning: comparison of constant '83' with boolean expression is always false [-Wbool-compare]
+  } else if ( 's' == !destination->List[0].Type && 'S' == !destination->List[0].Type)
+                                                       ^
+../src/Terminal.c: In function 'RunCommand':
+../src/Terminal.c:271:15: warning: pointer targets in passing argument 1 of 'snprintf' differ in signedness [-Wpointer-sign]
+      snprintf(&message[0], 25, "%d", adcReading);
+               ^
+In file included from /usr/local/gcc-arm-none-eabi-5_3-2016q1/arm-none-eabi/include/stdio.h:29:0,
+                 from ../include/common.h:9,
+                 from ../src/Terminal.c:6:
+/usr/local/gcc-arm-none-eabi-5_3-2016q1/arm-none-eabi/include/stdio.h:247:5: note: expected 'char * restrict' but argument is of type 'unsigned char *'
+ int _EXFUN(snprintf, (char *__restrict, size_t, const char *__restrict, ...)
+     ^
+../src/Terminal.c:276:15: warning: pointer targets in passing argument 1 of 'snprintf' differ in signedness [-Wpointer-sign]
+      snprintf(&message[0], 25, "%d", adcTempCelsius);
+               ^
+In file included from /usr/local/gcc-arm-none-eabi-5_3-2016q1/arm-none-eabi/include/stdio.h:29:0,
+                 from ../include/common.h:9,
+                 from ../src/Terminal.c:6:
+/usr/local/gcc-arm-none-eabi-5_3-2016q1/arm-none-eabi/include/stdio.h:247:5: note: expected 'char * restrict' but argument is of type 'unsigned char *'
+ int _EXFUN(snprintf, (char *__restrict, size_t, const char *__restrict, ...)
+     ^
+../src/Terminal.c:276:32: warning: format '%d' expects argument of type 'int', but argument 4 has type 'long int' [-Wformat=]
+      snprintf(&message[0], 25, "%d", adcTempCelsius);
+                                ^
+../src/Terminal.c:284:15: warning: pointer targets in passing argument 1 of 'snprintf' differ in signedness [-Wpointer-sign]
+      snprintf(&message[0], 25, "%f", adcNorm);
+               ^
+In file included from /usr/local/gcc-arm-none-eabi-5_3-2016q1/arm-none-eabi/include/stdio.h:29:0,
+                 from ../include/common.h:9,
+                 from ../src/Terminal.c:6:
+/usr/local/gcc-arm-none-eabi-5_3-2016q1/arm-none-eabi/include/stdio.h:247:5: note: expected 'char * restrict' but argument is of type 'unsigned char *'
+ int _EXFUN(snprintf, (char *__restrict, size_t, const char *__restrict, ...)
+     ^
+Finished building: ../src/Terminal.c
+ 
+Building target: Temperature.elf
+Invoking: Cross ARM C++ Linker
+arm-none-eabi-g++ -mcpu=cortex-m0 -mthumb -Og -fmessage-length=0 -fsigned-char -ffunction-sections -fdata-sections -ffreestanding -fno-move-loop-invariants -Wall -Wextra  -g3 -T mem.ld -T libs.ld -T sections.ld -nostartfiles -Xlinker --gc-sections -L"../ldscripts" -Wl,-Map,"Temperature.map" --specs=nano.specs -o "Temperature.elf"  ./system/src/stm32f0-stdperiph/stm32f0xx_adc.o ./system/src/stm32f0-stdperiph/stm32f0xx_can.o ./system/src/stm32f0-stdperiph/stm32f0xx_cec.o ./system/src/stm32f0-stdperiph/stm32f0xx_comp.o ./system/src/stm32f0-stdperiph/stm32f0xx_crc.o ./system/src/stm32f0-stdperiph/stm32f0xx_crs.o ./system/src/stm32f0-stdperiph/stm32f0xx_dac.o ./system/src/stm32f0-stdperiph/stm32f0xx_dbgmcu.o ./system/src/stm32f0-stdperiph/stm32f0xx_dma.o ./system/src/stm32f0-stdperiph/stm32f0xx_exti.o ./system/src/stm32f0-stdperiph/stm32f0xx_flash.o ./system/src/stm32f0-stdperiph/stm32f0xx_gpio.o ./system/src/stm32f0-stdperiph/stm32f0xx_i2c.o ./system/src/stm32f0-stdperiph/stm32f0xx_iwdg.o ./system/src/stm32f0-stdperiph/stm32f0xx_misc.o ./system/src/stm32f0-stdperiph/stm32f0xx_pwr.o ./system/src/stm32f0-stdperiph/stm32f0xx_rcc.o ./system/src/stm32f0-stdperiph/stm32f0xx_rtc.o ./system/src/stm32f0-stdperiph/stm32f0xx_spi.o ./system/src/stm32f0-stdperiph/stm32f0xx_syscfg.o ./system/src/stm32f0-stdperiph/stm32f0xx_tim.o ./system/src/stm32f0-stdperiph/stm32f0xx_usart.o ./system/src/stm32f0-stdperiph/stm32f0xx_wwdg.o  ./system/src/newlib/_cxx.o ./system/src/newlib/_exit.o ./system/src/newlib/_sbrk.o ./system/src/newlib/_startup.o ./system/src/newlib/_syscalls.o ./system/src/newlib/assert.o  ./system/src/diag/Trace.o ./system/src/diag/trace_impl.o  ./system/src/cortexm/_initialize_hardware.o ./system/src/cortexm/_reset_hardware.o ./system/src/cortexm/exception_handlers.o  ./system/src/cmsis/system_stm32f0xx.o ./system/src/cmsis/vectors_stm32f0xx.o  ./src/MCU/led.o ./src/MCU/tick.o ./src/MCU/usart2.o  ./src/ADC.o ./src/FIFO.o ./src/Terminal.o ./src/main.o   
+Finished building target: Temperature.elf
+ 
+make --no-print-directory post-build
+Binary
+arm-none-eabi-objcopy -S  -O binary  "Temperature.elf" "Temperature.bin"
+ 
+Invoking: Cross ARM GNU Create Flash Image
+arm-none-eabi-objcopy -O ihex "Temperature.elf"  "Temperature.hex"
+Finished building: Temperature.hex
+ 
+Invoking: Cross ARM GNU Print Size
+arm-none-eabi-size --format=berkeley "Temperature.elf"
+   text	   data	    bss	    dec	    hex	filename
+  23312	    268	   3272	  26852	   68e4	Temperature.elf
+Finished building: Temperature.siz
+ 
+02:56:00 **** Incremental Build of configuration Debug for project Temperature ****
+make all 
+Invoking: Cross ARM GNU Print Size
+arm-none-eabi-size --format=berkeley "Temperature.elf"
+   text	   data	    bss	    dec	    hex	filename
+  23312	    268	   3272	  26852	   68e4	Temperature.elf
+Finished building: Temperature.siz
+ 
+02:58:56 **** Incremental Build of configuration Debug for project Temperature ****
 make all 
 Building file: ../src/ADC.c
 Invoking: Cross ARM C Compiler
 arm-none-eabi-gcc -mcpu=cortex-m0 -mthumb -Og -fmessage-length=0 -fsigned-char -ffunction-sections -fdata-sections -ffreestanding -fno-move-loop-invariants -Wall -Wextra  -g3 -DDEBUG -DUSE_FULL_ASSERT -DTRACE -DOS_USE_TRACE_SEMIHOSTING_DEBUG -DSTM32F030 -DUSE_STDPERIPH_DRIVER -DHSE_VALUE=8000000 -I"../include" -I"../system/include" -I"../system/include/cmsis" -I"../system/include/stm32f0-stdperiph" -std=gnu11 -MMD -MP -MF"src/ADC.d" -MT"src/ADC.o" -c -o "src/ADC.o" "../src/ADC.c"
-../src/ADC.c: In function 'ADC_ReadNorm':
-../src/ADC.c:64:41: warning: unused parameter 'channel' [-Wunused-parameter]
- uint_fast8_t ADC_ReadNorm(uint_fast32_t channel, float *destination) {
-                                         ^
-../src/ADC.c:64:57: warning: unused parameter 'destination' [-Wunused-parameter]
- uint_fast8_t ADC_ReadNorm(uint_fast32_t channel, float *destination) {
-                                                         ^
 Finished building: ../src/ADC.c
  
+Building target: Temperature.elf
+Invoking: Cross ARM C++ Linker
+arm-none-eabi-g++ -mcpu=cortex-m0 -mthumb -Og -fmessage-length=0 -fsigned-char -ffunction-sections -fdata-sections -ffreestanding -fno-move-loop-invariants -Wall -Wextra  -g3 -T mem.ld -T libs.ld -T sections.ld -nostartfiles -Xlinker --gc-sections -L"../ldscripts" -Wl,-Map,"Temperature.map" --specs=nano.specs -o "Temperature.elf"  ./system/src/stm32f0-stdperiph/stm32f0xx_adc.o ./system/src/stm32f0-stdperiph/stm32f0xx_can.o ./system/src/stm32f0-stdperiph/stm32f0xx_cec.o ./system/src/stm32f0-stdperiph/stm32f0xx_comp.o ./system/src/stm32f0-stdperiph/stm32f0xx_crc.o ./system/src/stm32f0-stdperiph/stm32f0xx_crs.o ./system/src/stm32f0-stdperiph/stm32f0xx_dac.o ./system/src/stm32f0-stdperiph/stm32f0xx_dbgmcu.o ./system/src/stm32f0-stdperiph/stm32f0xx_dma.o ./system/src/stm32f0-stdperiph/stm32f0xx_exti.o ./system/src/stm32f0-stdperiph/stm32f0xx_flash.o ./system/src/stm32f0-stdperiph/stm32f0xx_gpio.o ./system/src/stm32f0-stdperiph/stm32f0xx_i2c.o ./system/src/stm32f0-stdperiph/stm32f0xx_iwdg.o ./system/src/stm32f0-stdperiph/stm32f0xx_misc.o ./system/src/stm32f0-stdperiph/stm32f0xx_pwr.o ./system/src/stm32f0-stdperiph/stm32f0xx_rcc.o ./system/src/stm32f0-stdperiph/stm32f0xx_rtc.o ./system/src/stm32f0-stdperiph/stm32f0xx_spi.o ./system/src/stm32f0-stdperiph/stm32f0xx_syscfg.o ./system/src/stm32f0-stdperiph/stm32f0xx_tim.o ./system/src/stm32f0-stdperiph/stm32f0xx_usart.o ./system/src/stm32f0-stdperiph/stm32f0xx_wwdg.o  ./system/src/newlib/_cxx.o ./system/src/newlib/_exit.o ./system/src/newlib/_sbrk.o ./system/src/newlib/_startup.o ./system/src/newlib/_syscalls.o ./system/src/newlib/assert.o  ./system/src/diag/Trace.o ./system/src/diag/trace_impl.o  ./system/src/cortexm/_initialize_hardware.o ./system/src/cortexm/_reset_hardware.o ./system/src/cortexm/exception_handlers.o  ./system/src/cmsis/system_stm32f0xx.o ./system/src/cmsis/vectors_stm32f0xx.o  ./src/MCU/led.o ./src/MCU/tick.o ./src/MCU/usart2.o  ./src/ADC.o ./src/FIFO.o ./src/Terminal.o ./src/main.o   
+Finished building target: Temperature.elf
+ 
+make --no-print-directory post-build
+Binary
+arm-none-eabi-objcopy -S  -O binary  "Temperature.elf" "Temperature.bin"
+ 
+Invoking: Cross ARM GNU Create Flash Image
+arm-none-eabi-objcopy -O ihex "Temperature.elf"  "Temperature.hex"
+Finished building: Temperature.hex
+ 
+Invoking: Cross ARM GNU Print Size
+arm-none-eabi-size --format=berkeley "Temperature.elf"
+   text	   data	    bss	    dec	    hex	filename
+  24008	    268	   3272	  27548	   6b9c	Temperature.elf
+Finished building: Temperature.siz
+ 
+02:59:02 **** Incremental Build of configuration Debug for project Temperature ****
+make all 
+Invoking: Cross ARM GNU Print Size
+arm-none-eabi-size --format=berkeley "Temperature.elf"
+   text	   data	    bss	    dec	    hex	filename
+  24008	    268	   3272	  27548	   6b9c	Temperature.elf
+Finished building: Temperature.siz
+ 
+03:10:21 **** Incremental Build of configuration Debug for project Temperature ****
+make all 
+Invoking: Cross ARM GNU Print Size
+arm-none-eabi-size --format=berkeley "Temperature.elf"
+   text	   data	    bss	    dec	    hex	filename
+  24008	    268	   3272	  27548	   6b9c	Temperature.elf
+Finished building: Temperature.siz
+ 
+03:17:05 **** Incremental Build of configuration Debug for project Temperature ****
+make all 
 Building file: ../src/Terminal.c
 Invoking: Cross ARM C Compiler
 arm-none-eabi-gcc -mcpu=cortex-m0 -mthumb -Og -fmessage-length=0 -fsigned-char -ffunction-sections -fdata-sections -ffreestanding -fno-move-loop-invariants -Wall -Wextra  -g3 -DDEBUG -DUSE_FULL_ASSERT -DTRACE -DOS_USE_TRACE_SEMIHOSTING_DEBUG -DSTM32F030 -DUSE_STDPERIPH_DRIVER -DHSE_VALUE=8000000 -I"../include" -I"../system/include" -I"../system/include/cmsis" -I"../system/include/stm32f0-stdperiph" -std=gnu11 -MMD -MP -MF"src/Terminal.d" -MT"src/Terminal.o" -c -o "src/Terminal.o" "../src/Terminal.c"
@@ -810,7 +473,7 @@ arm-none-eabi-gcc -mcpu=cortex-m0 -mthumb -Og -fmessage-length=0 -fsigned-char -
   } else if ( 's' == !destination->List[0].Type && 'S' == !destination->List[0].Type)
                                                        ^
 ../src/Terminal.c: In function 'RunCommand':
-../src/Terminal.c:270:15: warning: pointer targets in passing argument 1 of 'snprintf' differ in signedness [-Wpointer-sign]
+../src/Terminal.c:271:15: warning: pointer targets in passing argument 1 of 'snprintf' differ in signedness [-Wpointer-sign]
       snprintf(&message[0], 25, "%d", adcReading);
                ^
 In file included from /usr/local/gcc-arm-none-eabi-5_3-2016q1/arm-none-eabi/include/stdio.h:29:0,
@@ -819,7 +482,7 @@ In file included from /usr/local/gcc-arm-none-eabi-5_3-2016q1/arm-none-eabi/incl
 /usr/local/gcc-arm-none-eabi-5_3-2016q1/arm-none-eabi/include/stdio.h:247:5: note: expected 'char * restrict' but argument is of type 'unsigned char *'
  int _EXFUN(snprintf, (char *__restrict, size_t, const char *__restrict, ...)
      ^
-../src/Terminal.c:275:15: warning: pointer targets in passing argument 1 of 'snprintf' differ in signedness [-Wpointer-sign]
+../src/Terminal.c:276:15: warning: pointer targets in passing argument 1 of 'snprintf' differ in signedness [-Wpointer-sign]
       snprintf(&message[0], 25, "%d", adcTempCelsius);
                ^
 In file included from /usr/local/gcc-arm-none-eabi-5_3-2016q1/arm-none-eabi/include/stdio.h:29:0,
@@ -828,9 +491,18 @@ In file included from /usr/local/gcc-arm-none-eabi-5_3-2016q1/arm-none-eabi/incl
 /usr/local/gcc-arm-none-eabi-5_3-2016q1/arm-none-eabi/include/stdio.h:247:5: note: expected 'char * restrict' but argument is of type 'unsigned char *'
  int _EXFUN(snprintf, (char *__restrict, size_t, const char *__restrict, ...)
      ^
-../src/Terminal.c:275:32: warning: format '%d' expects argument of type 'int', but argument 4 has type 'double' [-Wformat=]
+../src/Terminal.c:276:32: warning: format '%d' expects argument of type 'int', but argument 4 has type 'long int' [-Wformat=]
       snprintf(&message[0], 25, "%d", adcTempCelsius);
                                 ^
+../src/Terminal.c:284:15: warning: pointer targets in passing argument 1 of 'snprintf' differ in signedness [-Wpointer-sign]
+      snprintf(&message[0], 25, "%.2f", adcNorm);
+               ^
+In file included from /usr/local/gcc-arm-none-eabi-5_3-2016q1/arm-none-eabi/include/stdio.h:29:0,
+                 from ../include/common.h:9,
+                 from ../src/Terminal.c:6:
+/usr/local/gcc-arm-none-eabi-5_3-2016q1/arm-none-eabi/include/stdio.h:247:5: note: expected 'char * restrict' but argument is of type 'unsigned char *'
+ int _EXFUN(snprintf, (char *__restrict, size_t, const char *__restrict, ...)
+     ^
 Finished building: ../src/Terminal.c
  
 Building target: Temperature.elf
@@ -849,10 +521,26 @@ Finished building: Temperature.hex
 Invoking: Cross ARM GNU Print Size
 arm-none-eabi-size --format=berkeley "Temperature.elf"
    text	   data	    bss	    dec	    hex	filename
-  23200	    268	   3272	  26740	   6874	Temperature.elf
+  24016	    268	   3272	  27556	   6ba4	Temperature.elf
 Finished building: Temperature.siz
  
-20:33:19 **** Incremental Build of configuration Debug for project Temperature ****
+03:17:16 **** Incremental Build of configuration Debug for project Temperature ****
+make all 
+Invoking: Cross ARM GNU Print Size
+arm-none-eabi-size --format=berkeley "Temperature.elf"
+   text	   data	    bss	    dec	    hex	filename
+  24016	    268	   3272	  27556	   6ba4	Temperature.elf
+Finished building: Temperature.siz
+ 
+03:19:30 **** Incremental Build of configuration Debug for project Temperature ****
+make all 
+Invoking: Cross ARM GNU Print Size
+arm-none-eabi-size --format=berkeley "Temperature.elf"
+   text	   data	    bss	    dec	    hex	filename
+  24016	    268	   3272	  27556	   6ba4	Temperature.elf
+Finished building: Temperature.siz
+ 
+03:19:44 **** Incremental Build of configuration Debug for project Temperature ****
 make all 
 Building file: ../src/Terminal.c
 Invoking: Cross ARM C Compiler
@@ -865,7 +553,7 @@ arm-none-eabi-gcc -mcpu=cortex-m0 -mthumb -Og -fmessage-length=0 -fsigned-char -
   } else if ( 's' == !destination->List[0].Type && 'S' == !destination->List[0].Type)
                                                        ^
 ../src/Terminal.c: In function 'RunCommand':
-../src/Terminal.c:270:15: warning: pointer targets in passing argument 1 of 'snprintf' differ in signedness [-Wpointer-sign]
+../src/Terminal.c:271:15: warning: pointer targets in passing argument 1 of 'snprintf' differ in signedness [-Wpointer-sign]
       snprintf(&message[0], 25, "%d", adcReading);
                ^
 In file included from /usr/local/gcc-arm-none-eabi-5_3-2016q1/arm-none-eabi/include/stdio.h:29:0,
@@ -874,7 +562,7 @@ In file included from /usr/local/gcc-arm-none-eabi-5_3-2016q1/arm-none-eabi/incl
 /usr/local/gcc-arm-none-eabi-5_3-2016q1/arm-none-eabi/include/stdio.h:247:5: note: expected 'char * restrict' but argument is of type 'unsigned char *'
  int _EXFUN(snprintf, (char *__restrict, size_t, const char *__restrict, ...)
      ^
-../src/Terminal.c:275:15: warning: pointer targets in passing argument 1 of 'snprintf' differ in signedness [-Wpointer-sign]
+../src/Terminal.c:276:15: warning: pointer targets in passing argument 1 of 'snprintf' differ in signedness [-Wpointer-sign]
       snprintf(&message[0], 25, "%d", adcTempCelsius);
                ^
 In file included from /usr/local/gcc-arm-none-eabi-5_3-2016q1/arm-none-eabi/include/stdio.h:29:0,
@@ -883,9 +571,18 @@ In file included from /usr/local/gcc-arm-none-eabi-5_3-2016q1/arm-none-eabi/incl
 /usr/local/gcc-arm-none-eabi-5_3-2016q1/arm-none-eabi/include/stdio.h:247:5: note: expected 'char * restrict' but argument is of type 'unsigned char *'
  int _EXFUN(snprintf, (char *__restrict, size_t, const char *__restrict, ...)
      ^
-../src/Terminal.c:275:32: warning: format '%d' expects argument of type 'int', but argument 4 has type 'long int' [-Wformat=]
+../src/Terminal.c:276:32: warning: format '%d' expects argument of type 'int', but argument 4 has type 'long int' [-Wformat=]
       snprintf(&message[0], 25, "%d", adcTempCelsius);
                                 ^
+../src/Terminal.c:284:15: warning: pointer targets in passing argument 1 of 'snprintf' differ in signedness [-Wpointer-sign]
+      snprintf(&message[0], 25, "%.2f", (float)adcNorm);
+               ^
+In file included from /usr/local/gcc-arm-none-eabi-5_3-2016q1/arm-none-eabi/include/stdio.h:29:0,
+                 from ../include/common.h:9,
+                 from ../src/Terminal.c:6:
+/usr/local/gcc-arm-none-eabi-5_3-2016q1/arm-none-eabi/include/stdio.h:247:5: note: expected 'char * restrict' but argument is of type 'unsigned char *'
+ int _EXFUN(snprintf, (char *__restrict, size_t, const char *__restrict, ...)
+     ^
 Finished building: ../src/Terminal.c
  
 Building target: Temperature.elf
@@ -904,10 +601,18 @@ Finished building: Temperature.hex
 Invoking: Cross ARM GNU Print Size
 arm-none-eabi-size --format=berkeley "Temperature.elf"
    text	   data	    bss	    dec	    hex	filename
-  22880	    268	   3272	  26420	   6734	Temperature.elf
+  24016	    268	   3272	  27556	   6ba4	Temperature.elf
 Finished building: Temperature.siz
  
-20:33:52 **** Incremental Build of configuration Debug for project Temperature ****
+03:19:48 **** Incremental Build of configuration Debug for project Temperature ****
+make all 
+Invoking: Cross ARM GNU Print Size
+arm-none-eabi-size --format=berkeley "Temperature.elf"
+   text	   data	    bss	    dec	    hex	filename
+  24016	    268	   3272	  27556	   6ba4	Temperature.elf
+Finished building: Temperature.siz
+ 
+03:27:13 **** Incremental Build of configuration Debug for project Temperature ****
 make all 
 Building file: ../src/Terminal.c
 Invoking: Cross ARM C Compiler
@@ -920,7 +625,7 @@ arm-none-eabi-gcc -mcpu=cortex-m0 -mthumb -Og -fmessage-length=0 -fsigned-char -
   } else if ( 's' == !destination->List[0].Type && 'S' == !destination->List[0].Type)
                                                        ^
 ../src/Terminal.c: In function 'RunCommand':
-../src/Terminal.c:270:15: warning: pointer targets in passing argument 1 of 'snprintf' differ in signedness [-Wpointer-sign]
+../src/Terminal.c:271:15: warning: pointer targets in passing argument 1 of 'snprintf' differ in signedness [-Wpointer-sign]
       snprintf(&message[0], 25, "%d", adcReading);
                ^
 In file included from /usr/local/gcc-arm-none-eabi-5_3-2016q1/arm-none-eabi/include/stdio.h:29:0,
@@ -929,7 +634,7 @@ In file included from /usr/local/gcc-arm-none-eabi-5_3-2016q1/arm-none-eabi/incl
 /usr/local/gcc-arm-none-eabi-5_3-2016q1/arm-none-eabi/include/stdio.h:247:5: note: expected 'char * restrict' but argument is of type 'unsigned char *'
  int _EXFUN(snprintf, (char *__restrict, size_t, const char *__restrict, ...)
      ^
-../src/Terminal.c:275:15: warning: pointer targets in passing argument 1 of 'snprintf' differ in signedness [-Wpointer-sign]
+../src/Terminal.c:276:15: warning: pointer targets in passing argument 1 of 'snprintf' differ in signedness [-Wpointer-sign]
       snprintf(&message[0], 25, "%d", adcTempCelsius);
                ^
 In file included from /usr/local/gcc-arm-none-eabi-5_3-2016q1/arm-none-eabi/include/stdio.h:29:0,
@@ -938,9 +643,18 @@ In file included from /usr/local/gcc-arm-none-eabi-5_3-2016q1/arm-none-eabi/incl
 /usr/local/gcc-arm-none-eabi-5_3-2016q1/arm-none-eabi/include/stdio.h:247:5: note: expected 'char * restrict' but argument is of type 'unsigned char *'
  int _EXFUN(snprintf, (char *__restrict, size_t, const char *__restrict, ...)
      ^
-../src/Terminal.c:275:32: warning: format '%d' expects argument of type 'int', but argument 4 has type 'long int' [-Wformat=]
+../src/Terminal.c:276:32: warning: format '%d' expects argument of type 'int', but argument 4 has type 'long int' [-Wformat=]
       snprintf(&message[0], 25, "%d", adcTempCelsius);
                                 ^
+../src/Terminal.c:287:15: warning: pointer targets in passing argument 1 of 'snprintf' differ in signedness [-Wpointer-sign]
+      snprintf(&message[0], 25, "%d.%04d", intpart, fracpart);
+               ^
+In file included from /usr/local/gcc-arm-none-eabi-5_3-2016q1/arm-none-eabi/include/stdio.h:29:0,
+                 from ../include/common.h:9,
+                 from ../src/Terminal.c:6:
+/usr/local/gcc-arm-none-eabi-5_3-2016q1/arm-none-eabi/include/stdio.h:247:5: note: expected 'char * restrict' but argument is of type 'unsigned char *'
+ int _EXFUN(snprintf, (char *__restrict, size_t, const char *__restrict, ...)
+     ^
 Finished building: ../src/Terminal.c
  
 Building target: Temperature.elf
@@ -959,14 +673,672 @@ Finished building: Temperature.hex
 Invoking: Cross ARM GNU Print Size
 arm-none-eabi-size --format=berkeley "Temperature.elf"
    text	   data	    bss	    dec	    hex	filename
-  22880	    268	   3272	  26420	   6734	Temperature.elf
+  25496	    268	   3272	  29036	   716c	Temperature.elf
 Finished building: Temperature.siz
  
-20:34:01 **** Incremental Build of configuration Debug for project Temperature ****
+03:27:37 **** Incremental Build of configuration Debug for project Temperature ****
 make all 
 Invoking: Cross ARM GNU Print Size
 arm-none-eabi-size --format=berkeley "Temperature.elf"
    text	   data	    bss	    dec	    hex	filename
-  22880	    268	   3272	  26420	   6734	Temperature.elf
+  25496	    268	   3272	  29036	   716c	Temperature.elf
+Finished building: Temperature.siz
+ 
+03:27:43 **** Incremental Build of configuration Debug for project Temperature ****
+make all 
+Invoking: Cross ARM GNU Print Size
+arm-none-eabi-size --format=berkeley "Temperature.elf"
+   text	   data	    bss	    dec	    hex	filename
+  25496	    268	   3272	  29036	   716c	Temperature.elf
+Finished building: Temperature.siz
+ 
+03:27:49 **** Incremental Build of configuration Debug for project Temperature ****
+make all 
+Building file: ../src/Terminal.c
+Invoking: Cross ARM C Compiler
+arm-none-eabi-gcc -mcpu=cortex-m0 -mthumb -Og -fmessage-length=0 -fsigned-char -ffunction-sections -fdata-sections -ffreestanding -fno-move-loop-invariants -Wall -Wextra  -g3 -DDEBUG -DUSE_FULL_ASSERT -DTRACE -DOS_USE_TRACE_SEMIHOSTING_DEBUG -DSTM32F030 -DUSE_STDPERIPH_DRIVER -DHSE_VALUE=8000000 -I"../include" -I"../system/include" -I"../system/include/cmsis" -I"../system/include/stm32f0-stdperiph" -std=gnu11 -MMD -MP -MF"src/Terminal.d" -MT"src/Terminal.o" -c -o "src/Terminal.o" "../src/Terminal.c"
+../src/Terminal.c: In function 'ProcessData':
+../src/Terminal.c:173:18: warning: comparison of constant '115' with boolean expression is always false [-Wbool-compare]
+  } else if ( 's' == !destination->List[0].Type && 'S' == !destination->List[0].Type)
+                  ^
+../src/Terminal.c:173:55: warning: comparison of constant '83' with boolean expression is always false [-Wbool-compare]
+  } else if ( 's' == !destination->List[0].Type && 'S' == !destination->List[0].Type)
+                                                       ^
+../src/Terminal.c: In function 'RunCommand':
+../src/Terminal.c:271:15: warning: pointer targets in passing argument 1 of 'snprintf' differ in signedness [-Wpointer-sign]
+      snprintf(&message[0], 25, "%d", adcReading);
+               ^
+In file included from /usr/local/gcc-arm-none-eabi-5_3-2016q1/arm-none-eabi/include/stdio.h:29:0,
+                 from ../include/common.h:9,
+                 from ../src/Terminal.c:6:
+/usr/local/gcc-arm-none-eabi-5_3-2016q1/arm-none-eabi/include/stdio.h:247:5: note: expected 'char * restrict' but argument is of type 'unsigned char *'
+ int _EXFUN(snprintf, (char *__restrict, size_t, const char *__restrict, ...)
+     ^
+../src/Terminal.c:276:15: warning: pointer targets in passing argument 1 of 'snprintf' differ in signedness [-Wpointer-sign]
+      snprintf(&message[0], 25, "%d", adcTempCelsius);
+               ^
+In file included from /usr/local/gcc-arm-none-eabi-5_3-2016q1/arm-none-eabi/include/stdio.h:29:0,
+                 from ../include/common.h:9,
+                 from ../src/Terminal.c:6:
+/usr/local/gcc-arm-none-eabi-5_3-2016q1/arm-none-eabi/include/stdio.h:247:5: note: expected 'char * restrict' but argument is of type 'unsigned char *'
+ int _EXFUN(snprintf, (char *__restrict, size_t, const char *__restrict, ...)
+     ^
+../src/Terminal.c:276:32: warning: format '%d' expects argument of type 'int', but argument 4 has type 'long int' [-Wformat=]
+      snprintf(&message[0], 25, "%d", adcTempCelsius);
+                                ^
+../src/Terminal.c:287:15: warning: pointer targets in passing argument 1 of 'snprintf' differ in signedness [-Wpointer-sign]
+      snprintf(&message[0], 25, "%d.%04d", intpart, fracpart);
+               ^
+In file included from /usr/local/gcc-arm-none-eabi-5_3-2016q1/arm-none-eabi/include/stdio.h:29:0,
+                 from ../include/common.h:9,
+                 from ../src/Terminal.c:6:
+/usr/local/gcc-arm-none-eabi-5_3-2016q1/arm-none-eabi/include/stdio.h:247:5: note: expected 'char * restrict' but argument is of type 'unsigned char *'
+ int _EXFUN(snprintf, (char *__restrict, size_t, const char *__restrict, ...)
+     ^
+Finished building: ../src/Terminal.c
+ 
+Building target: Temperature.elf
+Invoking: Cross ARM C++ Linker
+arm-none-eabi-g++ -mcpu=cortex-m0 -mthumb -Og -fmessage-length=0 -fsigned-char -ffunction-sections -fdata-sections -ffreestanding -fno-move-loop-invariants -Wall -Wextra  -g3 -T mem.ld -T libs.ld -T sections.ld -nostartfiles -Xlinker --gc-sections -L"../ldscripts" -Wl,-Map,"Temperature.map" --specs=nano.specs -o "Temperature.elf"  ./system/src/stm32f0-stdperiph/stm32f0xx_adc.o ./system/src/stm32f0-stdperiph/stm32f0xx_can.o ./system/src/stm32f0-stdperiph/stm32f0xx_cec.o ./system/src/stm32f0-stdperiph/stm32f0xx_comp.o ./system/src/stm32f0-stdperiph/stm32f0xx_crc.o ./system/src/stm32f0-stdperiph/stm32f0xx_crs.o ./system/src/stm32f0-stdperiph/stm32f0xx_dac.o ./system/src/stm32f0-stdperiph/stm32f0xx_dbgmcu.o ./system/src/stm32f0-stdperiph/stm32f0xx_dma.o ./system/src/stm32f0-stdperiph/stm32f0xx_exti.o ./system/src/stm32f0-stdperiph/stm32f0xx_flash.o ./system/src/stm32f0-stdperiph/stm32f0xx_gpio.o ./system/src/stm32f0-stdperiph/stm32f0xx_i2c.o ./system/src/stm32f0-stdperiph/stm32f0xx_iwdg.o ./system/src/stm32f0-stdperiph/stm32f0xx_misc.o ./system/src/stm32f0-stdperiph/stm32f0xx_pwr.o ./system/src/stm32f0-stdperiph/stm32f0xx_rcc.o ./system/src/stm32f0-stdperiph/stm32f0xx_rtc.o ./system/src/stm32f0-stdperiph/stm32f0xx_spi.o ./system/src/stm32f0-stdperiph/stm32f0xx_syscfg.o ./system/src/stm32f0-stdperiph/stm32f0xx_tim.o ./system/src/stm32f0-stdperiph/stm32f0xx_usart.o ./system/src/stm32f0-stdperiph/stm32f0xx_wwdg.o  ./system/src/newlib/_cxx.o ./system/src/newlib/_exit.o ./system/src/newlib/_sbrk.o ./system/src/newlib/_startup.o ./system/src/newlib/_syscalls.o ./system/src/newlib/assert.o  ./system/src/diag/Trace.o ./system/src/diag/trace_impl.o  ./system/src/cortexm/_initialize_hardware.o ./system/src/cortexm/_reset_hardware.o ./system/src/cortexm/exception_handlers.o  ./system/src/cmsis/system_stm32f0xx.o ./system/src/cmsis/vectors_stm32f0xx.o  ./src/MCU/led.o ./src/MCU/tick.o ./src/MCU/usart2.o  ./src/ADC.o ./src/FIFO.o ./src/Terminal.o ./src/main.o   
+Finished building target: Temperature.elf
+ 
+make --no-print-directory post-build
+Binary
+arm-none-eabi-objcopy -S  -O binary  "Temperature.elf" "Temperature.bin"
+ 
+Invoking: Cross ARM GNU Create Flash Image
+arm-none-eabi-objcopy -O ihex "Temperature.elf"  "Temperature.hex"
+Finished building: Temperature.hex
+ 
+Invoking: Cross ARM GNU Print Size
+arm-none-eabi-size --format=berkeley "Temperature.elf"
+   text	   data	    bss	    dec	    hex	filename
+  25496	    268	   3272	  29036	   716c	Temperature.elf
+Finished building: Temperature.siz
+ 
+03:29:25 **** Incremental Build of configuration Debug for project Temperature ****
+make all 
+Invoking: Cross ARM GNU Print Size
+arm-none-eabi-size --format=berkeley "Temperature.elf"
+   text	   data	    bss	    dec	    hex	filename
+  25496	    268	   3272	  29036	   716c	Temperature.elf
+Finished building: Temperature.siz
+ 
+01:41:41 **** Incremental Build of configuration Debug for project Temperature ****
+make all 
+Building file: ../src/Terminal.c
+Invoking: Cross ARM C Compiler
+arm-none-eabi-gcc -mcpu=cortex-m0 -mthumb -Og -fmessage-length=0 -fsigned-char -ffunction-sections -fdata-sections -ffreestanding -fno-move-loop-invariants -Wall -Wextra  -g3 -DDEBUG -DUSE_FULL_ASSERT -DTRACE -DOS_USE_TRACE_SEMIHOSTING_DEBUG -DSTM32F030 -DUSE_STDPERIPH_DRIVER -DHSE_VALUE=8000000 -I"../include" -I"../system/include" -I"../system/include/cmsis" -I"../system/include/stm32f0-stdperiph" -std=gnu11 -MMD -MP -MF"src/Terminal.d" -MT"src/Terminal.o" -c -o "src/Terminal.o" "../src/Terminal.c"
+../src/Terminal.c: In function 'ProcessData':
+../src/Terminal.c:173:18: warning: comparison of constant '115' with boolean expression is always false [-Wbool-compare]
+  } else if ( 's' == !destination->List[0].Type && 'S' == !destination->List[0].Type)
+                  ^
+../src/Terminal.c:173:55: warning: comparison of constant '83' with boolean expression is always false [-Wbool-compare]
+  } else if ( 's' == !destination->List[0].Type && 'S' == !destination->List[0].Type)
+                                                       ^
+../src/Terminal.c: In function 'RunCommand':
+../src/Terminal.c:271:15: warning: pointer targets in passing argument 1 of 'snprintf' differ in signedness [-Wpointer-sign]
+      snprintf(&message[0], 25, "%d", adcReading);
+               ^
+In file included from /usr/local/gcc-arm-none-eabi-5_3-2016q1/arm-none-eabi/include/stdio.h:29:0,
+                 from ../include/common.h:9,
+                 from ../src/Terminal.c:6:
+/usr/local/gcc-arm-none-eabi-5_3-2016q1/arm-none-eabi/include/stdio.h:247:5: note: expected 'char * restrict' but argument is of type 'unsigned char *'
+ int _EXFUN(snprintf, (char *__restrict, size_t, const char *__restrict, ...)
+     ^
+../src/Terminal.c:276:15: warning: pointer targets in passing argument 1 of 'snprintf' differ in signedness [-Wpointer-sign]
+      snprintf(&message[0], 25, "%d", adcTempCelsius);
+               ^
+In file included from /usr/local/gcc-arm-none-eabi-5_3-2016q1/arm-none-eabi/include/stdio.h:29:0,
+                 from ../include/common.h:9,
+                 from ../src/Terminal.c:6:
+/usr/local/gcc-arm-none-eabi-5_3-2016q1/arm-none-eabi/include/stdio.h:247:5: note: expected 'char * restrict' but argument is of type 'unsigned char *'
+ int _EXFUN(snprintf, (char *__restrict, size_t, const char *__restrict, ...)
+     ^
+../src/Terminal.c:276:32: warning: format '%d' expects argument of type 'int', but argument 4 has type 'long int' [-Wformat=]
+      snprintf(&message[0], 25, "%d", adcTempCelsius);
+                                ^
+../src/Terminal.c:285:61: error: unknown type name 'brooke'
+      uint16_t fracpart = (int)((adcNorm - intpart) * 1000); brooke working on math here to get right fraction
+                                                             ^
+../src/Terminal.c:285:76: error: expected '=', ',', ';', 'asm' or '__attribute__' before 'on'
+      uint16_t fracpart = (int)((adcNorm - intpart) * 1000); brooke working on math here to get right fraction
+                                                                            ^
+../src/Terminal.c:285:15: warning: unused variable 'fracpart' [-Wunused-variable]
+      uint16_t fracpart = (int)((adcNorm - intpart) * 1000); brooke working on math here to get right fraction
+               ^
+make: *** [src/Terminal.o] Error 1
+01:41:50 **** Incremental Build of configuration Debug for project Temperature ****
+make all 
+Building file: ../src/Terminal.c
+Invoking: Cross ARM C Compiler
+arm-none-eabi-gcc -mcpu=cortex-m0 -mthumb -Og -fmessage-length=0 -fsigned-char -ffunction-sections -fdata-sections -ffreestanding -fno-move-loop-invariants -Wall -Wextra  -g3 -DDEBUG -DUSE_FULL_ASSERT -DTRACE -DOS_USE_TRACE_SEMIHOSTING_DEBUG -DSTM32F030 -DUSE_STDPERIPH_DRIVER -DHSE_VALUE=8000000 -I"../include" -I"../system/include" -I"../system/include/cmsis" -I"../system/include/stm32f0-stdperiph" -std=gnu11 -MMD -MP -MF"src/Terminal.d" -MT"src/Terminal.o" -c -o "src/Terminal.o" "../src/Terminal.c"
+../src/Terminal.c: In function 'ProcessData':
+../src/Terminal.c:173:18: warning: comparison of constant '115' with boolean expression is always false [-Wbool-compare]
+  } else if ( 's' == !destination->List[0].Type && 'S' == !destination->List[0].Type)
+                  ^
+../src/Terminal.c:173:55: warning: comparison of constant '83' with boolean expression is always false [-Wbool-compare]
+  } else if ( 's' == !destination->List[0].Type && 'S' == !destination->List[0].Type)
+                                                       ^
+../src/Terminal.c: In function 'RunCommand':
+../src/Terminal.c:271:15: warning: pointer targets in passing argument 1 of 'snprintf' differ in signedness [-Wpointer-sign]
+      snprintf(&message[0], 25, "%d", adcReading);
+               ^
+In file included from /usr/local/gcc-arm-none-eabi-5_3-2016q1/arm-none-eabi/include/stdio.h:29:0,
+                 from ../include/common.h:9,
+                 from ../src/Terminal.c:6:
+/usr/local/gcc-arm-none-eabi-5_3-2016q1/arm-none-eabi/include/stdio.h:247:5: note: expected 'char * restrict' but argument is of type 'unsigned char *'
+ int _EXFUN(snprintf, (char *__restrict, size_t, const char *__restrict, ...)
+     ^
+../src/Terminal.c:276:15: warning: pointer targets in passing argument 1 of 'snprintf' differ in signedness [-Wpointer-sign]
+      snprintf(&message[0], 25, "%d", adcTempCelsius);
+               ^
+In file included from /usr/local/gcc-arm-none-eabi-5_3-2016q1/arm-none-eabi/include/stdio.h:29:0,
+                 from ../include/common.h:9,
+                 from ../src/Terminal.c:6:
+/usr/local/gcc-arm-none-eabi-5_3-2016q1/arm-none-eabi/include/stdio.h:247:5: note: expected 'char * restrict' but argument is of type 'unsigned char *'
+ int _EXFUN(snprintf, (char *__restrict, size_t, const char *__restrict, ...)
+     ^
+../src/Terminal.c:276:32: warning: format '%d' expects argument of type 'int', but argument 4 has type 'long int' [-Wformat=]
+      snprintf(&message[0], 25, "%d", adcTempCelsius);
+                                ^
+../src/Terminal.c:287:15: warning: pointer targets in passing argument 1 of 'snprintf' differ in signedness [-Wpointer-sign]
+      snprintf(&message[0], 25, "%d.%03d", intpart, fracpart);
+               ^
+In file included from /usr/local/gcc-arm-none-eabi-5_3-2016q1/arm-none-eabi/include/stdio.h:29:0,
+                 from ../include/common.h:9,
+                 from ../src/Terminal.c:6:
+/usr/local/gcc-arm-none-eabi-5_3-2016q1/arm-none-eabi/include/stdio.h:247:5: note: expected 'char * restrict' but argument is of type 'unsigned char *'
+ int _EXFUN(snprintf, (char *__restrict, size_t, const char *__restrict, ...)
+     ^
+Finished building: ../src/Terminal.c
+ 
+Building target: Temperature.elf
+Invoking: Cross ARM C++ Linker
+arm-none-eabi-g++ -mcpu=cortex-m0 -mthumb -Og -fmessage-length=0 -fsigned-char -ffunction-sections -fdata-sections -ffreestanding -fno-move-loop-invariants -Wall -Wextra  -g3 -T mem.ld -T libs.ld -T sections.ld -nostartfiles -Xlinker --gc-sections -L"../ldscripts" -Wl,-Map,"Temperature.map" --specs=nano.specs -o "Temperature.elf"  ./system/src/stm32f0-stdperiph/stm32f0xx_adc.o ./system/src/stm32f0-stdperiph/stm32f0xx_can.o ./system/src/stm32f0-stdperiph/stm32f0xx_cec.o ./system/src/stm32f0-stdperiph/stm32f0xx_comp.o ./system/src/stm32f0-stdperiph/stm32f0xx_crc.o ./system/src/stm32f0-stdperiph/stm32f0xx_crs.o ./system/src/stm32f0-stdperiph/stm32f0xx_dac.o ./system/src/stm32f0-stdperiph/stm32f0xx_dbgmcu.o ./system/src/stm32f0-stdperiph/stm32f0xx_dma.o ./system/src/stm32f0-stdperiph/stm32f0xx_exti.o ./system/src/stm32f0-stdperiph/stm32f0xx_flash.o ./system/src/stm32f0-stdperiph/stm32f0xx_gpio.o ./system/src/stm32f0-stdperiph/stm32f0xx_i2c.o ./system/src/stm32f0-stdperiph/stm32f0xx_iwdg.o ./system/src/stm32f0-stdperiph/stm32f0xx_misc.o ./system/src/stm32f0-stdperiph/stm32f0xx_pwr.o ./system/src/stm32f0-stdperiph/stm32f0xx_rcc.o ./system/src/stm32f0-stdperiph/stm32f0xx_rtc.o ./system/src/stm32f0-stdperiph/stm32f0xx_spi.o ./system/src/stm32f0-stdperiph/stm32f0xx_syscfg.o ./system/src/stm32f0-stdperiph/stm32f0xx_tim.o ./system/src/stm32f0-stdperiph/stm32f0xx_usart.o ./system/src/stm32f0-stdperiph/stm32f0xx_wwdg.o  ./system/src/newlib/_cxx.o ./system/src/newlib/_exit.o ./system/src/newlib/_sbrk.o ./system/src/newlib/_startup.o ./system/src/newlib/_syscalls.o ./system/src/newlib/assert.o  ./system/src/diag/Trace.o ./system/src/diag/trace_impl.o  ./system/src/cortexm/_initialize_hardware.o ./system/src/cortexm/_reset_hardware.o ./system/src/cortexm/exception_handlers.o  ./system/src/cmsis/system_stm32f0xx.o ./system/src/cmsis/vectors_stm32f0xx.o  ./src/MCU/led.o ./src/MCU/tick.o ./src/MCU/usart2.o  ./src/ADC.o ./src/FIFO.o ./src/Terminal.o ./src/main.o   
+Finished building target: Temperature.elf
+ 
+make --no-print-directory post-build
+Binary
+arm-none-eabi-objcopy -S  -O binary  "Temperature.elf" "Temperature.bin"
+ 
+Invoking: Cross ARM GNU Create Flash Image
+arm-none-eabi-objcopy -O ihex "Temperature.elf"  "Temperature.hex"
+Finished building: Temperature.hex
+ 
+Invoking: Cross ARM GNU Print Size
+arm-none-eabi-size --format=berkeley "Temperature.elf"
+   text	   data	    bss	    dec	    hex	filename
+  25496	    268	   3272	  29036	   716c	Temperature.elf
+Finished building: Temperature.siz
+ 
+01:41:57 **** Incremental Build of configuration Debug for project Temperature ****
+make all 
+Invoking: Cross ARM GNU Print Size
+arm-none-eabi-size --format=berkeley "Temperature.elf"
+   text	   data	    bss	    dec	    hex	filename
+  25496	    268	   3272	  29036	   716c	Temperature.elf
+Finished building: Temperature.siz
+ 
+01:45:36 **** Incremental Build of configuration Debug for project Temperature ****
+make all 
+Invoking: Cross ARM GNU Print Size
+arm-none-eabi-size --format=berkeley "Temperature.elf"
+   text	   data	    bss	    dec	    hex	filename
+  25496	    268	   3272	  29036	   716c	Temperature.elf
+Finished building: Temperature.siz
+ 
+01:52:23 **** Incremental Build of configuration Debug for project Temperature ****
+make all 
+Building file: ../src/Terminal.c
+Invoking: Cross ARM C Compiler
+arm-none-eabi-gcc -mcpu=cortex-m0 -mthumb -Og -fmessage-length=0 -fsigned-char -ffunction-sections -fdata-sections -ffreestanding -fno-move-loop-invariants -Wall -Wextra  -g3 -DDEBUG -DUSE_FULL_ASSERT -DTRACE -DOS_USE_TRACE_SEMIHOSTING_DEBUG -DSTM32F030 -DUSE_STDPERIPH_DRIVER -DHSE_VALUE=8000000 -I"../include" -I"../system/include" -I"../system/include/cmsis" -I"../system/include/stm32f0-stdperiph" -std=gnu11 -MMD -MP -MF"src/Terminal.d" -MT"src/Terminal.o" -c -o "src/Terminal.o" "../src/Terminal.c"
+../src/Terminal.c: In function 'ProcessData':
+../src/Terminal.c:173:18: warning: comparison of constant '115' with boolean expression is always false [-Wbool-compare]
+  } else if ( 's' == !destination->List[0].Type && 'S' == !destination->List[0].Type)
+                  ^
+../src/Terminal.c:173:55: warning: comparison of constant '83' with boolean expression is always false [-Wbool-compare]
+  } else if ( 's' == !destination->List[0].Type && 'S' == !destination->List[0].Type)
+                                                       ^
+../src/Terminal.c: In function 'RunCommand':
+../src/Terminal.c:271:15: warning: pointer targets in passing argument 1 of 'snprintf' differ in signedness [-Wpointer-sign]
+      snprintf(&message[0], 25, "%d", adcReading);
+               ^
+In file included from /usr/local/gcc-arm-none-eabi-5_3-2016q1/arm-none-eabi/include/stdio.h:29:0,
+                 from ../include/common.h:9,
+                 from ../src/Terminal.c:6:
+/usr/local/gcc-arm-none-eabi-5_3-2016q1/arm-none-eabi/include/stdio.h:247:5: note: expected 'char * restrict' but argument is of type 'unsigned char *'
+ int _EXFUN(snprintf, (char *__restrict, size_t, const char *__restrict, ...)
+     ^
+../src/Terminal.c:276:15: warning: pointer targets in passing argument 1 of 'snprintf' differ in signedness [-Wpointer-sign]
+      snprintf(&message[0], 25, "%d", adcTempCelsius);
+               ^
+In file included from /usr/local/gcc-arm-none-eabi-5_3-2016q1/arm-none-eabi/include/stdio.h:29:0,
+                 from ../include/common.h:9,
+                 from ../src/Terminal.c:6:
+/usr/local/gcc-arm-none-eabi-5_3-2016q1/arm-none-eabi/include/stdio.h:247:5: note: expected 'char * restrict' but argument is of type 'unsigned char *'
+ int _EXFUN(snprintf, (char *__restrict, size_t, const char *__restrict, ...)
+     ^
+../src/Terminal.c:276:32: warning: format '%d' expects argument of type 'int', but argument 4 has type 'long int' [-Wformat=]
+      snprintf(&message[0], 25, "%d", adcTempCelsius);
+                                ^
+../src/Terminal.c:284:6: error: invalid type argument of unary '*' (have 'float')
+      *adcNorm = 0; // temp C range -40 to 105
+      ^
+../src/Terminal.c:288:15: warning: pointer targets in passing argument 1 of 'snprintf' differ in signedness [-Wpointer-sign]
+      snprintf(&message[0], 25, "%d.%03d", intpart, fracpart);
+               ^
+In file included from /usr/local/gcc-arm-none-eabi-5_3-2016q1/arm-none-eabi/include/stdio.h:29:0,
+                 from ../include/common.h:9,
+                 from ../src/Terminal.c:6:
+/usr/local/gcc-arm-none-eabi-5_3-2016q1/arm-none-eabi/include/stdio.h:247:5: note: expected 'char * restrict' but argument is of type 'unsigned char *'
+ int _EXFUN(snprintf, (char *__restrict, size_t, const char *__restrict, ...)
+     ^
+make: *** [src/Terminal.o] Error 1
+01:52:30 **** Incremental Build of configuration Debug for project Temperature ****
+make all 
+Building file: ../src/Terminal.c
+Invoking: Cross ARM C Compiler
+arm-none-eabi-gcc -mcpu=cortex-m0 -mthumb -Og -fmessage-length=0 -fsigned-char -ffunction-sections -fdata-sections -ffreestanding -fno-move-loop-invariants -Wall -Wextra  -g3 -DDEBUG -DUSE_FULL_ASSERT -DTRACE -DOS_USE_TRACE_SEMIHOSTING_DEBUG -DSTM32F030 -DUSE_STDPERIPH_DRIVER -DHSE_VALUE=8000000 -I"../include" -I"../system/include" -I"../system/include/cmsis" -I"../system/include/stm32f0-stdperiph" -std=gnu11 -MMD -MP -MF"src/Terminal.d" -MT"src/Terminal.o" -c -o "src/Terminal.o" "../src/Terminal.c"
+../src/Terminal.c: In function 'ProcessData':
+../src/Terminal.c:173:18: warning: comparison of constant '115' with boolean expression is always false [-Wbool-compare]
+  } else if ( 's' == !destination->List[0].Type && 'S' == !destination->List[0].Type)
+                  ^
+../src/Terminal.c:173:55: warning: comparison of constant '83' with boolean expression is always false [-Wbool-compare]
+  } else if ( 's' == !destination->List[0].Type && 'S' == !destination->List[0].Type)
+                                                       ^
+../src/Terminal.c: In function 'RunCommand':
+../src/Terminal.c:271:15: warning: pointer targets in passing argument 1 of 'snprintf' differ in signedness [-Wpointer-sign]
+      snprintf(&message[0], 25, "%d", adcReading);
+               ^
+In file included from /usr/local/gcc-arm-none-eabi-5_3-2016q1/arm-none-eabi/include/stdio.h:29:0,
+                 from ../include/common.h:9,
+                 from ../src/Terminal.c:6:
+/usr/local/gcc-arm-none-eabi-5_3-2016q1/arm-none-eabi/include/stdio.h:247:5: note: expected 'char * restrict' but argument is of type 'unsigned char *'
+ int _EXFUN(snprintf, (char *__restrict, size_t, const char *__restrict, ...)
+     ^
+../src/Terminal.c:276:15: warning: pointer targets in passing argument 1 of 'snprintf' differ in signedness [-Wpointer-sign]
+      snprintf(&message[0], 25, "%d", adcTempCelsius);
+               ^
+In file included from /usr/local/gcc-arm-none-eabi-5_3-2016q1/arm-none-eabi/include/stdio.h:29:0,
+                 from ../include/common.h:9,
+                 from ../src/Terminal.c:6:
+/usr/local/gcc-arm-none-eabi-5_3-2016q1/arm-none-eabi/include/stdio.h:247:5: note: expected 'char * restrict' but argument is of type 'unsigned char *'
+ int _EXFUN(snprintf, (char *__restrict, size_t, const char *__restrict, ...)
+     ^
+../src/Terminal.c:276:32: warning: format '%d' expects argument of type 'int', but argument 4 has type 'long int' [-Wformat=]
+      snprintf(&message[0], 25, "%d", adcTempCelsius);
+                                ^
+../src/Terminal.c:284:6: error: invalid type argument of unary '*' (have 'float')
+      *adcNorm = 0; // temp C range -40 to 105
+      ^
+../src/Terminal.c:288:15: warning: pointer targets in passing argument 1 of 'snprintf' differ in signedness [-Wpointer-sign]
+      snprintf(&message[0], 25, "%d.%03d", intpart, fracpart);
+               ^
+In file included from /usr/local/gcc-arm-none-eabi-5_3-2016q1/arm-none-eabi/include/stdio.h:29:0,
+                 from ../include/common.h:9,
+                 from ../src/Terminal.c:6:
+/usr/local/gcc-arm-none-eabi-5_3-2016q1/arm-none-eabi/include/stdio.h:247:5: note: expected 'char * restrict' but argument is of type 'unsigned char *'
+ int _EXFUN(snprintf, (char *__restrict, size_t, const char *__restrict, ...)
+     ^
+make: *** [src/Terminal.o] Error 1
+01:53:43 **** Incremental Build of configuration Debug for project Temperature ****
+make all 
+Building file: ../src/Terminal.c
+Invoking: Cross ARM C Compiler
+arm-none-eabi-gcc -mcpu=cortex-m0 -mthumb -Og -fmessage-length=0 -fsigned-char -ffunction-sections -fdata-sections -ffreestanding -fno-move-loop-invariants -Wall -Wextra  -g3 -DDEBUG -DUSE_FULL_ASSERT -DTRACE -DOS_USE_TRACE_SEMIHOSTING_DEBUG -DSTM32F030 -DUSE_STDPERIPH_DRIVER -DHSE_VALUE=8000000 -I"../include" -I"../system/include" -I"../system/include/cmsis" -I"../system/include/stm32f0-stdperiph" -std=gnu11 -MMD -MP -MF"src/Terminal.d" -MT"src/Terminal.o" -c -o "src/Terminal.o" "../src/Terminal.c"
+../src/Terminal.c: In function 'ProcessData':
+../src/Terminal.c:173:18: warning: comparison of constant '115' with boolean expression is always false [-Wbool-compare]
+  } else if ( 's' == !destination->List[0].Type && 'S' == !destination->List[0].Type)
+                  ^
+../src/Terminal.c:173:55: warning: comparison of constant '83' with boolean expression is always false [-Wbool-compare]
+  } else if ( 's' == !destination->List[0].Type && 'S' == !destination->List[0].Type)
+                                                       ^
+../src/Terminal.c: In function 'RunCommand':
+../src/Terminal.c:271:15: warning: pointer targets in passing argument 1 of 'snprintf' differ in signedness [-Wpointer-sign]
+      snprintf(&message[0], 25, "%d", adcReading);
+               ^
+In file included from /usr/local/gcc-arm-none-eabi-5_3-2016q1/arm-none-eabi/include/stdio.h:29:0,
+                 from ../include/common.h:9,
+                 from ../src/Terminal.c:6:
+/usr/local/gcc-arm-none-eabi-5_3-2016q1/arm-none-eabi/include/stdio.h:247:5: note: expected 'char * restrict' but argument is of type 'unsigned char *'
+ int _EXFUN(snprintf, (char *__restrict, size_t, const char *__restrict, ...)
+     ^
+../src/Terminal.c:276:15: warning: pointer targets in passing argument 1 of 'snprintf' differ in signedness [-Wpointer-sign]
+      snprintf(&message[0], 25, "%d", adcTempCelsius);
+               ^
+In file included from /usr/local/gcc-arm-none-eabi-5_3-2016q1/arm-none-eabi/include/stdio.h:29:0,
+                 from ../include/common.h:9,
+                 from ../src/Terminal.c:6:
+/usr/local/gcc-arm-none-eabi-5_3-2016q1/arm-none-eabi/include/stdio.h:247:5: note: expected 'char * restrict' but argument is of type 'unsigned char *'
+ int _EXFUN(snprintf, (char *__restrict, size_t, const char *__restrict, ...)
+     ^
+../src/Terminal.c:276:32: warning: format '%d' expects argument of type 'int', but argument 4 has type 'long int' [-Wformat=]
+      snprintf(&message[0], 25, "%d", adcTempCelsius);
+                                ^
+../src/Terminal.c:288:15: warning: pointer targets in passing argument 1 of 'snprintf' differ in signedness [-Wpointer-sign]
+      snprintf(&message[0], 25, "%d.%03d", intpart, fracpart);
+               ^
+In file included from /usr/local/gcc-arm-none-eabi-5_3-2016q1/arm-none-eabi/include/stdio.h:29:0,
+                 from ../include/common.h:9,
+                 from ../src/Terminal.c:6:
+/usr/local/gcc-arm-none-eabi-5_3-2016q1/arm-none-eabi/include/stdio.h:247:5: note: expected 'char * restrict' but argument is of type 'unsigned char *'
+ int _EXFUN(snprintf, (char *__restrict, size_t, const char *__restrict, ...)
+     ^
+Finished building: ../src/Terminal.c
+ 
+Building target: Temperature.elf
+Invoking: Cross ARM C++ Linker
+arm-none-eabi-g++ -mcpu=cortex-m0 -mthumb -Og -fmessage-length=0 -fsigned-char -ffunction-sections -fdata-sections -ffreestanding -fno-move-loop-invariants -Wall -Wextra  -g3 -T mem.ld -T libs.ld -T sections.ld -nostartfiles -Xlinker --gc-sections -L"../ldscripts" -Wl,-Map,"Temperature.map" --specs=nano.specs -o "Temperature.elf"  ./system/src/stm32f0-stdperiph/stm32f0xx_adc.o ./system/src/stm32f0-stdperiph/stm32f0xx_can.o ./system/src/stm32f0-stdperiph/stm32f0xx_cec.o ./system/src/stm32f0-stdperiph/stm32f0xx_comp.o ./system/src/stm32f0-stdperiph/stm32f0xx_crc.o ./system/src/stm32f0-stdperiph/stm32f0xx_crs.o ./system/src/stm32f0-stdperiph/stm32f0xx_dac.o ./system/src/stm32f0-stdperiph/stm32f0xx_dbgmcu.o ./system/src/stm32f0-stdperiph/stm32f0xx_dma.o ./system/src/stm32f0-stdperiph/stm32f0xx_exti.o ./system/src/stm32f0-stdperiph/stm32f0xx_flash.o ./system/src/stm32f0-stdperiph/stm32f0xx_gpio.o ./system/src/stm32f0-stdperiph/stm32f0xx_i2c.o ./system/src/stm32f0-stdperiph/stm32f0xx_iwdg.o ./system/src/stm32f0-stdperiph/stm32f0xx_misc.o ./system/src/stm32f0-stdperiph/stm32f0xx_pwr.o ./system/src/stm32f0-stdperiph/stm32f0xx_rcc.o ./system/src/stm32f0-stdperiph/stm32f0xx_rtc.o ./system/src/stm32f0-stdperiph/stm32f0xx_spi.o ./system/src/stm32f0-stdperiph/stm32f0xx_syscfg.o ./system/src/stm32f0-stdperiph/stm32f0xx_tim.o ./system/src/stm32f0-stdperiph/stm32f0xx_usart.o ./system/src/stm32f0-stdperiph/stm32f0xx_wwdg.o  ./system/src/newlib/_cxx.o ./system/src/newlib/_exit.o ./system/src/newlib/_sbrk.o ./system/src/newlib/_startup.o ./system/src/newlib/_syscalls.o ./system/src/newlib/assert.o  ./system/src/diag/Trace.o ./system/src/diag/trace_impl.o  ./system/src/cortexm/_initialize_hardware.o ./system/src/cortexm/_reset_hardware.o ./system/src/cortexm/exception_handlers.o  ./system/src/cmsis/system_stm32f0xx.o ./system/src/cmsis/vectors_stm32f0xx.o  ./src/MCU/led.o ./src/MCU/tick.o ./src/MCU/usart2.o  ./src/ADC.o ./src/FIFO.o ./src/Terminal.o ./src/main.o   
+Finished building target: Temperature.elf
+ 
+make --no-print-directory post-build
+Binary
+arm-none-eabi-objcopy -S  -O binary  "Temperature.elf" "Temperature.bin"
+ 
+Invoking: Cross ARM GNU Create Flash Image
+arm-none-eabi-objcopy -O ihex "Temperature.elf"  "Temperature.hex"
+Finished building: Temperature.hex
+ 
+Invoking: Cross ARM GNU Print Size
+arm-none-eabi-size --format=berkeley "Temperature.elf"
+   text	   data	    bss	    dec	    hex	filename
+  23848	    268	   3272	  27388	   6afc	Temperature.elf
+Finished building: Temperature.siz
+ 
+01:53:51 **** Incremental Build of configuration Debug for project Temperature ****
+make all 
+Invoking: Cross ARM GNU Print Size
+arm-none-eabi-size --format=berkeley "Temperature.elf"
+   text	   data	    bss	    dec	    hex	filename
+  23848	    268	   3272	  27388	   6afc	Temperature.elf
+Finished building: Temperature.siz
+ 
+01:54:44 **** Incremental Build of configuration Debug for project Temperature ****
+make all 
+Building file: ../src/Terminal.c
+Invoking: Cross ARM C Compiler
+arm-none-eabi-gcc -mcpu=cortex-m0 -mthumb -Og -fmessage-length=0 -fsigned-char -ffunction-sections -fdata-sections -ffreestanding -fno-move-loop-invariants -Wall -Wextra  -g3 -DDEBUG -DUSE_FULL_ASSERT -DTRACE -DOS_USE_TRACE_SEMIHOSTING_DEBUG -DSTM32F030 -DUSE_STDPERIPH_DRIVER -DHSE_VALUE=8000000 -I"../include" -I"../system/include" -I"../system/include/cmsis" -I"../system/include/stm32f0-stdperiph" -std=gnu11 -MMD -MP -MF"src/Terminal.d" -MT"src/Terminal.o" -c -o "src/Terminal.o" "../src/Terminal.c"
+../src/Terminal.c: In function 'ProcessData':
+../src/Terminal.c:173:18: warning: comparison of constant '115' with boolean expression is always false [-Wbool-compare]
+  } else if ( 's' == !destination->List[0].Type && 'S' == !destination->List[0].Type)
+                  ^
+../src/Terminal.c:173:55: warning: comparison of constant '83' with boolean expression is always false [-Wbool-compare]
+  } else if ( 's' == !destination->List[0].Type && 'S' == !destination->List[0].Type)
+                                                       ^
+../src/Terminal.c: In function 'RunCommand':
+../src/Terminal.c:271:15: warning: pointer targets in passing argument 1 of 'snprintf' differ in signedness [-Wpointer-sign]
+      snprintf(&message[0], 25, "%d", adcReading);
+               ^
+In file included from /usr/local/gcc-arm-none-eabi-5_3-2016q1/arm-none-eabi/include/stdio.h:29:0,
+                 from ../include/common.h:9,
+                 from ../src/Terminal.c:6:
+/usr/local/gcc-arm-none-eabi-5_3-2016q1/arm-none-eabi/include/stdio.h:247:5: note: expected 'char * restrict' but argument is of type 'unsigned char *'
+ int _EXFUN(snprintf, (char *__restrict, size_t, const char *__restrict, ...)
+     ^
+../src/Terminal.c:276:15: warning: pointer targets in passing argument 1 of 'snprintf' differ in signedness [-Wpointer-sign]
+      snprintf(&message[0], 25, "%d", adcTempCelsius);
+               ^
+In file included from /usr/local/gcc-arm-none-eabi-5_3-2016q1/arm-none-eabi/include/stdio.h:29:0,
+                 from ../include/common.h:9,
+                 from ../src/Terminal.c:6:
+/usr/local/gcc-arm-none-eabi-5_3-2016q1/arm-none-eabi/include/stdio.h:247:5: note: expected 'char * restrict' but argument is of type 'unsigned char *'
+ int _EXFUN(snprintf, (char *__restrict, size_t, const char *__restrict, ...)
+     ^
+../src/Terminal.c:276:32: warning: format '%d' expects argument of type 'int', but argument 4 has type 'long int' [-Wformat=]
+      snprintf(&message[0], 25, "%d", adcTempCelsius);
+                                ^
+../src/Terminal.c:288:15: warning: pointer targets in passing argument 1 of 'snprintf' differ in signedness [-Wpointer-sign]
+      snprintf(&message[0], 25, "%d.%03d", intpart, fracpart);
+               ^
+In file included from /usr/local/gcc-arm-none-eabi-5_3-2016q1/arm-none-eabi/include/stdio.h:29:0,
+                 from ../include/common.h:9,
+                 from ../src/Terminal.c:6:
+/usr/local/gcc-arm-none-eabi-5_3-2016q1/arm-none-eabi/include/stdio.h:247:5: note: expected 'char * restrict' but argument is of type 'unsigned char *'
+ int _EXFUN(snprintf, (char *__restrict, size_t, const char *__restrict, ...)
+     ^
+Finished building: ../src/Terminal.c
+ 
+Building target: Temperature.elf
+Invoking: Cross ARM C++ Linker
+arm-none-eabi-g++ -mcpu=cortex-m0 -mthumb -Og -fmessage-length=0 -fsigned-char -ffunction-sections -fdata-sections -ffreestanding -fno-move-loop-invariants -Wall -Wextra  -g3 -T mem.ld -T libs.ld -T sections.ld -nostartfiles -Xlinker --gc-sections -L"../ldscripts" -Wl,-Map,"Temperature.map" --specs=nano.specs -o "Temperature.elf"  ./system/src/stm32f0-stdperiph/stm32f0xx_adc.o ./system/src/stm32f0-stdperiph/stm32f0xx_can.o ./system/src/stm32f0-stdperiph/stm32f0xx_cec.o ./system/src/stm32f0-stdperiph/stm32f0xx_comp.o ./system/src/stm32f0-stdperiph/stm32f0xx_crc.o ./system/src/stm32f0-stdperiph/stm32f0xx_crs.o ./system/src/stm32f0-stdperiph/stm32f0xx_dac.o ./system/src/stm32f0-stdperiph/stm32f0xx_dbgmcu.o ./system/src/stm32f0-stdperiph/stm32f0xx_dma.o ./system/src/stm32f0-stdperiph/stm32f0xx_exti.o ./system/src/stm32f0-stdperiph/stm32f0xx_flash.o ./system/src/stm32f0-stdperiph/stm32f0xx_gpio.o ./system/src/stm32f0-stdperiph/stm32f0xx_i2c.o ./system/src/stm32f0-stdperiph/stm32f0xx_iwdg.o ./system/src/stm32f0-stdperiph/stm32f0xx_misc.o ./system/src/stm32f0-stdperiph/stm32f0xx_pwr.o ./system/src/stm32f0-stdperiph/stm32f0xx_rcc.o ./system/src/stm32f0-stdperiph/stm32f0xx_rtc.o ./system/src/stm32f0-stdperiph/stm32f0xx_spi.o ./system/src/stm32f0-stdperiph/stm32f0xx_syscfg.o ./system/src/stm32f0-stdperiph/stm32f0xx_tim.o ./system/src/stm32f0-stdperiph/stm32f0xx_usart.o ./system/src/stm32f0-stdperiph/stm32f0xx_wwdg.o  ./system/src/newlib/_cxx.o ./system/src/newlib/_exit.o ./system/src/newlib/_sbrk.o ./system/src/newlib/_startup.o ./system/src/newlib/_syscalls.o ./system/src/newlib/assert.o  ./system/src/diag/Trace.o ./system/src/diag/trace_impl.o  ./system/src/cortexm/_initialize_hardware.o ./system/src/cortexm/_reset_hardware.o ./system/src/cortexm/exception_handlers.o  ./system/src/cmsis/system_stm32f0xx.o ./system/src/cmsis/vectors_stm32f0xx.o  ./src/MCU/led.o ./src/MCU/tick.o ./src/MCU/usart2.o  ./src/ADC.o ./src/FIFO.o ./src/Terminal.o ./src/main.o   
+Finished building target: Temperature.elf
+ 
+make --no-print-directory post-build
+Binary
+arm-none-eabi-objcopy -S  -O binary  "Temperature.elf" "Temperature.bin"
+ 
+Invoking: Cross ARM GNU Create Flash Image
+arm-none-eabi-objcopy -O ihex "Temperature.elf"  "Temperature.hex"
+Finished building: Temperature.hex
+ 
+Invoking: Cross ARM GNU Print Size
+arm-none-eabi-size --format=berkeley "Temperature.elf"
+   text	   data	    bss	    dec	    hex	filename
+  23848	    268	   3272	  27388	   6afc	Temperature.elf
+Finished building: Temperature.siz
+ 
+01:54:57 **** Incremental Build of configuration Debug for project Temperature ****
+make all 
+Building file: ../src/Terminal.c
+Invoking: Cross ARM C Compiler
+arm-none-eabi-gcc -mcpu=cortex-m0 -mthumb -Og -fmessage-length=0 -fsigned-char -ffunction-sections -fdata-sections -ffreestanding -fno-move-loop-invariants -Wall -Wextra  -g3 -DDEBUG -DUSE_FULL_ASSERT -DTRACE -DOS_USE_TRACE_SEMIHOSTING_DEBUG -DSTM32F030 -DUSE_STDPERIPH_DRIVER -DHSE_VALUE=8000000 -I"../include" -I"../system/include" -I"../system/include/cmsis" -I"../system/include/stm32f0-stdperiph" -std=gnu11 -MMD -MP -MF"src/Terminal.d" -MT"src/Terminal.o" -c -o "src/Terminal.o" "../src/Terminal.c"
+../src/Terminal.c: In function 'ProcessData':
+../src/Terminal.c:173:18: warning: comparison of constant '115' with boolean expression is always false [-Wbool-compare]
+  } else if ( 's' == !destination->List[0].Type && 'S' == !destination->List[0].Type)
+                  ^
+../src/Terminal.c:173:55: warning: comparison of constant '83' with boolean expression is always false [-Wbool-compare]
+  } else if ( 's' == !destination->List[0].Type && 'S' == !destination->List[0].Type)
+                                                       ^
+../src/Terminal.c: In function 'RunCommand':
+../src/Terminal.c:271:15: warning: pointer targets in passing argument 1 of 'snprintf' differ in signedness [-Wpointer-sign]
+      snprintf(&message[0], 25, "%d", adcReading);
+               ^
+In file included from /usr/local/gcc-arm-none-eabi-5_3-2016q1/arm-none-eabi/include/stdio.h:29:0,
+                 from ../include/common.h:9,
+                 from ../src/Terminal.c:6:
+/usr/local/gcc-arm-none-eabi-5_3-2016q1/arm-none-eabi/include/stdio.h:247:5: note: expected 'char * restrict' but argument is of type 'unsigned char *'
+ int _EXFUN(snprintf, (char *__restrict, size_t, const char *__restrict, ...)
+     ^
+../src/Terminal.c:276:15: warning: pointer targets in passing argument 1 of 'snprintf' differ in signedness [-Wpointer-sign]
+      snprintf(&message[0], 25, "%d", adcTempCelsius);
+               ^
+In file included from /usr/local/gcc-arm-none-eabi-5_3-2016q1/arm-none-eabi/include/stdio.h:29:0,
+                 from ../include/common.h:9,
+                 from ../src/Terminal.c:6:
+/usr/local/gcc-arm-none-eabi-5_3-2016q1/arm-none-eabi/include/stdio.h:247:5: note: expected 'char * restrict' but argument is of type 'unsigned char *'
+ int _EXFUN(snprintf, (char *__restrict, size_t, const char *__restrict, ...)
+     ^
+../src/Terminal.c:276:32: warning: format '%d' expects argument of type 'int', but argument 4 has type 'long int' [-Wformat=]
+      snprintf(&message[0], 25, "%d", adcTempCelsius);
+                                ^
+../src/Terminal.c:287:15: warning: pointer targets in passing argument 1 of 'snprintf' differ in signedness [-Wpointer-sign]
+      snprintf(&message[0], 25, "%d.%03d", intpart, fracpart);
+               ^
+In file included from /usr/local/gcc-arm-none-eabi-5_3-2016q1/arm-none-eabi/include/stdio.h:29:0,
+                 from ../include/common.h:9,
+                 from ../src/Terminal.c:6:
+/usr/local/gcc-arm-none-eabi-5_3-2016q1/arm-none-eabi/include/stdio.h:247:5: note: expected 'char * restrict' but argument is of type 'unsigned char *'
+ int _EXFUN(snprintf, (char *__restrict, size_t, const char *__restrict, ...)
+     ^
+Finished building: ../src/Terminal.c
+ 
+Building target: Temperature.elf
+Invoking: Cross ARM C++ Linker
+arm-none-eabi-g++ -mcpu=cortex-m0 -mthumb -Og -fmessage-length=0 -fsigned-char -ffunction-sections -fdata-sections -ffreestanding -fno-move-loop-invariants -Wall -Wextra  -g3 -T mem.ld -T libs.ld -T sections.ld -nostartfiles -Xlinker --gc-sections -L"../ldscripts" -Wl,-Map,"Temperature.map" --specs=nano.specs -o "Temperature.elf"  ./system/src/stm32f0-stdperiph/stm32f0xx_adc.o ./system/src/stm32f0-stdperiph/stm32f0xx_can.o ./system/src/stm32f0-stdperiph/stm32f0xx_cec.o ./system/src/stm32f0-stdperiph/stm32f0xx_comp.o ./system/src/stm32f0-stdperiph/stm32f0xx_crc.o ./system/src/stm32f0-stdperiph/stm32f0xx_crs.o ./system/src/stm32f0-stdperiph/stm32f0xx_dac.o ./system/src/stm32f0-stdperiph/stm32f0xx_dbgmcu.o ./system/src/stm32f0-stdperiph/stm32f0xx_dma.o ./system/src/stm32f0-stdperiph/stm32f0xx_exti.o ./system/src/stm32f0-stdperiph/stm32f0xx_flash.o ./system/src/stm32f0-stdperiph/stm32f0xx_gpio.o ./system/src/stm32f0-stdperiph/stm32f0xx_i2c.o ./system/src/stm32f0-stdperiph/stm32f0xx_iwdg.o ./system/src/stm32f0-stdperiph/stm32f0xx_misc.o ./system/src/stm32f0-stdperiph/stm32f0xx_pwr.o ./system/src/stm32f0-stdperiph/stm32f0xx_rcc.o ./system/src/stm32f0-stdperiph/stm32f0xx_rtc.o ./system/src/stm32f0-stdperiph/stm32f0xx_spi.o ./system/src/stm32f0-stdperiph/stm32f0xx_syscfg.o ./system/src/stm32f0-stdperiph/stm32f0xx_tim.o ./system/src/stm32f0-stdperiph/stm32f0xx_usart.o ./system/src/stm32f0-stdperiph/stm32f0xx_wwdg.o  ./system/src/newlib/_cxx.o ./system/src/newlib/_exit.o ./system/src/newlib/_sbrk.o ./system/src/newlib/_startup.o ./system/src/newlib/_syscalls.o ./system/src/newlib/assert.o  ./system/src/diag/Trace.o ./system/src/diag/trace_impl.o  ./system/src/cortexm/_initialize_hardware.o ./system/src/cortexm/_reset_hardware.o ./system/src/cortexm/exception_handlers.o  ./system/src/cmsis/system_stm32f0xx.o ./system/src/cmsis/vectors_stm32f0xx.o  ./src/MCU/led.o ./src/MCU/tick.o ./src/MCU/usart2.o  ./src/ADC.o ./src/FIFO.o ./src/Terminal.o ./src/main.o   
+Finished building target: Temperature.elf
+ 
+make --no-print-directory post-build
+Binary
+arm-none-eabi-objcopy -S  -O binary  "Temperature.elf" "Temperature.bin"
+ 
+Invoking: Cross ARM GNU Create Flash Image
+arm-none-eabi-objcopy -O ihex "Temperature.elf"  "Temperature.hex"
+Finished building: Temperature.hex
+ 
+Invoking: Cross ARM GNU Print Size
+arm-none-eabi-size --format=berkeley "Temperature.elf"
+   text	   data	    bss	    dec	    hex	filename
+  25496	    268	   3272	  29036	   716c	Temperature.elf
+Finished building: Temperature.siz
+ 
+01:56:03 **** Incremental Build of configuration Debug for project Temperature ****
+make all 
+Building file: ../src/Terminal.c
+Invoking: Cross ARM C Compiler
+arm-none-eabi-gcc -mcpu=cortex-m0 -mthumb -Og -fmessage-length=0 -fsigned-char -ffunction-sections -fdata-sections -ffreestanding -fno-move-loop-invariants -Wall -Wextra  -g3 -DDEBUG -DUSE_FULL_ASSERT -DTRACE -DOS_USE_TRACE_SEMIHOSTING_DEBUG -DSTM32F030 -DUSE_STDPERIPH_DRIVER -DHSE_VALUE=8000000 -I"../include" -I"../system/include" -I"../system/include/cmsis" -I"../system/include/stm32f0-stdperiph" -std=gnu11 -MMD -MP -MF"src/Terminal.d" -MT"src/Terminal.o" -c -o "src/Terminal.o" "../src/Terminal.c"
+../src/Terminal.c: In function 'ProcessData':
+../src/Terminal.c:173:18: warning: comparison of constant '115' with boolean expression is always false [-Wbool-compare]
+  } else if ( 's' == !destination->List[0].Type && 'S' == !destination->List[0].Type)
+                  ^
+../src/Terminal.c:173:55: warning: comparison of constant '83' with boolean expression is always false [-Wbool-compare]
+  } else if ( 's' == !destination->List[0].Type && 'S' == !destination->List[0].Type)
+                                                       ^
+../src/Terminal.c: In function 'RunCommand':
+../src/Terminal.c:271:15: warning: pointer targets in passing argument 1 of 'snprintf' differ in signedness [-Wpointer-sign]
+      snprintf(&message[0], 25, "%d", adcReading);
+               ^
+In file included from /usr/local/gcc-arm-none-eabi-5_3-2016q1/arm-none-eabi/include/stdio.h:29:0,
+                 from ../include/common.h:9,
+                 from ../src/Terminal.c:6:
+/usr/local/gcc-arm-none-eabi-5_3-2016q1/arm-none-eabi/include/stdio.h:247:5: note: expected 'char * restrict' but argument is of type 'unsigned char *'
+ int _EXFUN(snprintf, (char *__restrict, size_t, const char *__restrict, ...)
+     ^
+../src/Terminal.c:276:15: warning: pointer targets in passing argument 1 of 'snprintf' differ in signedness [-Wpointer-sign]
+      snprintf(&message[0], 25, "%d", adcTempCelsius);
+               ^
+In file included from /usr/local/gcc-arm-none-eabi-5_3-2016q1/arm-none-eabi/include/stdio.h:29:0,
+                 from ../include/common.h:9,
+                 from ../src/Terminal.c:6:
+/usr/local/gcc-arm-none-eabi-5_3-2016q1/arm-none-eabi/include/stdio.h:247:5: note: expected 'char * restrict' but argument is of type 'unsigned char *'
+ int _EXFUN(snprintf, (char *__restrict, size_t, const char *__restrict, ...)
+     ^
+../src/Terminal.c:276:32: warning: format '%d' expects argument of type 'int', but argument 4 has type 'long int' [-Wformat=]
+      snprintf(&message[0], 25, "%d", adcTempCelsius);
+                                ^
+../src/Terminal.c:288:15: warning: pointer targets in passing argument 1 of 'snprintf' differ in signedness [-Wpointer-sign]
+      snprintf(&message[0], 25, "%d.%03d", intpart, fracpart);
+               ^
+In file included from /usr/local/gcc-arm-none-eabi-5_3-2016q1/arm-none-eabi/include/stdio.h:29:0,
+                 from ../include/common.h:9,
+                 from ../src/Terminal.c:6:
+/usr/local/gcc-arm-none-eabi-5_3-2016q1/arm-none-eabi/include/stdio.h:247:5: note: expected 'char * restrict' but argument is of type 'unsigned char *'
+ int _EXFUN(snprintf, (char *__restrict, size_t, const char *__restrict, ...)
+     ^
+Finished building: ../src/Terminal.c
+ 
+Building target: Temperature.elf
+Invoking: Cross ARM C++ Linker
+arm-none-eabi-g++ -mcpu=cortex-m0 -mthumb -Og -fmessage-length=0 -fsigned-char -ffunction-sections -fdata-sections -ffreestanding -fno-move-loop-invariants -Wall -Wextra  -g3 -T mem.ld -T libs.ld -T sections.ld -nostartfiles -Xlinker --gc-sections -L"../ldscripts" -Wl,-Map,"Temperature.map" --specs=nano.specs -o "Temperature.elf"  ./system/src/stm32f0-stdperiph/stm32f0xx_adc.o ./system/src/stm32f0-stdperiph/stm32f0xx_can.o ./system/src/stm32f0-stdperiph/stm32f0xx_cec.o ./system/src/stm32f0-stdperiph/stm32f0xx_comp.o ./system/src/stm32f0-stdperiph/stm32f0xx_crc.o ./system/src/stm32f0-stdperiph/stm32f0xx_crs.o ./system/src/stm32f0-stdperiph/stm32f0xx_dac.o ./system/src/stm32f0-stdperiph/stm32f0xx_dbgmcu.o ./system/src/stm32f0-stdperiph/stm32f0xx_dma.o ./system/src/stm32f0-stdperiph/stm32f0xx_exti.o ./system/src/stm32f0-stdperiph/stm32f0xx_flash.o ./system/src/stm32f0-stdperiph/stm32f0xx_gpio.o ./system/src/stm32f0-stdperiph/stm32f0xx_i2c.o ./system/src/stm32f0-stdperiph/stm32f0xx_iwdg.o ./system/src/stm32f0-stdperiph/stm32f0xx_misc.o ./system/src/stm32f0-stdperiph/stm32f0xx_pwr.o ./system/src/stm32f0-stdperiph/stm32f0xx_rcc.o ./system/src/stm32f0-stdperiph/stm32f0xx_rtc.o ./system/src/stm32f0-stdperiph/stm32f0xx_spi.o ./system/src/stm32f0-stdperiph/stm32f0xx_syscfg.o ./system/src/stm32f0-stdperiph/stm32f0xx_tim.o ./system/src/stm32f0-stdperiph/stm32f0xx_usart.o ./system/src/stm32f0-stdperiph/stm32f0xx_wwdg.o  ./system/src/newlib/_cxx.o ./system/src/newlib/_exit.o ./system/src/newlib/_sbrk.o ./system/src/newlib/_startup.o ./system/src/newlib/_syscalls.o ./system/src/newlib/assert.o  ./system/src/diag/Trace.o ./system/src/diag/trace_impl.o  ./system/src/cortexm/_initialize_hardware.o ./system/src/cortexm/_reset_hardware.o ./system/src/cortexm/exception_handlers.o  ./system/src/cmsis/system_stm32f0xx.o ./system/src/cmsis/vectors_stm32f0xx.o  ./src/MCU/led.o ./src/MCU/tick.o ./src/MCU/usart2.o  ./src/ADC.o ./src/FIFO.o ./src/Terminal.o ./src/main.o   
+Finished building target: Temperature.elf
+ 
+make --no-print-directory post-build
+Binary
+arm-none-eabi-objcopy -S  -O binary  "Temperature.elf" "Temperature.bin"
+ 
+Invoking: Cross ARM GNU Create Flash Image
+arm-none-eabi-objcopy -O ihex "Temperature.elf"  "Temperature.hex"
+Finished building: Temperature.hex
+ 
+Invoking: Cross ARM GNU Print Size
+arm-none-eabi-size --format=berkeley "Temperature.elf"
+   text	   data	    bss	    dec	    hex	filename
+  25496	    268	   3272	  29036	   716c	Temperature.elf
+Finished building: Temperature.siz
+ 
+01:56:12 **** Incremental Build of configuration Debug for project Temperature ****
+make all 
+Invoking: Cross ARM GNU Print Size
+arm-none-eabi-size --format=berkeley "Temperature.elf"
+   text	   data	    bss	    dec	    hex	filename
+  25496	    268	   3272	  29036	   716c	Temperature.elf
+Finished building: Temperature.siz
+ 
+01:57:31 **** Incremental Build of configuration Debug for project Temperature ****
+make all 
+Invoking: Cross ARM GNU Print Size
+arm-none-eabi-size --format=berkeley "Temperature.elf"
+   text	   data	    bss	    dec	    hex	filename
+  25496	    268	   3272	  29036	   716c	Temperature.elf
+Finished building: Temperature.siz
+ 
+01:59:49 **** Incremental Build of configuration Debug for project Temperature ****
+make all 
+Building file: ../src/Terminal.c
+Invoking: Cross ARM C Compiler
+arm-none-eabi-gcc -mcpu=cortex-m0 -mthumb -Og -fmessage-length=0 -fsigned-char -ffunction-sections -fdata-sections -ffreestanding -fno-move-loop-invariants -Wall -Wextra  -g3 -DDEBUG -DUSE_FULL_ASSERT -DTRACE -DOS_USE_TRACE_SEMIHOSTING_DEBUG -DSTM32F030 -DUSE_STDPERIPH_DRIVER -DHSE_VALUE=8000000 -I"../include" -I"../system/include" -I"../system/include/cmsis" -I"../system/include/stm32f0-stdperiph" -std=gnu11 -MMD -MP -MF"src/Terminal.d" -MT"src/Terminal.o" -c -o "src/Terminal.o" "../src/Terminal.c"
+../src/Terminal.c: In function 'ProcessData':
+../src/Terminal.c:173:18: warning: comparison of constant '115' with boolean expression is always false [-Wbool-compare]
+  } else if ( 's' == !destination->List[0].Type && 'S' == !destination->List[0].Type)
+                  ^
+../src/Terminal.c:173:55: warning: comparison of constant '83' with boolean expression is always false [-Wbool-compare]
+  } else if ( 's' == !destination->List[0].Type && 'S' == !destination->List[0].Type)
+                                                       ^
+../src/Terminal.c: In function 'RunCommand':
+../src/Terminal.c:271:15: warning: pointer targets in passing argument 1 of 'snprintf' differ in signedness [-Wpointer-sign]
+      snprintf(&message[0], 25, "%d", adcReading);
+               ^
+In file included from /usr/local/gcc-arm-none-eabi-5_3-2016q1/arm-none-eabi/include/stdio.h:29:0,
+                 from ../include/common.h:9,
+                 from ../src/Terminal.c:6:
+/usr/local/gcc-arm-none-eabi-5_3-2016q1/arm-none-eabi/include/stdio.h:247:5: note: expected 'char * restrict' but argument is of type 'unsigned char *'
+ int _EXFUN(snprintf, (char *__restrict, size_t, const char *__restrict, ...)
+     ^
+../src/Terminal.c:276:15: warning: pointer targets in passing argument 1 of 'snprintf' differ in signedness [-Wpointer-sign]
+      snprintf(&message[0], 25, "%d", adcTempCelsius);
+               ^
+In file included from /usr/local/gcc-arm-none-eabi-5_3-2016q1/arm-none-eabi/include/stdio.h:29:0,
+                 from ../include/common.h:9,
+                 from ../src/Terminal.c:6:
+/usr/local/gcc-arm-none-eabi-5_3-2016q1/arm-none-eabi/include/stdio.h:247:5: note: expected 'char * restrict' but argument is of type 'unsigned char *'
+ int _EXFUN(snprintf, (char *__restrict, size_t, const char *__restrict, ...)
+     ^
+../src/Terminal.c:276:32: warning: format '%d' expects argument of type 'int', but argument 4 has type 'long int' [-Wformat=]
+      snprintf(&message[0], 25, "%d", adcTempCelsius);
+                                ^
+../src/Terminal.c:288:15: warning: pointer targets in passing argument 1 of 'snprintf' differ in signedness [-Wpointer-sign]
+      snprintf(&message[0], 25, "%d.%05d", intpart, fracpart);
+               ^
+In file included from /usr/local/gcc-arm-none-eabi-5_3-2016q1/arm-none-eabi/include/stdio.h:29:0,
+                 from ../include/common.h:9,
+                 from ../src/Terminal.c:6:
+/usr/local/gcc-arm-none-eabi-5_3-2016q1/arm-none-eabi/include/stdio.h:247:5: note: expected 'char * restrict' but argument is of type 'unsigned char *'
+ int _EXFUN(snprintf, (char *__restrict, size_t, const char *__restrict, ...)
+     ^
+Finished building: ../src/Terminal.c
+ 
+Building target: Temperature.elf
+Invoking: Cross ARM C++ Linker
+arm-none-eabi-g++ -mcpu=cortex-m0 -mthumb -Og -fmessage-length=0 -fsigned-char -ffunction-sections -fdata-sections -ffreestanding -fno-move-loop-invariants -Wall -Wextra  -g3 -T mem.ld -T libs.ld -T sections.ld -nostartfiles -Xlinker --gc-sections -L"../ldscripts" -Wl,-Map,"Temperature.map" --specs=nano.specs -o "Temperature.elf"  ./system/src/stm32f0-stdperiph/stm32f0xx_adc.o ./system/src/stm32f0-stdperiph/stm32f0xx_can.o ./system/src/stm32f0-stdperiph/stm32f0xx_cec.o ./system/src/stm32f0-stdperiph/stm32f0xx_comp.o ./system/src/stm32f0-stdperiph/stm32f0xx_crc.o ./system/src/stm32f0-stdperiph/stm32f0xx_crs.o ./system/src/stm32f0-stdperiph/stm32f0xx_dac.o ./system/src/stm32f0-stdperiph/stm32f0xx_dbgmcu.o ./system/src/stm32f0-stdperiph/stm32f0xx_dma.o ./system/src/stm32f0-stdperiph/stm32f0xx_exti.o ./system/src/stm32f0-stdperiph/stm32f0xx_flash.o ./system/src/stm32f0-stdperiph/stm32f0xx_gpio.o ./system/src/stm32f0-stdperiph/stm32f0xx_i2c.o ./system/src/stm32f0-stdperiph/stm32f0xx_iwdg.o ./system/src/stm32f0-stdperiph/stm32f0xx_misc.o ./system/src/stm32f0-stdperiph/stm32f0xx_pwr.o ./system/src/stm32f0-stdperiph/stm32f0xx_rcc.o ./system/src/stm32f0-stdperiph/stm32f0xx_rtc.o ./system/src/stm32f0-stdperiph/stm32f0xx_spi.o ./system/src/stm32f0-stdperiph/stm32f0xx_syscfg.o ./system/src/stm32f0-stdperiph/stm32f0xx_tim.o ./system/src/stm32f0-stdperiph/stm32f0xx_usart.o ./system/src/stm32f0-stdperiph/stm32f0xx_wwdg.o  ./system/src/newlib/_cxx.o ./system/src/newlib/_exit.o ./system/src/newlib/_sbrk.o ./system/src/newlib/_startup.o ./system/src/newlib/_syscalls.o ./system/src/newlib/assert.o  ./system/src/diag/Trace.o ./system/src/diag/trace_impl.o  ./system/src/cortexm/_initialize_hardware.o ./system/src/cortexm/_reset_hardware.o ./system/src/cortexm/exception_handlers.o  ./system/src/cmsis/system_stm32f0xx.o ./system/src/cmsis/vectors_stm32f0xx.o  ./src/MCU/led.o ./src/MCU/tick.o ./src/MCU/usart2.o  ./src/ADC.o ./src/FIFO.o ./src/Terminal.o ./src/main.o   
+Finished building target: Temperature.elf
+ 
+make --no-print-directory post-build
+Binary
+arm-none-eabi-objcopy -S  -O binary  "Temperature.elf" "Temperature.bin"
+ 
+Invoking: Cross ARM GNU Create Flash Image
+arm-none-eabi-objcopy -O ihex "Temperature.elf"  "Temperature.hex"
+Finished building: Temperature.hex
+ 
+Invoking: Cross ARM GNU Print Size
+arm-none-eabi-size --format=berkeley "Temperature.elf"
+   text	   data	    bss	    dec	    hex	filename
+  25496	    268	   3272	  29036	   716c	Temperature.elf
+Finished building: Temperature.siz
+ 
+01:59:55 **** Incremental Build of configuration Debug for project Temperature ****
+make all 
+Invoking: Cross ARM GNU Print Size
+arm-none-eabi-size --format=berkeley "Temperature.elf"
+   text	   data	    bss	    dec	    hex	filename
+  25496	    268	   3272	  29036	   716c	Temperature.elf
+Finished building: Temperature.siz
+ 
+01:59:59 **** Incremental Build of configuration Debug for project Temperature ****
+make all 
+Invoking: Cross ARM GNU Print Size
+arm-none-eabi-size --format=berkeley "Temperature.elf"
+   text	   data	    bss	    dec	    hex	filename
+  25496	    268	   3272	  29036	   716c	Temperature.elf
 Finished building: Temperature.siz
  
