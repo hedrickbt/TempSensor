@@ -62,11 +62,24 @@ uint_fast8_t ADC_Read(uint_fast32_t channel, uint_fast16_t *destination) {
 /// \return True on success else adc is not open
 ///////////////////////////////////////////////////////////////////////////////
 uint_fast8_t ADC_ReadNorm(uint_fast32_t channel, float *destination) {
+	if (!destination) {
+		return FALSE;
+	}
+
 	uint_fast16_t adcReading = 0;
+	uint32_t adcResolution;
 	if (ADC_Read(channel, &adcReading )) {
-		float temp = (float)adcReading / (float)UINT16_MAX;
-		*destination = temp;
-		return TRUE;
+		if (adcReading > 0) {
+			adcResolution =  (uint32_t)12 - (((uint32_t)(ADC1->CFGR1 & ADC_CFGR1_RES ) >> 3) * 2);
+			adcResolution = ((uint32_t)(1 << adcResolution)); // this gives us 2^adcResolution
+
+			float temp = (float)adcReading / (float)(adcResolution-1);
+			*destination = temp;
+			return TRUE;
+		} else {
+			*destination = 0;
+			return TRUE;
+		}
 	} else {
 		return FALSE;
 	}
@@ -81,26 +94,26 @@ void ADC_Off(void) {
 
 }
 
+/* Temperature sensor calibration value address */
+#define TEMP110_CAL_ADDR ((uint16_t*) ((uint32_t) 0x1FFFF7C2))
+#define TEMP30_CAL_ADDR ((uint16_t*) ((uint32_t) 0x1FFFF7B8))
+#define VDD_CALIB ((uint16_t) (330))
+#define VDD_APPLI ((uint16_t) (300))
+
 ///////////////////////////////////////////////////////////////////////////////
 /// \brief Calculated the calibrated value from an ADC_Read result
 ///
 /// \param rawData from the destination parameter in ADC_Read
 ///
-/// \return Calibrated reading value
+/// \return Calibrated reading value in Celsius
 /// \sa ADC_Read()
 ///////////////////////////////////////////////////////////////////////////////
 int32_t ADC_CalibratedTemperature(uint_fast16_t rawData) {
-	/* Temperature sensor calibration value address */
-	#define TEMP110_CAL_ADDR ((uint16_t*) ((uint32_t) 0x1FFFF7C2))
-	#define TEMP30_CAL_ADDR ((uint16_t*) ((uint32_t) 0x1FFFF7B8))
-	#define VDD_CALIB ((uint16_t) (330))
-	#define VDD_APPLI ((uint16_t) (300))
 	int32_t temperature; /* will contain the temperature in degree Celsius */
 	temperature = (((int32_t) rawData * VDD_APPLI / VDD_CALIB) - (int32_t) *TEMP30_CAL_ADDR );
 	temperature = temperature * (int32_t)(110 - 30);
 	temperature = temperature / (int32_t)(*TEMP110_CAL_ADDR - *TEMP30_CAL_ADDR);
 	temperature = temperature + 30;
-
 
 	return temperature;
 }
