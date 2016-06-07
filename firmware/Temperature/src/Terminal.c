@@ -282,8 +282,10 @@ static int_fast8_t RunCommand(ListOfParameterStructureType *source)
 
 				if (ADC_ReadNorm(source->List[1].Value.i32_t[0], &adcNorm )) {
 					// Split the decimal into the whole number and fraction since %f doesn't work with snprintf
-					uint16_t intpart = (int)adcNorm;
-					uint16_t fracpart = (int)((adcNorm - intpart) * 100000);
+					//uint16_t intpart = (int)adcNorm;
+					//uint16_t fracpart = (int)((adcNorm - intpart) * 100000);
+					uint32_t intpart = (uint32_t)adcNorm;
+					uint32_t fracpart = (int32_t)((adcNorm - intpart) * 100000);
 
 					snprintf(&message[0], 25, "%d.%05d", intpart, fracpart);
 					SerialPort2.SendString(&message[0]);
