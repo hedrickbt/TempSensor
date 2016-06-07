@@ -86,7 +86,7 @@ static void DisplaySystemInformation(void)
 	SerialPort2.SendByte(0x0C); // clear terminal
     SerialPort2.SendString(&SystemMessageString[0]);
 	// Send new line feed and prompt
-	SerialPort2.SendString((uint8_t*)"\n> ");
+	SerialPort2.SendString((uint8_t*)"\r\n> ");
 }
 
 ///////////////////////////////////////////////////////////////////////////////
@@ -330,7 +330,7 @@ int_fast8_t Terminal_Process(void)
 	if ('\r' == SerialTempData)
 	{
 		// Send new line feed and prompt
-		SerialPort2.SendString((uint8_t*)"\n> ");
+		//SerialPort2.SendString((uint8_t*)"\r\n> ");
 
 		if (NumberOfByteReceived)
 		{
@@ -348,6 +348,8 @@ int_fast8_t Terminal_Process(void)
 		{
 			Result =  FALSE;
 		}
+		SerialPort2.SendString((uint8_t*)"\r\n> ");
+
 	}
 	else if ( (SerialTempData >= '0' && SerialTempData <= '9') ||
 			(SerialTempData >= 'A' && SerialTempData <= 'Z') ||
