@@ -246,6 +246,8 @@ static int_fast8_t RunCommand(ListOfParameterStructureType *source)
 		Command_AdcSample = 4
 	};
 
+	SerialPort2.SendString((uint8_t*)"\r\n");
+
 	switch ( source->List[0].Value.i32_t[0] )
 	{
 		case Command_LedControl: // control the LED

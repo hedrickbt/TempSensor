@@ -7,7 +7,7 @@
       <property name="type">cmsis.repo</property>
       <property name="repo.url">http://www.keil.com/pack/index.idx</property>
       <property name="generator">GNU ARM Eclipse Plug-ins</property>
-      <property name="date">20160528175831</property>
+      <property name="date">20160612205335</property>
     </properties>
     <packages>
       <package name="CM3_DFP">
@@ -2318,7 +2318,7 @@ Renamed device names.</description>
               <property name="version.name">1.0.3</property>
               <property name="archive.url">http://mcu.holtek.com.tw/pack/Holtek.HT32_DFP.1.0.3.pack</property>
               <property name="archive.name">Holtek.HT32_DFP.1.0.3.pack</property>
-              <property name="archive.size">40025447</property>
+              <property name="archive.size">0</property>
               <property name="dest.folder">Holtek/HT32_DFP/1.0.3</property>
               <property name="pdsc.name">Holtek.HT32_DFP.pdsc</property>
               <property name="date">2016-04-14</property>
@@ -2446,7 +2446,7 @@ Packages
               <property name="version.name">1.0.2</property>
               <property name="archive.url">http://mcu.holtek.com.tw/pack/Holtek.HT32_DFP.1.0.2.pack</property>
               <property name="archive.name">Holtek.HT32_DFP.1.0.2.pack</property>
-              <property name="archive.size">41729804</property>
+              <property name="archive.size">0</property>
               <property name="dest.folder">Holtek/HT32_DFP/1.0.2</property>
               <property name="pdsc.name">Holtek.HT32_DFP.pdsc</property>
               <property name="date">2016-03-03</property>
@@ -2461,7 +2461,7 @@ Packages
               <property name="version.name">1.0.1</property>
               <property name="archive.url">http://mcu.holtek.com.tw/pack/Holtek.HT32_DFP.1.0.1.pack</property>
               <property name="archive.name">Holtek.HT32_DFP.1.0.1.pack</property>
-              <property name="archive.size">41711562</property>
+              <property name="archive.size">0</property>
               <property name="dest.folder">Holtek/HT32_DFP/1.0.1</property>
               <property name="pdsc.name">Holtek.HT32_DFP.pdsc</property>
               <property name="date">2016-02-16</property>
@@ -2479,7 +2479,7 @@ HT32F1655,HT32F1656,HT32F1653,HT32F1654</description>
               <property name="version.name">1.0.0</property>
               <property name="archive.url">http://mcu.holtek.com.tw/pack/Holtek.HT32_DFP.1.0.0.pack</property>
               <property name="archive.name">Holtek.HT32_DFP.1.0.0.pack</property>
-              <property name="archive.size">24221365</property>
+              <property name="archive.size">0</property>
               <property name="dest.folder">Holtek/HT32_DFP/1.0.0</property>
               <property name="pdsc.name">Holtek.HT32_DFP.pdsc</property>
               <property name="date">2015-03-23</property>
@@ -12911,20 +12911,23 @@ USB Host:
       <package name="R-IN32M3_DFP">
         <description>Renesas R-IN32M3 Series Device Support and Examples</description>
         <versions>
-          <version name="1.2.0">
-            <description>Reworked Flash Programming Algorithms.
-Updated Abstract.txt in TS-R-IN32M3-CEC board examples.</description>
+          <version name="1.3.0">
+            <description>Removed HWRTOS related files/examples.
+Moved board documentation to folder boards.
+Replaced backslash with forward slash.
+Removed PackCheck warnings.
+Migrated Flash Programming Algorithms from uvproj to uvprojx.</description>
             <properties>
               <property name="type">cmsis.pack</property>
               <property name="vendor.name">Keil</property>
               <property name="pack.name">R-IN32M3_DFP</property>
-              <property name="version.name">1.2.0</property>
-              <property name="archive.url">http://www.keil.com/pack/Keil.R-IN32M3_DFP.1.2.0.pack</property>
-              <property name="archive.name">Keil.R-IN32M3_DFP.1.2.0.pack</property>
-              <property name="archive.size">1663835</property>
-              <property name="dest.folder">Keil/R-IN32M3_DFP/1.2.0</property>
+              <property name="version.name">1.3.0</property>
+              <property name="archive.url">http://www.keil.com/pack/Keil.R-IN32M3_DFP.1.3.0.pack</property>
+              <property name="archive.name">Keil.R-IN32M3_DFP.1.3.0.pack</property>
+              <property name="archive.size">1520500</property>
+              <property name="dest.folder">Keil/R-IN32M3_DFP/1.3.0</property>
               <property name="pdsc.name">Keil.R-IN32M3_DFP.pdsc</property>
-              <property name="date">2014-11-03</property>
+              <property name="date">2016-06-10</property>
             </properties>
             <outline>
               <keyword name="Renesas" />
@@ -12985,28 +12988,13 @@ including CC-Link IE Field and EtherCAT, and conventional open network protocols
               <component name="Device / R-IN32M3 Drivers / WDT">
                 <description>Window Watchdog Timer (WDTA) driver for R-IN32M3</description>
               </component>
-              <component name="Device / R-IN32M3 HW-RTOS / Library">
-                <description>HW-RTOS Library for R-IN32M3</description>
-              </component>
-              <example name="OS Sample (TS-R-IN32M3-CL)">
-                <description>OS Sample example</description>
-                <property name="example.name">OS Sample</property>
-              </example>
               <example name="OS-less Sample (TS-R-IN32M3-CL)">
                 <description>OS-less Sample example</description>
                 <property name="example.name">OS-less Sample</property>
               </example>
-              <example name="OS Sample (TS-R-IN32M3-EC)">
-                <description>OS Sample example</description>
-                <property name="example.name">OS Sample</property>
-              </example>
               <example name="OS-less Sample (TS-R-IN32M3-EC)">
                 <description>OS-less Sample example</description>
                 <property name="example.name">OS-less Sample</property>
-              </example>
-              <example name="OS Sample (TS-R-IN32M3-CEC)">
-                <description>OS Sample example</description>
-                <property name="example.name">OS Sample</property>
               </example>
               <example name="OS-less Sample (TS-R-IN32M3-CEC)">
                 <description>OS-less Sample example</description>
@@ -13024,6 +13012,22 @@ including CC-Link IE Field and EtherCAT, and conventional open network protocols
                 <property name="vendor.name">Tessera</property>
               </board>
             </external>
+          </version>
+          <version name="1.2.0">
+            <description>Reworked Flash Programming Algorithms.
+Updated Abstract.txt in TS-R-IN32M3-CEC board examples.</description>
+            <properties>
+              <property name="type">cmsis.pack</property>
+              <property name="vendor.name">Keil</property>
+              <property name="pack.name">R-IN32M3_DFP</property>
+              <property name="version.name">1.2.0</property>
+              <property name="archive.url">http://www.keil.com/pack/Keil.R-IN32M3_DFP.1.2.0.pack</property>
+              <property name="archive.name">Keil.R-IN32M3_DFP.1.2.0.pack</property>
+              <property name="archive.size">1663835</property>
+              <property name="dest.folder">Keil/R-IN32M3_DFP/1.2.0</property>
+              <property name="pdsc.name">Keil.R-IN32M3_DFP.pdsc</property>
+              <property name="date">2014-11-03</property>
+            </properties>
           </version>
           <version name="1.1.0">
             <description>Board description and examples added</description>
@@ -13053,6 +13057,115 @@ including CC-Link IE Field and EtherCAT, and conventional open network protocols
               <property name="dest.folder">Keil/R-IN32M3_DFP/1.0.0</property>
               <property name="pdsc.name">Keil.R-IN32M3_DFP.pdsc</property>
             </properties>
+          </version>
+        </versions>
+      </package>
+      <package name="R-IN32M4_DFP">
+        <description>Renesas R-IN32M4 Series Device Support and Examples</description>
+        <versions>
+          <version name="1.0.0">
+            <description>First Release version of R-IN32M4 Device Family Pack.
+Changes made to the pack provided by Renesas.
+- Corrected endianess.
+- Corrected SVD file.
+- Updated file system_RIN32M4.c.
+- Updated examples
+- Moved board documentation to folder boards.
+- Replaced backslash with forward slash.
+- Removed PackCheck warnings.</description>
+            <properties>
+              <property name="type">cmsis.pack</property>
+              <property name="vendor.name">Keil</property>
+              <property name="pack.name">R-IN32M4_DFP</property>
+              <property name="version.name">1.0.0</property>
+              <property name="archive.url">http://www.keil.com/pack/Keil.R-IN32M4_DFP.1.0.0.pack</property>
+              <property name="archive.name">Keil.R-IN32M4_DFP.1.0.0.pack</property>
+              <property name="archive.size">1466781</property>
+              <property name="dest.folder">Keil/R-IN32M4_DFP/1.0.0</property>
+              <property name="pdsc.name">Keil.R-IN32M4_DFP.pdsc</property>
+              <property name="date">2016-06-10</property>
+            </properties>
+            <outline>
+              <keyword name="Renesas" />
+              <keyword name="Device Support" />
+              <keyword name="Device Family Package Renesas" />
+              <keyword name="R-IN32M4" />
+              <devicefamily name="R-IN32M4 Series">
+                <description>The R-IN32M4-CL2 contains built-in Gigabit PHY in addition to
+our featured R-IN engine available in the series family,
+providing the optimal solution to bring high performanc
+CC-Link IE Field network protocol to industrial equipments.
+
+With the embedded Gigabit ethernet PHY in R-IN32M4, circuit design
+are made extremely easy since no Gigabit PHY related analog design
+is required, which can be quite troublesome in
+conventional hardware approach.
+Furthermore, with the addition of FPU, 8 channel of 10bit ADC and
+16 channels of 16bit timers embedded to the CPU core,
+R-IN32M4 has greatly extended the family’s application.
+Not only remote IO applications where the R-IN32M series exceeded,
+the new R-IN32M4 performs well in motor and sensor control,
+and even industrial network gateway applications.</description>
+                <property name="vendor.name">Renesas</property>
+                <property name="vendor.id">117</property>
+              </devicefamily>
+              <board name="TS-R-IN32M4-CL2">
+                <description>R-IN32M4-CL2 Evaluation Board</description>
+                <property name="vendor.name">Tessera</property>
+              </board>
+              <component name="Device / Startup">
+                <description>System Startup for Renesas R-IN32M4 device series</description>
+              </component>
+              <component name="Device / R-IN32M4 Drivers / ADC">
+                <description>A/D Converter driver for R-IN32M4</description>
+              </component>
+              <component name="Device / R-IN32M4 Drivers / CSI">
+                <description>Clocked Serial Interface (CSIH) driver for R-IN32M4</description>
+              </component>
+              <component name="Device / R-IN32M4 Drivers / DMAC">
+                <description>DMA Controller (DMAC) driver for R-IN32M4</description>
+              </component>
+              <component name="Device / R-IN32M4 Drivers / IIC">
+                <description>I2C Bus Controller (I2CB) driver for R-IN32M4</description>
+              </component>
+              <component name="Device / R-IN32M4 Drivers / SROMC">
+                <description>Serial Flash ROM Controller (SROMC) driver for R-IN32M4</description>
+              </component>
+              <component name="Device / R-IN32M4 Drivers / TAUD">
+                <description>16-bit Timer Array Unit (TAUD) driver for R-IN32M4</description>
+              </component>
+              <component name="Device / R-IN32M4 Drivers / TIMER">
+                <description>32-bit Timer Array Unit (TAUJ2) driver for R-IN32M4</description>
+              </component>
+              <component name="Device / R-IN32M4 Drivers / UART">
+                <description>Asynchronous Serial Interface (UARTJn) driver for R-IN32M4</description>
+              </component>
+              <component name="Device / R-IN32M4 Drivers / WDT">
+                <description>Window Watchdog Timer (WDTA) driver for R-IN32M4</description>
+              </component>
+              <component name="Device / R-IN32M4 Middlewares / Flash">
+                <description>Flash middleware for R-IN32M4</description>
+              </component>
+              <component name="Device / R-IN32M4 Middlewares / Sflash">
+                <description>Serial Flash middleware for R-IN32M4</description>
+              </component>
+              <component name="Device / R-IN32M4 GbEthPHY / Library">
+                <description>Gigabit Ethernet PHy Library for R-IN32M4</description>
+              </component>
+              <example name="OS-less Sample (TS-R-IN32M4-CL2)">
+                <description>OS-less Sample example</description>
+                <property name="example.name">OS-less Sample</property>
+              </example>
+              <example name="Interval Timer Sample (TS-R-IN32M4-CL2)">
+                <description>Interval Timer Sample example</description>
+                <property name="example.name">Interval Timer Sample</property>
+              </example>
+            </outline>
+            <external>
+              <board name="TS-R-IN32M4-CL2">
+                <property name="vendor.name">Tessera</property>
+              </board>
+            </external>
           </version>
         </versions>
       </package>
@@ -16677,38 +16790,34 @@ Added: Board description, Board support for
       <package name="STM32F4xx_DFP">
         <description>STMicroelectronics STM32F4 Series Device Support, Drivers and Examples</description>
         <versions>
-          <version name="2.8.0">
-            <description>Updated CMSIS drivers:
-- EMAC:
--- Corrected Ethernet PTP functionality
+          <version name="2.9.0">
+            <description>Added device support for subfamily STM32F412
+- updated device list according STM32Cube V1.45.0
+Updated Pack to STM32Cube_FW_F4 Firmware Package version V1.12.0
+Updated HAL to version V1.5.0
+Updated CMSIS drivers:
 - CAN:
--- Corrected functionality when only one CAN controller is used
--- Corrected functionality when NULL pointer is provided for one or both signal callbacks in Initialize function call
-- USB Host full-speed:
--- Removed interrupt priority handling
-- USB Host high-speed:
--- Added DMA configuration to RTE_Device.h
--- Corrected wrong result of PipeTransferGetResult for In Pipe transfers in DMA mode
--- Added check to PipeTransfer function for 4-byte data alignment if DMA is used
--- Removed interrupt priority handling
-- USART:
--- Corrected CTS handling and added signal CTS change event.
-Updated examples:
-- Updated emWin examples to emWin V5.32
-- Updated CAN example
-- Updated USB Host examples
-- Updated USB Device CDC ACM VirtualCOM example for Keil MCBSTM32F400 evaluation board</description>
+-- reflect changes from RTE_Device.h (Ver 2.4.1) adding pin configurations
+-- corrected CAN2 initialization was disabling CAN1 filters
+-- corrected receive overrun signaling
+- USART: reflect changes from RTE_Device.h (Ver 2.4.1) adding pin configurations
+- MCI: reflect changes from RTE_Device.h (Ver 2.4.1) adding pin configurations
+- I2C: corrected rise time setting when using ARM_I2C_BUS_SPEED_FAST
+- USB Device:
+-- VBUS detection is selected automatically based on VBUS sensing pin setting (in RTE_Device.h or by STM32CubeMX)
+-- Corrected initial resume signaling after USB Bus Reset
+-- Corrected device status information</description>
             <properties>
               <property name="type">cmsis.pack</property>
               <property name="vendor.name">Keil</property>
               <property name="pack.name">STM32F4xx_DFP</property>
-              <property name="version.name">2.8.0</property>
-              <property name="archive.url">http://www.keil.com/pack/Keil.STM32F4xx_DFP.2.8.0.pack</property>
-              <property name="archive.name">Keil.STM32F4xx_DFP.2.8.0.pack</property>
-              <property name="archive.size">410985179</property>
-              <property name="dest.folder">Keil/STM32F4xx_DFP/2.8.0</property>
+              <property name="version.name">2.9.0</property>
+              <property name="archive.url">http://www.keil.com/pack/Keil.STM32F4xx_DFP.2.9.0.pack</property>
+              <property name="archive.name">Keil.STM32F4xx_DFP.2.9.0.pack</property>
+              <property name="archive.size">478291230</property>
+              <property name="dest.folder">Keil/STM32F4xx_DFP/2.9.0</property>
               <property name="pdsc.name">Keil.STM32F4xx_DFP.pdsc</property>
-              <property name="date">2016-04-14</property>
+              <property name="date">2016-05-31</property>
             </properties>
             <outline>
               <keyword name="ST" />
@@ -16886,6 +16995,9 @@ Updated examples:
               </component>
               <component name="Device / STM32Cube HAL / WWDG">
                 <description>Window watchdog (WWDG) HAL driver</description>
+              </component>
+              <component name="Device / STM32Cube HAL / DFSDM">
+                <description>Digital Filter for Sigma-Delta Modulators (DFSDM) HAL driver</description>
               </component>
               <component name="CMSIS Driver / CAN">
                 <description>CAN Driver for STM32F4 Series</description>
@@ -17109,6 +17221,40 @@ Updated examples:
                 <property name="vendor.name">Keil</property>
               </board>
             </external>
+          </version>
+          <version name="2.8.0">
+            <description>Updated CMSIS drivers:
+- EMAC:
+-- Corrected Ethernet PTP functionality
+- CAN:
+-- Corrected functionality when only one CAN controller is used
+-- Corrected functionality when NULL pointer is provided for one or both signal callbacks in Initialize function call
+- USB Host full-speed:
+-- Removed interrupt priority handling
+- USB Host high-speed:
+-- Added DMA configuration to RTE_Device.h
+-- Corrected wrong result of PipeTransferGetResult for In Pipe transfers in DMA mode
+-- Added check to PipeTransfer function for 4-byte data alignment if DMA is used
+-- Removed interrupt priority handling
+- USART:
+-- Corrected CTS handling and added signal CTS change event.
+Updated examples:
+- Updated emWin examples to emWin V5.32
+- Updated CAN example
+- Updated USB Host examples
+- Updated USB Device CDC ACM VirtualCOM example for Keil MCBSTM32F400 evaluation board</description>
+            <properties>
+              <property name="type">cmsis.pack</property>
+              <property name="vendor.name">Keil</property>
+              <property name="pack.name">STM32F4xx_DFP</property>
+              <property name="version.name">2.8.0</property>
+              <property name="archive.url">http://www.keil.com/pack/Keil.STM32F4xx_DFP.2.8.0.pack</property>
+              <property name="archive.name">Keil.STM32F4xx_DFP.2.8.0.pack</property>
+              <property name="archive.size">410985179</property>
+              <property name="dest.folder">Keil/STM32F4xx_DFP/2.8.0</property>
+              <property name="pdsc.name">Keil.STM32F4xx_DFP.pdsc</property>
+              <property name="date">2016-04-14</property>
+            </properties>
           </version>
           <version name="2.7.0">
             <description>Updated STMicroelectronics STM32CubeF4 Firmware Package to Version 1.10.0.
@@ -18235,22 +18381,21 @@ STM32F756, STM32F745, STM32F746 sub families
       <package name="STM32L0xx_DFP">
         <description>STMicroelectronics STM32L0 Series Device Support and Examples</description>
         <versions>
-          <version name="1.5.0">
-            <description>Aligned devices with list of STM32Cube Firmware Library (V 1.5.0).
-Corrected RAM1 according data sheets
-Updated documentation
-Updated SVD files fixing name of Bit9 of PWR Peripheral CR Register</description>
+          <version name="1.6.0">
+            <description>Aligned devices with STM32CubeMx v4.15.0.
+Updated device support files to STM32Cube Firmware Library (V 1.6.0).
+Corrected system_stm32l0xx.c.</description>
             <properties>
               <property name="type">cmsis.pack</property>
               <property name="vendor.name">Keil</property>
               <property name="pack.name">STM32L0xx_DFP</property>
-              <property name="version.name">1.5.0</property>
-              <property name="archive.url">http://www.keil.com/pack/Keil.STM32L0xx_DFP.1.5.0.pack</property>
-              <property name="archive.name">Keil.STM32L0xx_DFP.1.5.0.pack</property>
-              <property name="archive.size">32289570</property>
-              <property name="dest.folder">Keil/STM32L0xx_DFP/1.5.0</property>
+              <property name="version.name">1.6.0</property>
+              <property name="archive.url">http://www.keil.com/pack/Keil.STM32L0xx_DFP.1.6.0.pack</property>
+              <property name="archive.name">Keil.STM32L0xx_DFP.1.6.0.pack</property>
+              <property name="archive.size">32733741</property>
+              <property name="dest.folder">Keil/STM32L0xx_DFP/1.6.0</property>
               <property name="pdsc.name">Keil.STM32L0xx_DFP.pdsc</property>
-              <property name="date">2016-04-04</property>
+              <property name="date">2016-06-06</property>
             </properties>
             <outline>
               <devicefamily name="STM32L0 Series">
@@ -18339,6 +18484,24 @@ Typical applications include application control and user interfaces, handheld e
                 <property name="vendor.name">STMicroelectronics</property>
               </board>
             </external>
+          </version>
+          <version name="1.5.0">
+            <description>Aligned devices with list of STM32Cube Firmware Library (V 1.5.0).
+Corrected RAM1 according data sheets
+Updated documentation
+Updated SVD files fixing name of Bit9 of PWR Peripheral CR Register</description>
+            <properties>
+              <property name="type">cmsis.pack</property>
+              <property name="vendor.name">Keil</property>
+              <property name="pack.name">STM32L0xx_DFP</property>
+              <property name="version.name">1.5.0</property>
+              <property name="archive.url">http://www.keil.com/pack/Keil.STM32L0xx_DFP.1.5.0.pack</property>
+              <property name="archive.name">Keil.STM32L0xx_DFP.1.5.0.pack</property>
+              <property name="archive.size">32289570</property>
+              <property name="dest.folder">Keil/STM32L0xx_DFP/1.5.0</property>
+              <property name="pdsc.name">Keil.STM32L0xx_DFP.pdsc</property>
+              <property name="date">2016-04-04</property>
+            </properties>
           </version>
           <version name="1.4.0">
             <description>Added subfamilies STM32L011/21, STM32L031/41, STM32L071/72/73, STM32L081/82/83.

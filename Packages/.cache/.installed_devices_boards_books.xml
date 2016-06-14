@@ -113,14 +113,10 @@
               <property name="start">0x08000000</property>
               <property name="size">0x8000</property>
               <property name="startup">1</property>
-              <property name="access"></property>
-              <property name="alias"></property>
             </node>
             <node type="memory" name="IRAM1">
               <property name="start">0x20000000</property>
               <property name="size">0x1000</property>
-              <property name="access"></property>
-              <property name="alias"></property>
             </node>
           </node>
           <node type="device" name="STM32F030C8">
@@ -129,14 +125,10 @@
               <property name="start">0x08000000</property>
               <property name="size">0x10000</property>
               <property name="startup">1</property>
-              <property name="access"></property>
-              <property name="alias"></property>
             </node>
             <node type="memory" name="IRAM1">
               <property name="start">0x20000000</property>
               <property name="size">0x2000</property>
-              <property name="access"></property>
-              <property name="alias"></property>
             </node>
           </node>
           <node type="device" name="STM32F030CC">
@@ -145,14 +137,10 @@
               <property name="start">0x08000000</property>
               <property name="size">0x40000</property>
               <property name="startup">1</property>
-              <property name="access"></property>
-              <property name="alias"></property>
             </node>
             <node type="memory" name="IRAM1">
               <property name="start">0x20000000</property>
               <property name="size">0x8000</property>
-              <property name="access"></property>
-              <property name="alias"></property>
             </node>
           </node>
           <node type="device" name="STM32F030F4">
@@ -161,14 +149,10 @@
               <property name="start">0x08000000</property>
               <property name="size">0x4000</property>
               <property name="startup">1</property>
-              <property name="access"></property>
-              <property name="alias"></property>
             </node>
             <node type="memory" name="IRAM1">
               <property name="start">0x20000000</property>
               <property name="size">0x1000</property>
-              <property name="access"></property>
-              <property name="alias"></property>
             </node>
           </node>
           <node type="device" name="STM32F030K6">
@@ -177,14 +161,10 @@
               <property name="start">0x08000000</property>
               <property name="size">0x8000</property>
               <property name="startup">1</property>
-              <property name="access"></property>
-              <property name="alias"></property>
             </node>
             <node type="memory" name="IRAM1">
               <property name="start">0x20000000</property>
               <property name="size">0x1000</property>
-              <property name="access"></property>
-              <property name="alias"></property>
             </node>
           </node>
           <node type="device" name="STM32F030R8">
@@ -193,14 +173,10 @@
               <property name="start">0x08000000</property>
               <property name="size">0x10000</property>
               <property name="startup">1</property>
-              <property name="access"></property>
-              <property name="alias"></property>
             </node>
             <node type="memory" name="IRAM1">
               <property name="start">0x20000000</property>
               <property name="size">0x2000</property>
-              <property name="access"></property>
-              <property name="alias"></property>
             </node>
           </node>
           <node type="device" name="STM32F030RC">
@@ -209,14 +185,10 @@
               <property name="start">0x08000000</property>
               <property name="size">0x40000</property>
               <property name="startup">1</property>
-              <property name="access"></property>
-              <property name="alias"></property>
             </node>
             <node type="memory" name="IRAM1">
               <property name="start">0x20000000</property>
               <property name="size">0x8000</property>
-              <property name="access"></property>
-              <property name="alias"></property>
             </node>
           </node>
         </node>
@@ -235,14 +207,10 @@
               <property name="start">0x08000000</property>
               <property name="size">0x4000</property>
               <property name="startup">1</property>
-              <property name="access"></property>
-              <property name="alias"></property>
             </node>
             <node type="memory" name="IRAM1">
               <property name="start">0x20000000</property>
               <property name="size">0x1000</property>
-              <property name="access"></property>
-              <property name="alias"></property>
             </node>
           </node>
           <node type="device" name="STM32F031C6">
@@ -250,14 +218,10 @@
               <property name="start">0x08000000</property>
               <property name="size">0x8000</property>
               <property name="startup">1</property>
-              <property name="access"></property>
-              <property name="alias"></property>
             </node>
             <node type="memory" name="IRAM1">
               <property name="start">0x20000000</property>
               <property name="size">0x1000</property>
-              <property name="access"></property>
-              <property name="alias"></property>
             </node>
           </node>
           <node type="device" name="STM32F031E6">
@@ -265,14 +229,10 @@
               <property name="start">0x08000000</property>
               <property name="size">0x8000</property>
               <property name="startup">1</property>
-              <property name="access"></property>
-              <property name="alias"></property>
             </node>
             <node type="memory" name="IRAM1">
               <property name="start">0x20000000</property>
               <property name="size">0x1000</property>
-              <property name="access"></property>
-              <property name="alias"></property>
             </node>
           </node>
           <node type="device" name="STM32F031F4">
@@ -280,14 +240,10 @@
               <property name="start">0x08000000</property>
               <property name="size">0x4000</property>
               <property name="startup">1</property>
-              <property name="access"></property>
-              <property name="alias"></property>
             </node>
             <node type="memory" name="IRAM1">
               <property name="start">0x20000000</property>
               <property name="size">0x1000</property>
-              <property name="access"></property>
-              <property name="alias"></property>
             </node>
           </node>
           <node type="device" name="STM32F031F6">
@@ -295,14 +251,10 @@
               <property name="start">0x08000000</property>
               <property name="size">0x8000</property>
               <property name="startup">1</property>
-              <property name="access"></property>
-              <property name="alias"></property>
             </node>
             <node type="memory" name="IRAM1">
               <property name="start">0x20000000</property>
               <property name="size">0x1000</property>
-              <property name="access"></property>
-              <property name="alias"></property>
             </node>
           </node>
           <node type="device" name="STM32F031G4">
@@ -310,14 +262,10 @@
               <property name="start">0x08000000</property>
               <property name="size">0x4000</property>
               <property name="startup">1</property>
-              <property name="access"></property>
-              <property name="alias"></property>
             </node>
             <node type="memory" name="IRAM1">
               <property name="start">0x20000000</property>
               <property name="size">0x1000</property>
-              <property name="access"></property>
-              <property name="alias"></property>
             </node>
           </node>
           <node type="device" name="STM32F031G6">
@@ -325,14 +273,10 @@
               <property name="start">0x08000000</property>
               <property name="size">0x8000</property>
               <property name="startup">1</property>
-              <property name="access"></property>
-              <property name="alias"></property>
             </node>
             <node type="memory" name="IRAM1">
               <property name="start">0x20000000</property>
               <property name="size">0x1000</property>
-              <property name="access"></property>
-              <property name="alias"></property>
             </node>
           </node>
           <node type="device" name="STM32F031K4">
@@ -340,14 +284,10 @@
               <property name="start">0x08000000</property>
               <property name="size">0x4000</property>
               <property name="startup">1</property>
-              <property name="access"></property>
-              <property name="alias"></property>
             </node>
             <node type="memory" name="IRAM1">
               <property name="start">0x20000000</property>
               <property name="size">0x1000</property>
-              <property name="access"></property>
-              <property name="alias"></property>
             </node>
           </node>
           <node type="device" name="STM32F031K6">
@@ -355,14 +295,10 @@
               <property name="start">0x08000000</property>
               <property name="size">0x8000</property>
               <property name="startup">1</property>
-              <property name="access"></property>
-              <property name="alias"></property>
             </node>
             <node type="memory" name="IRAM1">
               <property name="start">0x20000000</property>
               <property name="size">0x1000</property>
-              <property name="access"></property>
-              <property name="alias"></property>
             </node>
           </node>
         </node>
@@ -381,14 +317,10 @@
               <property name="start">0x08000000</property>
               <property name="size">0x8000</property>
               <property name="startup">1</property>
-              <property name="access"></property>
-              <property name="alias"></property>
             </node>
             <node type="memory" name="IRAM1">
               <property name="start">0x20000000</property>
               <property name="size">0x1000</property>
-              <property name="access"></property>
-              <property name="alias"></property>
             </node>
           </node>
           <node type="device" name="STM32F038E6">
@@ -396,14 +328,10 @@
               <property name="start">0x08000000</property>
               <property name="size">0x8000</property>
               <property name="startup">1</property>
-              <property name="access"></property>
-              <property name="alias"></property>
             </node>
             <node type="memory" name="IRAM1">
               <property name="start">0x20000000</property>
               <property name="size">0x1000</property>
-              <property name="access"></property>
-              <property name="alias"></property>
             </node>
           </node>
           <node type="device" name="STM32F038F6">
@@ -411,14 +339,10 @@
               <property name="start">0x08000000</property>
               <property name="size">0x8000</property>
               <property name="startup">1</property>
-              <property name="access"></property>
-              <property name="alias"></property>
             </node>
             <node type="memory" name="IRAM1">
               <property name="start">0x20000000</property>
               <property name="size">0x1000</property>
-              <property name="access"></property>
-              <property name="alias"></property>
             </node>
           </node>
           <node type="device" name="STM32F038G6">
@@ -426,14 +350,10 @@
               <property name="start">0x08000000</property>
               <property name="size">0x8000</property>
               <property name="startup">1</property>
-              <property name="access"></property>
-              <property name="alias"></property>
             </node>
             <node type="memory" name="IRAM1">
               <property name="start">0x20000000</property>
               <property name="size">0x1000</property>
-              <property name="access"></property>
-              <property name="alias"></property>
             </node>
           </node>
           <node type="device" name="STM32F038K6">
@@ -441,14 +361,10 @@
               <property name="start">0x08000000</property>
               <property name="size">0x8000</property>
               <property name="startup">1</property>
-              <property name="access"></property>
-              <property name="alias"></property>
             </node>
             <node type="memory" name="IRAM1">
               <property name="start">0x20000000</property>
               <property name="size">0x1000</property>
-              <property name="access"></property>
-              <property name="alias"></property>
             </node>
           </node>
         </node>
@@ -467,14 +383,10 @@
               <property name="start">0x08000000</property>
               <property name="size">0x4000</property>
               <property name="startup">1</property>
-              <property name="access"></property>
-              <property name="alias"></property>
             </node>
             <node type="memory" name="IRAM1">
               <property name="start">0x20000000</property>
               <property name="size">0x1800</property>
-              <property name="access"></property>
-              <property name="alias"></property>
             </node>
           </node>
           <node type="device" name="STM32F042C6">
@@ -482,14 +394,10 @@
               <property name="start">0x08000000</property>
               <property name="size">0x8000</property>
               <property name="startup">1</property>
-              <property name="access"></property>
-              <property name="alias"></property>
             </node>
             <node type="memory" name="IRAM1">
               <property name="start">0x20000000</property>
               <property name="size">0x1800</property>
-              <property name="access"></property>
-              <property name="alias"></property>
             </node>
           </node>
           <node type="device" name="STM32F042F4">
@@ -497,14 +405,10 @@
               <property name="start">0x08000000</property>
               <property name="size">0x4000</property>
               <property name="startup">1</property>
-              <property name="access"></property>
-              <property name="alias"></property>
             </node>
             <node type="memory" name="IRAM1">
               <property name="start">0x20000000</property>
               <property name="size">0x1800</property>
-              <property name="access"></property>
-              <property name="alias"></property>
             </node>
           </node>
           <node type="device" name="STM32F042F6">
@@ -512,14 +416,10 @@
               <property name="start">0x08000000</property>
               <property name="size">0x8000</property>
               <property name="startup">1</property>
-              <property name="access"></property>
-              <property name="alias"></property>
             </node>
             <node type="memory" name="IRAM1">
               <property name="start">0x20000000</property>
               <property name="size">0x1800</property>
-              <property name="access"></property>
-              <property name="alias"></property>
             </node>
           </node>
           <node type="device" name="STM32F042G4">
@@ -527,14 +427,10 @@
               <property name="start">0x08000000</property>
               <property name="size">0x4000</property>
               <property name="startup">1</property>
-              <property name="access"></property>
-              <property name="alias"></property>
             </node>
             <node type="memory" name="IRAM1">
               <property name="start">0x20000000</property>
               <property name="size">0x1800</property>
-              <property name="access"></property>
-              <property name="alias"></property>
             </node>
           </node>
           <node type="device" name="STM32F042G6">
@@ -542,14 +438,10 @@
               <property name="start">0x08000000</property>
               <property name="size">0x8000</property>
               <property name="startup">1</property>
-              <property name="access"></property>
-              <property name="alias"></property>
             </node>
             <node type="memory" name="IRAM1">
               <property name="start">0x20000000</property>
               <property name="size">0x1800</property>
-              <property name="access"></property>
-              <property name="alias"></property>
             </node>
           </node>
           <node type="device" name="STM32F042K4">
@@ -557,14 +449,10 @@
               <property name="start">0x08000000</property>
               <property name="size">0x4000</property>
               <property name="startup">1</property>
-              <property name="access"></property>
-              <property name="alias"></property>
             </node>
             <node type="memory" name="IRAM1">
               <property name="start">0x20000000</property>
               <property name="size">0x1800</property>
-              <property name="access"></property>
-              <property name="alias"></property>
             </node>
           </node>
           <node type="device" name="STM32F042K6">
@@ -572,14 +460,10 @@
               <property name="start">0x08000000</property>
               <property name="size">0x8000</property>
               <property name="startup">1</property>
-              <property name="access"></property>
-              <property name="alias"></property>
             </node>
             <node type="memory" name="IRAM1">
               <property name="start">0x20000000</property>
               <property name="size">0x1800</property>
-              <property name="access"></property>
-              <property name="alias"></property>
             </node>
           </node>
           <node type="device" name="STM32F042T4">
@@ -587,14 +471,10 @@
               <property name="start">0x08000000</property>
               <property name="size">0x4000</property>
               <property name="startup">1</property>
-              <property name="access"></property>
-              <property name="alias"></property>
             </node>
             <node type="memory" name="IRAM1">
               <property name="start">0x20000000</property>
               <property name="size">0x1800</property>
-              <property name="access"></property>
-              <property name="alias"></property>
             </node>
           </node>
           <node type="device" name="STM32F042T6">
@@ -602,14 +482,10 @@
               <property name="start">0x08000000</property>
               <property name="size">0x8000</property>
               <property name="startup">1</property>
-              <property name="access"></property>
-              <property name="alias"></property>
             </node>
             <node type="memory" name="IRAM1">
               <property name="start">0x20000000</property>
               <property name="size">0x1800</property>
-              <property name="access"></property>
-              <property name="alias"></property>
             </node>
           </node>
         </node>
@@ -628,14 +504,10 @@
               <property name="start">0x08000000</property>
               <property name="size">0x8000</property>
               <property name="startup">1</property>
-              <property name="access"></property>
-              <property name="alias"></property>
             </node>
             <node type="memory" name="IRAM1">
               <property name="start">0x20000000</property>
               <property name="size">0x1800</property>
-              <property name="access"></property>
-              <property name="alias"></property>
             </node>
           </node>
           <node type="device" name="STM32F048G6">
@@ -643,14 +515,10 @@
               <property name="start">0x08000000</property>
               <property name="size">0x8000</property>
               <property name="startup">1</property>
-              <property name="access"></property>
-              <property name="alias"></property>
             </node>
             <node type="memory" name="IRAM1">
               <property name="start">0x20000000</property>
               <property name="size">0x1800</property>
-              <property name="access"></property>
-              <property name="alias"></property>
             </node>
           </node>
           <node type="device" name="STM32F048T6">
@@ -658,14 +526,10 @@
               <property name="start">0x08000000</property>
               <property name="size">0x8000</property>
               <property name="startup">1</property>
-              <property name="access"></property>
-              <property name="alias"></property>
             </node>
             <node type="memory" name="IRAM1">
               <property name="start">0x20000000</property>
               <property name="size">0x1800</property>
-              <property name="access"></property>
-              <property name="alias"></property>
             </node>
           </node>
         </node>
@@ -684,14 +548,10 @@
               <property name="start">0x08000000</property>
               <property name="size">0x4000</property>
               <property name="startup">1</property>
-              <property name="access"></property>
-              <property name="alias"></property>
             </node>
             <node type="memory" name="IRAM1">
               <property name="start">0x20000000</property>
               <property name="size">0x2000</property>
-              <property name="access"></property>
-              <property name="alias"></property>
             </node>
           </node>
           <node type="device" name="STM32F051C6">
@@ -699,14 +559,10 @@
               <property name="start">0x08000000</property>
               <property name="size">0x8000</property>
               <property name="startup">1</property>
-              <property name="access"></property>
-              <property name="alias"></property>
             </node>
             <node type="memory" name="IRAM1">
               <property name="start">0x20000000</property>
               <property name="size">0x2000</property>
-              <property name="access"></property>
-              <property name="alias"></property>
             </node>
           </node>
           <node type="device" name="STM32F051C8">
@@ -714,14 +570,10 @@
               <property name="start">0x08000000</property>
               <property name="size">0x10000</property>
               <property name="startup">1</property>
-              <property name="access"></property>
-              <property name="alias"></property>
             </node>
             <node type="memory" name="IRAM1">
               <property name="start">0x20000000</property>
               <property name="size">0x2000</property>
-              <property name="access"></property>
-              <property name="alias"></property>
             </node>
           </node>
           <node type="device" name="STM32F051K4">
@@ -729,14 +581,10 @@
               <property name="start">0x08000000</property>
               <property name="size">0x4000</property>
               <property name="startup">1</property>
-              <property name="access"></property>
-              <property name="alias"></property>
             </node>
             <node type="memory" name="IRAM1">
               <property name="start">0x20000000</property>
               <property name="size">0x2000</property>
-              <property name="access"></property>
-              <property name="alias"></property>
             </node>
           </node>
           <node type="device" name="STM32F051K6">
@@ -744,14 +592,10 @@
               <property name="start">0x08000000</property>
               <property name="size">0x8000</property>
               <property name="startup">1</property>
-              <property name="access"></property>
-              <property name="alias"></property>
             </node>
             <node type="memory" name="IRAM1">
               <property name="start">0x20000000</property>
               <property name="size">0x2000</property>
-              <property name="access"></property>
-              <property name="alias"></property>
             </node>
           </node>
           <node type="device" name="STM32F051K8">
@@ -759,14 +603,10 @@
               <property name="start">0x08000000</property>
               <property name="size">0x10000</property>
               <property name="startup">1</property>
-              <property name="access"></property>
-              <property name="alias"></property>
             </node>
             <node type="memory" name="IRAM1">
               <property name="start">0x20000000</property>
               <property name="size">0x2000</property>
-              <property name="access"></property>
-              <property name="alias"></property>
             </node>
           </node>
           <node type="device" name="STM32F051R4">
@@ -774,14 +614,10 @@
               <property name="start">0x08000000</property>
               <property name="size">0x4000</property>
               <property name="startup">1</property>
-              <property name="access"></property>
-              <property name="alias"></property>
             </node>
             <node type="memory" name="IRAM1">
               <property name="start">0x20000000</property>
               <property name="size">0x2000</property>
-              <property name="access"></property>
-              <property name="alias"></property>
             </node>
           </node>
           <node type="device" name="STM32F051R6">
@@ -789,14 +625,10 @@
               <property name="start">0x08000000</property>
               <property name="size">0x8000</property>
               <property name="startup">1</property>
-              <property name="access"></property>
-              <property name="alias"></property>
             </node>
             <node type="memory" name="IRAM1">
               <property name="start">0x20000000</property>
               <property name="size">0x2000</property>
-              <property name="access"></property>
-              <property name="alias"></property>
             </node>
           </node>
           <node type="device" name="STM32F051R8">
@@ -804,14 +636,10 @@
               <property name="start">0x08000000</property>
               <property name="size">0x10000</property>
               <property name="startup">1</property>
-              <property name="access"></property>
-              <property name="alias"></property>
             </node>
             <node type="memory" name="IRAM1">
               <property name="start">0x20000000</property>
               <property name="size">0x2000</property>
-              <property name="access"></property>
-              <property name="alias"></property>
             </node>
           </node>
           <node type="device" name="STM32F051T8">
@@ -819,14 +647,10 @@
               <property name="start">0x08000000</property>
               <property name="size">0x10000</property>
               <property name="startup">1</property>
-              <property name="access"></property>
-              <property name="alias"></property>
             </node>
             <node type="memory" name="IRAM1">
               <property name="start">0x20000000</property>
               <property name="size">0x2000</property>
-              <property name="access"></property>
-              <property name="alias"></property>
             </node>
           </node>
         </node>
@@ -845,14 +669,10 @@
               <property name="start">0x08000000</property>
               <property name="size">0x10000</property>
               <property name="startup">1</property>
-              <property name="access"></property>
-              <property name="alias"></property>
             </node>
             <node type="memory" name="IRAM1">
               <property name="start">0x20000000</property>
               <property name="size">0x2000</property>
-              <property name="access"></property>
-              <property name="alias"></property>
             </node>
           </node>
           <node type="device" name="STM32F058R8">
@@ -860,14 +680,10 @@
               <property name="start">0x08000000</property>
               <property name="size">0x10000</property>
               <property name="startup">1</property>
-              <property name="access"></property>
-              <property name="alias"></property>
             </node>
             <node type="memory" name="IRAM1">
               <property name="start">0x20000000</property>
               <property name="size">0x2000</property>
-              <property name="access"></property>
-              <property name="alias"></property>
             </node>
           </node>
           <node type="device" name="STM32F058T8">
@@ -875,14 +691,10 @@
               <property name="start">0x08000000</property>
               <property name="size">0x10000</property>
               <property name="startup">1</property>
-              <property name="access"></property>
-              <property name="alias"></property>
             </node>
             <node type="memory" name="IRAM1">
               <property name="start">0x20000000</property>
               <property name="size">0x2000</property>
-              <property name="access"></property>
-              <property name="alias"></property>
             </node>
           </node>
         </node>
@@ -901,14 +713,10 @@
               <property name="start">0x08000000</property>
               <property name="size">0x8000</property>
               <property name="startup">1</property>
-              <property name="access"></property>
-              <property name="alias"></property>
             </node>
             <node type="memory" name="IRAM1">
               <property name="start">0x20000000</property>
               <property name="size">0x1800</property>
-              <property name="access"></property>
-              <property name="alias"></property>
             </node>
           </node>
           <node type="device" name="STM32F070CB">
@@ -917,14 +725,10 @@
               <property name="start">0x08000000</property>
               <property name="size">0x20000</property>
               <property name="startup">1</property>
-              <property name="access"></property>
-              <property name="alias"></property>
             </node>
             <node type="memory" name="IRAM1">
               <property name="start">0x20000000</property>
               <property name="size">0x4000</property>
-              <property name="access"></property>
-              <property name="alias"></property>
             </node>
           </node>
           <node type="device" name="STM32F070F6">
@@ -933,14 +737,10 @@
               <property name="start">0x08000000</property>
               <property name="size">0x8000</property>
               <property name="startup">1</property>
-              <property name="access"></property>
-              <property name="alias"></property>
             </node>
             <node type="memory" name="IRAM1">
               <property name="start">0x20000000</property>
               <property name="size">0x1800</property>
-              <property name="access"></property>
-              <property name="alias"></property>
             </node>
           </node>
           <node type="device" name="STM32F070RB">
@@ -949,14 +749,10 @@
               <property name="start">0x08000000</property>
               <property name="size">0x20000</property>
               <property name="startup">1</property>
-              <property name="access"></property>
-              <property name="alias"></property>
             </node>
             <node type="memory" name="IRAM1">
               <property name="start">0x20000000</property>
               <property name="size">0x4000</property>
-              <property name="access"></property>
-              <property name="alias"></property>
             </node>
           </node>
         </node>
@@ -975,14 +771,10 @@
               <property name="start">0x08000000</property>
               <property name="size">0x20000</property>
               <property name="startup">1</property>
-              <property name="access"></property>
-              <property name="alias"></property>
             </node>
             <node type="memory" name="IRAM1">
               <property name="start">0x20000000</property>
               <property name="size">0x4000</property>
-              <property name="access"></property>
-              <property name="alias"></property>
             </node>
           </node>
           <node type="device" name="STM32F071RB">
@@ -990,14 +782,10 @@
               <property name="start">0x08000000</property>
               <property name="size">0x20000</property>
               <property name="startup">1</property>
-              <property name="access"></property>
-              <property name="alias"></property>
             </node>
             <node type="memory" name="IRAM1">
               <property name="start">0x20000000</property>
               <property name="size">0x4000</property>
-              <property name="access"></property>
-              <property name="alias"></property>
             </node>
           </node>
           <node type="device" name="STM32F071V8">
@@ -1005,14 +793,10 @@
               <property name="start">0x08000000</property>
               <property name="size">0x10000</property>
               <property name="startup">1</property>
-              <property name="access"></property>
-              <property name="alias"></property>
             </node>
             <node type="memory" name="IRAM1">
               <property name="start">0x20000000</property>
               <property name="size">0x4000</property>
-              <property name="access"></property>
-              <property name="alias"></property>
             </node>
           </node>
           <node type="device" name="STM32F071VB">
@@ -1020,14 +804,10 @@
               <property name="start">0x08000000</property>
               <property name="size">0x20000</property>
               <property name="startup">1</property>
-              <property name="access"></property>
-              <property name="alias"></property>
             </node>
             <node type="memory" name="IRAM1">
               <property name="start">0x20000000</property>
               <property name="size">0x4000</property>
-              <property name="access"></property>
-              <property name="alias"></property>
             </node>
           </node>
         </node>
@@ -1046,14 +826,10 @@
               <property name="start">0x08000000</property>
               <property name="size">0x10000</property>
               <property name="startup">1</property>
-              <property name="access"></property>
-              <property name="alias"></property>
             </node>
             <node type="memory" name="IRAM1">
               <property name="start">0x20000000</property>
               <property name="size">0x4000</property>
-              <property name="access"></property>
-              <property name="alias"></property>
             </node>
           </node>
           <node type="device" name="STM32F072CB">
@@ -1061,14 +837,10 @@
               <property name="start">0x08000000</property>
               <property name="size">0x20000</property>
               <property name="startup">1</property>
-              <property name="access"></property>
-              <property name="alias"></property>
             </node>
             <node type="memory" name="IRAM1">
               <property name="start">0x20000000</property>
               <property name="size">0x4000</property>
-              <property name="access"></property>
-              <property name="alias"></property>
             </node>
           </node>
           <node type="device" name="STM32F072R8">
@@ -1076,14 +848,10 @@
               <property name="start">0x08000000</property>
               <property name="size">0x10000</property>
               <property name="startup">1</property>
-              <property name="access"></property>
-              <property name="alias"></property>
             </node>
             <node type="memory" name="IRAM1">
               <property name="start">0x20000000</property>
               <property name="size">0x4000</property>
-              <property name="access"></property>
-              <property name="alias"></property>
             </node>
           </node>
           <node type="device" name="STM32F072RB">
@@ -1091,14 +859,10 @@
               <property name="start">0x08000000</property>
               <property name="size">0x20000</property>
               <property name="startup">1</property>
-              <property name="access"></property>
-              <property name="alias"></property>
             </node>
             <node type="memory" name="IRAM1">
               <property name="start">0x20000000</property>
               <property name="size">0x4000</property>
-              <property name="access"></property>
-              <property name="alias"></property>
             </node>
           </node>
           <node type="device" name="STM32F072V8">
@@ -1106,14 +870,10 @@
               <property name="start">0x08000000</property>
               <property name="size">0x10000</property>
               <property name="startup">1</property>
-              <property name="access"></property>
-              <property name="alias"></property>
             </node>
             <node type="memory" name="IRAM1">
               <property name="start">0x20000000</property>
               <property name="size">0x4000</property>
-              <property name="access"></property>
-              <property name="alias"></property>
             </node>
           </node>
           <node type="device" name="STM32F072VB">
@@ -1121,14 +881,10 @@
               <property name="start">0x08000000</property>
               <property name="size">0x20000</property>
               <property name="startup">1</property>
-              <property name="access"></property>
-              <property name="alias"></property>
             </node>
             <node type="memory" name="IRAM1">
               <property name="start">0x20000000</property>
               <property name="size">0x4000</property>
-              <property name="access"></property>
-              <property name="alias"></property>
             </node>
           </node>
         </node>
@@ -1147,14 +903,10 @@
               <property name="start">0x08000000</property>
               <property name="size">0x20000</property>
               <property name="startup">1</property>
-              <property name="access"></property>
-              <property name="alias"></property>
             </node>
             <node type="memory" name="IRAM1">
               <property name="start">0x20000000</property>
               <property name="size">0x4000</property>
-              <property name="access"></property>
-              <property name="alias"></property>
             </node>
           </node>
           <node type="device" name="STM32F078RB">
@@ -1162,14 +914,10 @@
               <property name="start">0x08000000</property>
               <property name="size">0x20000</property>
               <property name="startup">1</property>
-              <property name="access"></property>
-              <property name="alias"></property>
             </node>
             <node type="memory" name="IRAM1">
               <property name="start">0x20000000</property>
               <property name="size">0x4000</property>
-              <property name="access"></property>
-              <property name="alias"></property>
             </node>
           </node>
           <node type="device" name="STM32F078VB">
@@ -1177,14 +925,10 @@
               <property name="start">0x08000000</property>
               <property name="size">0x20000</property>
               <property name="startup">1</property>
-              <property name="access"></property>
-              <property name="alias"></property>
             </node>
             <node type="memory" name="IRAM1">
               <property name="start">0x20000000</property>
               <property name="size">0x4000</property>
-              <property name="access"></property>
-              <property name="alias"></property>
             </node>
           </node>
         </node>
@@ -1203,14 +947,10 @@
               <property name="start">0x08000000</property>
               <property name="size">0x20000</property>
               <property name="startup">1</property>
-              <property name="access"></property>
-              <property name="alias"></property>
             </node>
             <node type="memory" name="IRAM1">
               <property name="start">0x20000000</property>
               <property name="size">0x8000</property>
-              <property name="access"></property>
-              <property name="alias"></property>
             </node>
           </node>
           <node type="device" name="STM32F091CC">
@@ -1218,14 +958,10 @@
               <property name="start">0x08000000</property>
               <property name="size">0x40000</property>
               <property name="startup">1</property>
-              <property name="access"></property>
-              <property name="alias"></property>
             </node>
             <node type="memory" name="IRAM1">
               <property name="start">0x20000000</property>
               <property name="size">0x8000</property>
-              <property name="access"></property>
-              <property name="alias"></property>
             </node>
           </node>
           <node type="device" name="STM32F091RB">
@@ -1233,14 +969,10 @@
               <property name="start">0x08000000</property>
               <property name="size">0x20000</property>
               <property name="startup">1</property>
-              <property name="access"></property>
-              <property name="alias"></property>
             </node>
             <node type="memory" name="IRAM1">
               <property name="start">0x20000000</property>
               <property name="size">0x8000</property>
-              <property name="access"></property>
-              <property name="alias"></property>
             </node>
           </node>
           <node type="device" name="STM32F091RC">
@@ -1248,14 +980,10 @@
               <property name="start">0x08000000</property>
               <property name="size">0x40000</property>
               <property name="startup">1</property>
-              <property name="access"></property>
-              <property name="alias"></property>
             </node>
             <node type="memory" name="IRAM1">
               <property name="start">0x20000000</property>
               <property name="size">0x8000</property>
-              <property name="access"></property>
-              <property name="alias"></property>
             </node>
           </node>
           <node type="device" name="STM32F091VB">
@@ -1263,14 +991,10 @@
               <property name="start">0x08000000</property>
               <property name="size">0x20000</property>
               <property name="startup">1</property>
-              <property name="access"></property>
-              <property name="alias"></property>
             </node>
             <node type="memory" name="IRAM1">
               <property name="start">0x20000000</property>
               <property name="size">0x8000</property>
-              <property name="access"></property>
-              <property name="alias"></property>
             </node>
           </node>
           <node type="device" name="STM32F091VC">
@@ -1278,14 +1002,10 @@
               <property name="start">0x08000000</property>
               <property name="size">0x40000</property>
               <property name="startup">1</property>
-              <property name="access"></property>
-              <property name="alias"></property>
             </node>
             <node type="memory" name="IRAM1">
               <property name="start">0x20000000</property>
               <property name="size">0x8000</property>
-              <property name="access"></property>
-              <property name="alias"></property>
             </node>
           </node>
         </node>
@@ -1304,14 +1024,10 @@
               <property name="start">0x08000000</property>
               <property name="size">0x40000</property>
               <property name="startup">1</property>
-              <property name="access"></property>
-              <property name="alias"></property>
             </node>
             <node type="memory" name="IRAM1">
               <property name="start">0x20000000</property>
               <property name="size">0x8000</property>
-              <property name="access"></property>
-              <property name="alias"></property>
             </node>
           </node>
           <node type="device" name="STM32F098RC">
@@ -1319,14 +1035,10 @@
               <property name="start">0x08000000</property>
               <property name="size">0x40000</property>
               <property name="startup">1</property>
-              <property name="access"></property>
-              <property name="alias"></property>
             </node>
             <node type="memory" name="IRAM1">
               <property name="start">0x20000000</property>
               <property name="size">0x8000</property>
-              <property name="access"></property>
-              <property name="alias"></property>
             </node>
           </node>
           <node type="device" name="STM32F098VC">
@@ -1334,14 +1046,10 @@
               <property name="start">0x08000000</property>
               <property name="size">0x40000</property>
               <property name="startup">1</property>
-              <property name="access"></property>
-              <property name="alias"></property>
             </node>
             <node type="memory" name="IRAM1">
               <property name="start">0x20000000</property>
               <property name="size">0x8000</property>
-              <property name="access"></property>
-              <property name="alias"></property>
             </node>
           </node>
         </node>
