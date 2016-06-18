@@ -282,10 +282,8 @@ static int_fast8_t RunCommand(ListOfParameterStructureType *source)
 					SerialPort2.SendString((uint8_t*)"Error reading ADC\r\n");
 				}
 
-				if (ADC_ReadNorm(source->List[1].Value.i32_t[0], &adcNorm )) {
+				if (ADC_Normalize(adcReading, &adcNorm )) {
 					// Split the decimal into the whole number and fraction since %f doesn't work with snprintf
-					//uint16_t intpart = (int)adcNorm;
-					//uint16_t fracpart = (int)((adcNorm - intpart) * 100000);
 					uint32_t intpart = (uint32_t)adcNorm;
 					uint32_t fracpart = (int32_t)((adcNorm - intpart) * 100000);
 
@@ -293,8 +291,20 @@ static int_fast8_t RunCommand(ListOfParameterStructureType *source)
 					SerialPort2.SendString(&message[0]);
 					SerialPort2.SendString((uint8_t*)"\r\n");
 				} else {
-					SerialPort2.SendString((uint8_t*)"Error reading ADC Norm\r\n");
+					SerialPort2.SendString((uint8_t*)"Error normalizing ADC readingr\n");
 				}
+
+//				if (ADC_ReadNorm(source->List[1].Value.i32_t[0], &adcNorm )) {
+//					// Split the decimal into the whole number and fraction since %f doesn't work with snprintf
+//					uint32_t intpart = (uint32_t)adcNorm;
+//					uint32_t fracpart = (int32_t)((adcNorm - intpart) * 100000);
+//
+//					snprintf(&message[0], 25, "%d.%05d", intpart, fracpart);
+//					SerialPort2.SendString(&message[0]);
+//					SerialPort2.SendString((uint8_t*)"\r\n");
+//				} else {
+//					SerialPort2.SendString((uint8_t*)"Error reading ADC Norm\r\n");
+//				}
 			}
 			break;
 		default:

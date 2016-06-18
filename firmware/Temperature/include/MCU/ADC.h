@@ -12,6 +12,7 @@
 
 void ADC_On(void);
 uint_fast8_t ADC_Read(uint_fast32_t channel, uint_fast16_t *destination);
+uint_fast8_t ADC_Normalize(uint_fast16_t adcReading, float *destination);
 uint_fast8_t ADC_ReadNorm(uint_fast32_t channel, float *destination);
 void ADC_Off(void);
 

@@ -56,6 +56,34 @@ uint_fast8_t ADC_Read(uint_fast32_t channel, uint_fast16_t *destination) {
 ///////////////////////////////////////////////////////////////////////////////
 /// \brief Normalize the value returned from an ADC_Read
 ///
+/// \param ADC reading
+/// \param destination pointer to return the normalized value
+///
+/// \return True on success else no valid destination
+///////////////////////////////////////////////////////////////////////////////
+uint_fast8_t ADC_Normalize(uint_fast16_t adcReading, float *destination) {
+	if (!destination) {
+		return FALSE;
+	}
+
+	uint32_t adcResolution;
+	if (adcReading != 0) {
+		adcResolution =  (uint32_t)12 - (((uint32_t)(ADC1->CFGR1 & ADC_CFGR1_RES ) >> 3) * 2);
+		adcResolution = ((uint32_t)(1 << adcResolution)); // this gives us 2^adcResolution
+
+		float temp = (float)adcReading / (float)(adcResolution-1);
+		*destination = temp;
+		return TRUE;
+	} else {
+		*destination = 0;
+		return TRUE;
+	}
+}
+
+
+///////////////////////////////////////////////////////////////////////////////
+/// \brief Normalize the value returned from an ADC_Read
+///
 /// \param ADC channel
 /// \param destination pointer to return the value read
 ///
@@ -67,19 +95,8 @@ uint_fast8_t ADC_ReadNorm(uint_fast32_t channel, float *destination) {
 	}
 
 	uint_fast16_t adcReading = 0;
-	uint32_t adcResolution;
 	if (ADC_Read(channel, &adcReading )) {
-		if (adcReading > 0) {
-			adcResolution =  (uint32_t)12 - (((uint32_t)(ADC1->CFGR1 & ADC_CFGR1_RES ) >> 3) * 2);
-			adcResolution = ((uint32_t)(1 << adcResolution)); // this gives us 2^adcResolution
-
-			float temp = (float)adcReading / (float)(adcResolution-1);
-			*destination = temp;
-			return TRUE;
-		} else {
-			*destination = 0;
-			return TRUE;
-		}
+		return ADC_Normalize(adcReading, destination);
 	} else {
 		return FALSE;
 	}
