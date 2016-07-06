@@ -1,0 +1,11 @@
+{
+  "name": "serial_test",
+  "version": "1.0.0",
+  "description": "First nodejs serial test",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Brooke T. Hedrick",
+  "license": "ISC"
+}
